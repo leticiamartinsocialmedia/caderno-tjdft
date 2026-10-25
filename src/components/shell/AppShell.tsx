@@ -113,7 +113,7 @@ export function AppShell({ usuario, children }: { usuario: Usuario; children: Re
               alternarTema={alternarTema}
               sair={sair}
             />
-            <main className="mx-auto w-full max-w-[1280px] flex-1 px-[max(16px,env(safe-area-inset-right))] py-6 lg:px-8 lg:py-8">
+            <main className="mx-auto w-full max-w-[1280px] flex-1 px-[max(16px,env(safe-area-inset-right))] pt-6 pb-24 lg:px-8 lg:pt-8">
               {children}
             </main>
           </div>
