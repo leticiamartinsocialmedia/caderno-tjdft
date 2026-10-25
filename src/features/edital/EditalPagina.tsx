@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { ArrowUpDown, Check, Folder, FolderOpen, Pencil, Plus, Trash2 } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir, useConsulta } from "@/lib/useConsulta";
+import { useTempoReal } from "@/lib/tempoReal";
 import { usePreferencia } from "@/lib/preferencias";
 import type { Materia, StatusTopico } from "@/lib/tipos";
 import { Abas, CabecalhoPagina, SeletorVisualizacao, type Visualizacao } from "@/components/ui/Cabecalho";
@@ -46,7 +47,8 @@ export function PillProgresso({ p }: { p: Progresso }) {
 
 export function EditalPagina() {
   const { avisar, excluirComDesfazer } = useToast();
-  const { dados, setDados, carregando, erro, recarregar } = useConsulta(carregarEdital);
+  const { dados, setDados, carregando, erro, recarregar, atualizar } = useConsulta(carregarEdital);
+  useTempoReal(["materias", "topicos"], atualizar);
   const [visualizacao, setVisualizacao] = usePreferencia<Visualizacao>("edital:vis", "cards");
   const [ordenacao, setOrdenacao] = usePreferencia<Ordenacao>("edital:ordem", "minha");
   const [filtro, setFiltro] = useState<Filtro>("todas");

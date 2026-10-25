@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { ArrowUpDown, Check, Copy, ExternalLink, Filter, Flame, Lightbulb, Pencil, Plus, Search, Trash2, X } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir, useConsulta } from "@/lib/useConsulta";
+import { useTempoReal } from "@/lib/tempoReal";
 import { buscarTodos, useEditalBasico } from "@/lib/useEditalBasico";
 import { usePreferencia } from "@/lib/preferencias";
 import { contem, TextoGrifado } from "@/lib/grifo";
@@ -41,11 +43,19 @@ export function BisusPagina() {
   const { usuario } = useApp();
   const { avisar, excluirComDesfazer } = useToast();
   const edital = useEditalBasico();
-  const { dados, setDados, carregando, erro, recarregar } = useConsulta(() => carregarBisus(usuario.id));
+  const { dados, setDados, carregando, erro, recarregar, atualizar } = useConsulta(() => carregarBisus(usuario.id));
+  useTempoReal(["bisus", "configuracoes"], atualizar);
   const [visualizacao, setVisualizacao] = usePreferencia<Visualizacao>("bisus:vis", "lista");
   const [ordenacao, setOrdenacao] = usePreferencia<Ordenacao>("bisus:ordem", "recentes");
   const [aba, setAba] = useState<Aba>("todos");
-  const [busca, setBusca] = useState("");
+  const params = useSearchParams();
+  const buscaUrl = params.get("busca");
+  const [busca, setBusca] = useState(buscaUrl ?? "");
+  useEffect(() => {
+    // Vindo da busca global: /bisus?busca=...
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (buscaUrl !== null) setBusca(buscaUrl);
+  }, [buscaUrl]);
   const [filtros, setFiltros] = useState<Filtros>(SEM_FILTROS);
   const [painelFiltros, setPainelFiltros] = useState(false);
   const [limite, setLimite] = useState(POR_PAGINA);

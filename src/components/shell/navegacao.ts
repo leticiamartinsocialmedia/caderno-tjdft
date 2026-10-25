@@ -25,4 +25,4 @@ export const NAVEGACAO: ItemNav[] = [
   { href: "/metodos", rotulo: "Métodos", icone: Compass },
 ];
 
-export const VERSAO_APP = "0.1.0";
+export const VERSAO_APP = "1.0.0";

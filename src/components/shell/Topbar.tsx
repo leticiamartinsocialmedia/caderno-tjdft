@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Bell, LogOut, Moon, PanelLeft, Search, Sun } from "lucide-react";
+import { Bell, LogOut, Moon, PanelLeft, Search, Settings, Sun, Timer } from "lucide-react";
+import { formatarRelogio, useCronometroEstudo } from "@/lib/cronometro";
 import { LogoIcone } from "@/components/Logo";
 import { useApp } from "./AppContext";
 
@@ -41,6 +42,7 @@ export function Topbar({
   const refSino = useFecharAoClicarFora(sinoAberto, () => setSinoAberto(false));
   const refMenu = useFecharAoClicarFora(menuAberto, () => setMenuAberto(false));
   const inicial = (usuario.nome || usuario.email).trim().charAt(0).toUpperCase();
+  const cronometro = useCronometroEstudo();
 
   return (
     <header className="sticky top-[env(safe-area-inset-top)] z-20 flex h-16 items-center justify-between gap-3 border-b border-borda bg-fundo px-[max(16px,env(safe-area-inset-right))] lg:px-6">
@@ -60,6 +62,15 @@ export function Topbar({
       </div>
 
       <div className="flex items-center gap-1">
+        {cronometro.rodando && (
+          <Link
+            href="/questoes"
+            className="tabular mr-1 inline-flex h-8 items-center gap-1.5 rounded-full bg-rosa-suave px-2.5 text-xs font-bold text-rosa-texto"
+            aria-label={`Cronômetro de estudo: ${formatarRelogio(cronometro.ms)}`}
+          >
+            <Timer size={14} /> {formatarRelogio(cronometro.ms)}
+          </Link>
+        )}
         <button
           type="button"
           onClick={abrirBusca}
@@ -119,6 +130,13 @@ export function Topbar({
           {menuAberto && (
             <div className="absolute right-0 mt-2 w-60 rounded-lg border border-borda bg-superficie p-1.5 shadow-lg">
               <p className="truncate px-2.5 py-2 text-xs text-texto-2">{usuario.email}</p>
+              <Link
+                href="/configuracoes"
+                onClick={() => setMenuAberto(false)}
+                className="flex w-full items-center gap-2.5 rounded-md px-2.5 py-2 text-[13px] font-semibold hover:bg-hover"
+              >
+                <Settings size={16} /> Configurações e backup
+              </Link>
               <button
                 type="button"
                 onClick={alternarTema}

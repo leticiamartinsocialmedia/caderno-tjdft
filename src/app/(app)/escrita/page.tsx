@@ -1,14 +1,7 @@
-import { Construction } from "lucide-react";
-import { CabecalhoPagina } from "@/components/ui/Cabecalho";
-import { EstadoVazio } from "@/components/ui/Estados";
+import { EscritasPagina } from "@/features/escrita/EscritasPagina";
 
 export const metadata = { title: "Escrita · Caderno TJDFT" };
 
 export default function Pagina() {
-  return (
-    <div className="flex flex-col gap-6">
-      <CabecalhoPagina titulo="Escrita" />
-      <EstadoVazio icone={Construction} titulo="Em construção" texto="Esta seção chega na etapa 4." />
-    </div>
-  );
+  return <EscritasPagina />;
 }

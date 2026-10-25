@@ -11,6 +11,7 @@ import { Sidebar } from "./Sidebar";
 import { Topbar } from "./Topbar";
 import { BuscaGlobal } from "./BuscaGlobal";
 import { BarraInferior } from "./BarraInferior";
+import { useTempoReal } from "@/lib/tempoReal";
 
 function lerPreferencia(chave: string): string | null {
   try {
@@ -61,15 +62,15 @@ export function AppShell({ usuario, children }: { usuario: Usuario; children: Re
     setEscuro(document.documentElement.classList.contains("dark"));
     /* eslint-enable react-hooks/set-state-in-effect */
 
-    // Na primeira visita prepara o edital; nas outras a função só confere e sai.
-    void supabase()
+    // Na primeira visita prepara o edital e a nomenclatura; nas outras as funções só conferem e saem.
+    const sb = supabase();
+    void sb
       .rpc("semear_edital")
+      .then(() => sb.rpc("semear_termos"))
       .then(() => atualizarContadores());
-
-    const aoVoltar = () => document.visibilityState === "visible" && atualizarContadores();
-    document.addEventListener("visibilitychange", aoVoltar);
-    return () => document.removeEventListener("visibilitychange", aoVoltar);
   }, [atualizarContadores, sair]);
+
+  useTempoReal(["revisoes"], atualizarContadores);
 
   useEffect(() => {
     const aoTeclar = (e: KeyboardEvent) => {

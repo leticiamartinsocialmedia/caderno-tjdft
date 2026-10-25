@@ -2,9 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, ChevronDown, FileQuestion, ListTree, Pencil, Plus, Trash2 } from "lucide-react";
+import { Check, ChevronDown, FileQuestion, ListTree, PenLine, Pencil, Plus, Trash2 } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir, useConsulta } from "@/lib/useConsulta";
+import { useTempoReal } from "@/lib/tempoReal";
 import type { Materia, StatusTopico, Topico } from "@/lib/tipos";
 import { Abas, CabecalhoPagina } from "@/components/ui/Cabecalho";
 import { Botao, BotaoIcone } from "@/components/ui/Botao";
@@ -39,7 +40,8 @@ export function PillStatus({ status }: { status: StatusTopico }) {
 export function MateriaPagina({ id }: { id: string }) {
   const router = useRouter();
   const { avisar, excluirComDesfazer } = useToast();
-  const { dados, setDados, carregando, erro, recarregar } = useConsulta(() => carregarMateria(id), id);
+  const { dados, setDados, carregando, erro, recarregar, atualizar } = useConsulta(() => carregarMateria(id), id);
+  useTempoReal(["materias", "topicos"], atualizar);
   const [filtro, setFiltro] = useState<Filtro>("todos");
   const [modalTopico, setModalTopico] = useState<{ topico?: Topico } | null>(null);
   const [renomeandoMateria, setRenomeandoMateria] = useState(false);
@@ -188,7 +190,7 @@ export function MateriaPagina({ id }: { id: string }) {
           <EstadoVazio icone={ListTree} titulo="Nenhum tópico nesta aba" />
         ) : (
           <>
-            <div className="hidden grid-cols-[28px_minmax(0,1fr)_170px_76px] gap-3 border-b border-borda px-2 pb-2.5 text-xs font-semibold text-texto-2 md:grid">
+            <div className="hidden grid-cols-[28px_minmax(0,1fr)_170px_116px] gap-3 border-b border-borda px-2 pb-2.5 text-xs font-semibold text-texto-2 md:grid">
               <span />
               <span>Tópico</span>
               <span>Status</span>
@@ -199,7 +201,7 @@ export function MateriaPagina({ id }: { id: string }) {
                 {visiveis.map((t) => (
                   <ItemArrastavel key={t.id} id={t.id} as="li" desativado={filtro !== "todos"} className="border-b border-borda">
                     {(alca) => (
-                      <div className="group grid grid-cols-[28px_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1.5 bg-fundo px-2 py-2.5 transition-colors hover:bg-hover md:grid-cols-[28px_minmax(0,1fr)_170px_76px]">
+                      <div className="group grid grid-cols-[28px_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1.5 bg-fundo px-2 py-2.5 transition-colors hover:bg-hover md:grid-cols-[28px_minmax(0,1fr)_170px_116px]">
                         <span>{filtro === "todos" && <AlcaArrastar alca={alca} />}</span>
                         <span className="min-w-0 text-[13.5px] leading-snug font-semibold">{t.nome}</span>
                         <span className="col-start-2 flex items-center gap-0.5 md:col-start-auto">
@@ -224,6 +226,9 @@ export function MateriaPagina({ id }: { id: string }) {
                           />
                         </span>
                         <span className="col-start-3 row-start-1 flex justify-end gap-0.5 opacity-100 transition-opacity md:col-start-auto md:row-start-auto md:opacity-0 md:group-focus-within:opacity-100 md:group-hover:opacity-100">
+                          <BotaoIcone rotulo={`Escrever sobre ${t.nome}`} onClick={() => router.push(`/escrita/nova?materia=${t.materia_id}&topico=${t.id}`)}>
+                            <PenLine size={15} />
+                          </BotaoIcone>
                           <BotaoIcone rotulo={`Renomear ${t.nome}`} onClick={() => setModalTopico({ topico: t })}>
                             <Pencil size={15} />
                           </BotaoIcone>

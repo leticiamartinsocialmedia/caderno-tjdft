@@ -10,8 +10,11 @@ export function CabecalhoPagina({
   aoVoltar,
   acoes,
   subtitulo,
+  acoesNaLinha = false,
 }: {
   titulo: string;
+  /** Mantém as ações ao lado do título também no celular (para um botão de ícone só). */
+  acoesNaLinha?: boolean;
   voltarPara?: string;
   aoVoltar?: () => void;
   acoes?: ReactNode;
@@ -19,7 +22,7 @@ export function CabecalhoPagina({
 }) {
   const estiloVoltar = "inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-texto hover:bg-hover";
   return (
-    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div className={`flex gap-4 ${acoesNaLinha ? "flex-row items-start justify-between" : "flex-col sm:flex-row sm:items-center sm:justify-between"}`}>
       <div className="flex min-w-0 items-center gap-2">
         {voltarPara ? (
           <Link href={voltarPara} className={estiloVoltar} aria-label="Voltar">
@@ -31,7 +34,7 @@ export function CabecalhoPagina({
           </button>
         ) : null}
         <div className="min-w-0">
-          <h1 className="truncate text-[22px] leading-tight font-extrabold tracking-tight">{titulo}</h1>
+          <h1 className="line-clamp-2 text-[22px] leading-tight font-extrabold tracking-tight">{titulo}</h1>
           {subtitulo && <p className="mt-0.5 text-[13px] text-texto-2">{subtitulo}</p>}
         </div>
       </div>

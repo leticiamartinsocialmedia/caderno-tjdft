@@ -31,13 +31,27 @@ export function useConsulta<T>(carregar: () => Promise<T>, chave = "") {
     }
   }, []);
 
+  /** Atualiza sem mostrar carregando nem erro (usado pelo tempo real). */
+  const atualizar = useCallback(async () => {
+    const minha = ++versao.current;
+    try {
+      const resultado = await carregarRef.current();
+      if (minha === versao.current) {
+        setDados(resultado);
+        setErro(false);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
+
   useEffect(() => {
     // Buscar dados ao montar é justamente sincronizar com um sistema externo (o banco).
     // eslint-disable-next-line react-hooks/set-state-in-effect
     void recarregar();
   }, [recarregar, chave]);
 
-  return { dados, setDados, carregando, erro, recarregar };
+  return { dados, setDados, carregando, erro, recarregar, atualizar };
 }
 
 /** Lança o erro do Supabase, se houver, e devolve os dados. */

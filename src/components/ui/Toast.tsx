@@ -21,6 +21,13 @@ type CtxToast = {
 
 const Ctx = createContext<CtxToast | null>(null);
 
+// Enquanto houver exclusão esperando o "Desfazer", o tempo real segura as atualizações
+// para o item escondido não reaparecer na tela.
+let exclusoesPendentes = 0;
+export function haExclusaoPendente() {
+  return exclusoesPendentes > 0;
+}
+
 export function useToast() {
   const ctx = useContext(Ctx);
   if (!ctx) throw new Error("useToast fora do ToastProvider");
@@ -46,14 +53,24 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       esconder();
       let desfeito = false;
       const id = proximoId.current;
+      exclusoesPendentes++;
+      let concluida = false;
+      const concluir = () => {
+        if (!concluida) {
+          concluida = true;
+          exclusoesPendentes--;
+        }
+      };
       const executar = async () => {
         pendentes.current.delete(id);
-        if (desfeito) return;
+        if (desfeito) return concluir();
         try {
           await apagar();
         } catch {
           restaurar();
           avisar({ texto: "Não deu para excluir. Tente de novo.", tipo: "erro" });
+        } finally {
+          concluir();
         }
       };
       pendentes.current.set(id, executar);
@@ -65,6 +82,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           fn: () => {
             desfeito = true;
             pendentes.current.delete(id);
+            concluir();
             restaurar();
           },
         },

@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir, useConsulta } from "./useConsulta";
+import { useTempoReal } from "./tempoReal";
 
 export type MateriaBasica = { id: string; nome: string; ordem: number };
 export type TopicoBasico = { id: string; nome: string; materia_id: string; ordem: number };
@@ -17,6 +18,7 @@ export function useEditalBasico() {
     ]);
     return { materias: exigir(m) as MateriaBasica[], topicos: exigir(t) as TopicoBasico[] };
   });
+  useTempoReal(["materias", "topicos"], consulta.atualizar);
   const materias = useMemo(() => consulta.dados?.materias ?? [], [consulta.dados]);
   const topicos = useMemo(() => consulta.dados?.topicos ?? [], [consulta.dados]);
   const nomeMateria = useMemo(() => new Map(materias.map((m) => [m.id, m.nome])), [materias]);
