@@ -44,7 +44,7 @@ export function MenuAcoes({
         aria-label={rotulo}
         title={rotulo}
         aria-expanded={aberto}
-        className="inline-flex h-8 min-w-8 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
+        className="inline-flex h-10 min-w-10 sm:h-8 sm:min-w-8 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
       >
         {gatilho ?? <MoreHorizontal size={18} />}
       </button>
@@ -63,7 +63,7 @@ export function MenuAcoes({
                   setAberto(false);
                   item.aoClicar();
                 }}
-                className={`flex w-full items-center gap-2.5 rounded-md px-2.5 py-2 text-left text-[13px] font-semibold hover:bg-hover ${
+                className={`flex w-full items-center gap-2.5 rounded-md px-2.5 py-2.5 sm:py-2 text-left text-[13px] font-semibold hover:bg-hover ${
                   item.perigo ? "text-erro" : "text-texto"
                 } ${item.marcado ? "bg-hover" : ""}`}
               >

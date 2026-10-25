@@ -142,7 +142,7 @@ export function EditalPagina() {
             <MenuAcoes
               rotulo="Ordenar"
               gatilho={
-                <span className="inline-flex h-9 items-center gap-2 rounded-md border border-borda bg-superficie px-3.5 text-[13px] font-bold text-texto hover:bg-hover">
+                <span className="inline-flex h-10 sm:h-9 items-center gap-2 rounded-md border border-borda bg-superficie px-3.5 text-[13px] font-bold text-texto hover:bg-hover">
                   <ArrowUpDown size={15} /> Ordenar
                 </span>
               }

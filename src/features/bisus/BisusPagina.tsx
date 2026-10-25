@@ -155,7 +155,7 @@ export function BisusPagina() {
             <MenuAcoes
               rotulo="Ordenar"
               gatilho={
-                <span className="inline-flex h-9 items-center gap-2 rounded-md border border-borda bg-superficie px-3.5 text-[13px] font-bold text-texto hover:bg-hover">
+                <span className="inline-flex h-10 sm:h-9 items-center gap-2 rounded-md border border-borda bg-superficie px-3.5 text-[13px] font-bold text-texto hover:bg-hover">
                   <ArrowUpDown size={15} /> Ordenar
                 </span>
               }
@@ -394,9 +394,10 @@ function CardBisu({ bisu, busca, nomeMateria, nomeTopico, editar, duplicar, excl
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-texto-2">
         {bisu.cai_muito && <BadgeCaiMuito />}
-        <span className="font-semibold text-texto">{bisu.professor || "Sem professor"}</span>
-        <span>· {ROTULO_FONTE[bisu.fonte]}</span>
-        <span className="tabular">· {formatarData(dataSP(bisu.created_at))}</span>
+        <span className="tabular">
+          <span className="font-semibold text-texto">{bisu.professor || "Sem professor"}</span> · {ROTULO_FONTE[bisu.fonte]} ·{" "}
+          {formatarData(dataSP(bisu.created_at))}
+        </span>
         {bisu.link && (
           <a href={bisu.link} target="_blank" rel="noreferrer" className="ml-auto inline-flex items-center gap-1 font-semibold text-rosa-texto hover:underline">
             Abrir link <ExternalLink size={12} />

@@ -10,6 +10,7 @@ import { AppCtx, type Usuario } from "./AppContext";
 import { Sidebar } from "./Sidebar";
 import { Topbar } from "./Topbar";
 import { BuscaGlobal } from "./BuscaGlobal";
+import { BarraInferior } from "./BarraInferior";
 
 function lerPreferencia(chave: string): string | null {
   try {
@@ -108,16 +109,16 @@ export function AppShell({ usuario, children }: { usuario: Usuario; children: Re
           <div className="flex min-w-0 flex-1 flex-col">
             <Topbar
               alternarSidebar={alternarSidebar}
-              abrirGaveta={() => setGavetaAberta(true)}
               escuro={escuro}
               alternarTema={alternarTema}
               sair={sair}
             />
-            <main className="mx-auto w-full max-w-[1280px] flex-1 px-[max(16px,env(safe-area-inset-right))] pt-6 pb-24 lg:px-8 lg:pt-8">
+            <main className="mx-auto w-full max-w-[1280px] flex-1 px-[max(16px,env(safe-area-inset-right))] pt-5 pb-[calc(112px+env(safe-area-inset-bottom))] lg:px-8 lg:pt-8 lg:pb-24">
               {children}
             </main>
           </div>
         </div>
+        <BarraInferior revisoesHoje={revisoesHoje} abrirGaveta={() => setGavetaAberta(true)} />
         {buscaAberta && <BuscaGlobal fechar={() => setBuscaAberta(false)} />}
       </ToastProvider>
     </AppCtx.Provider>

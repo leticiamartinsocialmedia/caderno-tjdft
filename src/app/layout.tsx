@@ -8,10 +8,12 @@ const sourceSerif = Source_Serif_4({ subsets: ["latin"], variable: "--font-sourc
 export const metadata: Metadata = {
   title: "Caderno TJDFT",
   description: "Organização de estudos para o concurso do TJDFT",
+  appleWebApp: { capable: true, title: "Caderno", statusBarStyle: "default" },
 };
 
 export const viewport: Viewport = {
   themeColor: "#0B0B0C",
+  viewportFit: "cover",
 };
 
 // Aplica o tema salvo antes da primeira pintura, para não piscar.

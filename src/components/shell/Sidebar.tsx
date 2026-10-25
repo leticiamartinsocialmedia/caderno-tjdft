@@ -24,7 +24,7 @@ export function Sidebar({
   return (
     <>
       <div
-        className={`fixed inset-0 z-30 bg-black/50 transition-opacity lg:hidden ${gavetaAberta ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        className={`fixed inset-0 z-[35] bg-black/50 transition-opacity lg:hidden ${gavetaAberta ? "opacity-100" : "pointer-events-none opacity-0"}`}
         onClick={fecharGaveta}
         aria-hidden="true"
       />

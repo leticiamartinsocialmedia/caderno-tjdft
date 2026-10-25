@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Bell, LogOut, Menu, Moon, PanelLeft, Search, Sun } from "lucide-react";
+import { Bell, LogOut, Moon, PanelLeft, Search, Sun } from "lucide-react";
+import { LogoIcone } from "@/components/Logo";
 import { useApp } from "./AppContext";
 
 function useFecharAoClicarFora(aberto: boolean, fechar: () => void) {
@@ -25,13 +26,11 @@ function useFecharAoClicarFora(aberto: boolean, fechar: () => void) {
 
 export function Topbar({
   alternarSidebar,
-  abrirGaveta,
   escuro,
   alternarTema,
   sair,
 }: {
   alternarSidebar: () => void;
-  abrirGaveta: () => void;
   escuro: boolean;
   alternarTema: () => void;
   sair: () => void;
@@ -46,14 +45,10 @@ export function Topbar({
   return (
     <header className="sticky top-[env(safe-area-inset-top)] z-20 flex h-16 items-center justify-between gap-3 border-b border-borda bg-fundo px-[max(16px,env(safe-area-inset-right))] lg:px-6">
       <div className="flex items-center gap-1">
-        <button
-          type="button"
-          onClick={abrirGaveta}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto lg:hidden"
-          aria-label="Abrir menu"
-        >
-          <Menu size={19} />
-        </button>
+        <Link href="/painel" className="flex items-center gap-2 lg:hidden" aria-label="Caderno TJDFT, ir para o painel">
+          <LogoIcone className="h-7 w-7" />
+          <span className="text-[15px] font-extrabold tracking-tight">Caderno</span>
+        </Link>
         <button
           type="button"
           onClick={alternarSidebar}
@@ -68,7 +63,7 @@ export function Topbar({
         <button
           type="button"
           onClick={abrirBusca}
-          className="inline-flex h-9 items-center gap-2 rounded-md px-2.5 text-texto-2 hover:bg-hover hover:text-texto"
+          className="inline-flex h-10 items-center gap-2 rounded-md px-2.5 text-texto-2 hover:bg-hover hover:text-texto"
           aria-label="Buscar (Ctrl+K)"
         >
           <Search size={18} />
@@ -79,7 +74,7 @@ export function Topbar({
           <button
             type="button"
             onClick={() => setSinoAberto((v) => !v)}
-            className="relative inline-flex h-9 w-9 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
+            className="relative inline-flex h-10 w-10 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
             aria-label={revisoesHoje > 0 ? `Notificações: ${revisoesHoje} revisões para hoje` : "Notificações"}
             aria-expanded={sinoAberto}
           >

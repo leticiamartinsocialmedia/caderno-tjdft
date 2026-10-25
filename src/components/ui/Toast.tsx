@@ -78,7 +78,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     <Ctx.Provider value={{ avisar, excluirComDesfazer }}>
       {children}
       <div
-        className="pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 px-4 pb-[max(16px,env(safe-area-inset-bottom))]"
+        className="pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 px-4 pb-[calc(80px+env(safe-area-inset-bottom))] lg:pb-[max(16px,env(safe-area-inset-bottom))]"
         aria-live="polite"
       >
         {toasts.map((t) => (

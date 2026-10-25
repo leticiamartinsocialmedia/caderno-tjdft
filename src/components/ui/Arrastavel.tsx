@@ -93,7 +93,7 @@ export function AlcaArrastar({ alca, rotulo = "Arrastar para reordenar" }: { alc
       {...alca.ouvintes}
       aria-label={rotulo}
       title={rotulo}
-      className="inline-flex h-8 w-6 shrink-0 cursor-grab touch-none items-center justify-center rounded text-texto-2/60 hover:bg-hover hover:text-texto active:cursor-grabbing"
+      className="inline-flex h-10 w-7 sm:h-8 sm:w-6 shrink-0 cursor-grab touch-none items-center justify-center rounded text-texto-2/60 hover:bg-hover hover:text-texto active:cursor-grabbing"
     >
       <GripVertical size={16} />
     </button>

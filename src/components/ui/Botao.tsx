@@ -20,7 +20,7 @@ export function Botao({
   return (
     <button
       type={type}
-      className={`inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md px-3.5 text-[13px] font-bold whitespace-nowrap transition disabled:cursor-not-allowed disabled:opacity-50 ${estilos[variante]} ${className}`}
+      className={`inline-flex h-10 sm:h-9 shrink-0 items-center justify-center gap-2 rounded-md px-3.5 text-[13px] font-bold whitespace-nowrap transition disabled:cursor-not-allowed disabled:opacity-50 ${estilos[variante]} ${className}`}
       {...props}
     >
       {icone}
@@ -40,7 +40,7 @@ export function BotaoIcone({
       type="button"
       aria-label={rotulo}
       title={rotulo}
-      className={`inline-flex h-8 w-8 items-center justify-center rounded-md text-texto-2 transition hover:bg-hover hover:text-texto ${className}`}
+      className={`inline-flex h-10 w-10 sm:h-8 sm:w-8 items-center justify-center rounded-md text-texto-2 transition hover:bg-hover hover:text-texto ${className}`}
       {...props}
     >
       {children}

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export const estiloInput =
-  "w-full rounded-md border border-borda bg-superficie px-3 py-2 text-sm text-texto placeholder:text-texto-2/70 outline-none transition-colors focus:border-rosa aria-[invalid=true]:border-erro";
+  "w-full rounded-md border border-borda bg-superficie px-3 py-2.5 text-base text-texto sm:py-2 sm:text-sm placeholder:text-texto-2/70 outline-none transition-colors focus:border-rosa aria-[invalid=true]:border-erro";
 
 export function Campo({
   id,
