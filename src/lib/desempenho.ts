@@ -19,7 +19,7 @@ export function corAcerto(pct: number | null): "verde" | "amarelo" | "vermelho" 
   return "vermelho";
 }
 
-export function somar(sessoes: SessaoBase[]): Totais {
+export function somar(sessoes: Pick<SessaoBase, "minutos" | "questoes" | "acertos">[]): Totais {
   const minutos = sessoes.reduce((s, x) => s + x.minutos, 0);
   const questoes = sessoes.reduce((s, x) => s + x.questoes, 0);
   const acertos = sessoes.reduce((s, x) => s + x.acertos, 0);

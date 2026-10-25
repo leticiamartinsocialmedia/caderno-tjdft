@@ -5,6 +5,8 @@ export type StatusTopico = "nao_visto" | "teoria" | "questoes" | "revisado";
 export type Materia = {
   id: string;
   nome: string;
+  /** Bloco da prova no edital (ex.: "Específicos"); null em matérias criadas à mão. */
+  grupo?: string | null;
   ordem: number;
   created_at: string;
   updated_at: string;
@@ -157,6 +159,7 @@ export type Termo = {
   pratica: string | null;
   tecnica: string | null;
   materia_ids: string[];
+  topico_ids: string[];
   dispositivo: string | null;
   tags: string[];
   status: "aprendendo" | "ja_sei";
@@ -165,3 +168,27 @@ export type Termo = {
 };
 
 export type TermoRelacionado = { termo_id: string; relacionado_id: string };
+
+export type Resumo = {
+  id: string;
+  topico_id: string;
+  titulo: string | null;
+  texto: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type TipoMaterial = "aula" | "pdf" | "questoes" | "link" | "arquivo";
+
+export type Material = {
+  id: string;
+  topico_id: string;
+  tipo: TipoMaterial;
+  titulo: string;
+  url: string | null;
+  arquivo_path: string | null;
+  arquivo_tamanho: number | null;
+  ordem: number;
+  created_at: string;
+  updated_at: string;
+};

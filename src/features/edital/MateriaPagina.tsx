@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, ChevronDown, FileQuestion, ListTree, PenLine, Pencil, Plus, Trash2 } from "lucide-react";
+import { BookX, Check, ChevronDown, FileQuestion, Lightbulb, ListTree, NotebookText, PenLine, Pencil, PlayCircle, Plus, Trash2 } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir, useConsulta } from "@/lib/useConsulta";
 import { useTempoReal } from "@/lib/tempoReal";
@@ -28,7 +29,59 @@ async function carregarMateria(id: string) {
     sb.from("materias").select("*").eq("id", id).maybeSingle(),
     sb.from("topicos").select("*").eq("materia_id", id).order("ordem").order("created_at"),
   ]);
-  return { materia: exigir(materia) as Materia | null, topicos: exigir(topicos) as Topico[] };
+  const lista = exigir(topicos) as Topico[];
+  const ids = lista.map((t) => t.id);
+  const contagens = new Map<string, Contagem>();
+  if (ids.length) {
+    // Tabelas do SQL 0003 (materiais, resumos) podem ainda não existir: aí contam zero.
+    const [bisus, escritas, erros, materiais, resumos] = await Promise.all([
+      sb.from("bisus").select("topico_id").in("topico_id", ids),
+      sb.from("escritas").select("topico_id").in("topico_id", ids).eq("rascunho", false),
+      sb.from("erros").select("topico_id").in("topico_id", ids).eq("revisado", false),
+      sb.from("materiais").select("topico_id").in("topico_id", ids),
+      sb.from("resumos").select("topico_id").in("topico_id", ids),
+    ]);
+    const somarEm = (linhas: { topico_id: string | null }[] | null, chave: keyof Contagem) => {
+      for (const l of linhas ?? []) {
+        if (!l.topico_id) continue;
+        const c = contagens.get(l.topico_id) ?? { bisus: 0, escritas: 0, erros: 0, materiais: 0 };
+        c[chave] += 1;
+        contagens.set(l.topico_id, c);
+      }
+    };
+    somarEm(exigir(bisus), "bisus");
+    somarEm(exigir(escritas), "escritas");
+    somarEm(exigir(erros), "erros");
+    somarEm(materiais.data, "materiais");
+    somarEm(resumos.data, "materiais");
+  }
+  return { materia: exigir(materia) as Materia | null, topicos: lista, contagens };
+}
+
+type Contagem = { bisus: number; escritas: number; erros: number; materiais: number };
+
+function Contadores({ c }: { c?: Contagem }) {
+  if (!c) return null;
+  const itens = [
+    { n: c.materiais, icone: PlayCircle, rotulo: "materiais e resumos" },
+    { n: c.escritas, icone: NotebookText, rotulo: "escritas guardadas" },
+    { n: c.bisus, icone: Lightbulb, rotulo: "bisus" },
+  ].filter((x) => x.n > 0);
+  return (
+    <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-texto-2">
+      {itens.map(({ n, icone: Icone, rotulo }) => (
+        <span key={rotulo} className="tabular inline-flex items-center gap-1" title={`${n} ${rotulo}`}>
+          <Icone size={13} aria-hidden /> {n}
+          <span className="sr-only">{rotulo}</span>
+        </span>
+      ))}
+      {c.erros > 0 && (
+        <span className="tabular inline-flex items-center gap-1 font-bold text-erro" title={`${c.erros} erros para revisar`}>
+          <BookX size={13} aria-hidden /> {c.erros} para revisar
+        </span>
+      )}
+    </span>
+  );
 }
 
 export function PillStatus({ status }: { status: StatusTopico }) {
@@ -41,7 +94,7 @@ export function MateriaPagina({ id }: { id: string }) {
   const router = useRouter();
   const { avisar, excluirComDesfazer } = useToast();
   const { dados, setDados, carregando, erro, recarregar, atualizar } = useConsulta(() => carregarMateria(id), id);
-  useTempoReal(["materias", "topicos"], atualizar);
+  useTempoReal(["materias", "topicos", "bisus", "escritas", "erros", "materiais", "resumos"], atualizar);
   const [filtro, setFiltro] = useState<Filtro>("todos");
   const [modalTopico, setModalTopico] = useState<{ topico?: Topico } | null>(null);
   const [renomeandoMateria, setRenomeandoMateria] = useState(false);
@@ -203,7 +256,15 @@ export function MateriaPagina({ id }: { id: string }) {
                     {(alca) => (
                       <div className="group grid grid-cols-[28px_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1.5 bg-fundo px-2 py-2.5 transition-colors hover:bg-hover md:grid-cols-[28px_minmax(0,1fr)_170px_116px]">
                         <span>{filtro === "todos" && <AlcaArrastar alca={alca} />}</span>
-                        <span className="min-w-0 text-[13.5px] leading-snug font-semibold">{t.nome}</span>
+                        <span className="flex min-w-0 flex-col gap-1">
+                          <Link
+                            href={`/edital/${t.materia_id}/${t.id}`}
+                            className="text-[13.5px] leading-snug font-semibold underline decoration-borda underline-offset-4 hover:decoration-rosa"
+                          >
+                            {t.nome}
+                          </Link>
+                          <Contadores c={dados?.contagens.get(t.id)} />
+                        </span>
                         <span className="col-start-2 flex items-center gap-0.5 md:col-start-auto">
                           <button
                             type="button"

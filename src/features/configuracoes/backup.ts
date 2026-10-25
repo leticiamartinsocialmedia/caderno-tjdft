@@ -8,6 +8,8 @@ import { hojeSP } from "@/lib/datas";
 export const TABELAS = [
   "materias",
   "topicos",
+  "resumos",
+  "materiais",
   "bisus",
   "escritas",
   "escrita_versoes",
@@ -29,10 +31,18 @@ const CONFLITO: Partial<Record<Tabela, string>> = {
   revisoes: "user_id,item_tipo,item_id",
 };
 
+/** Tabelas criadas pelo SQL 0003: se ainda não existem, o backup sai sem elas em vez de falhar. */
+const OPCIONAIS: Tabela[] = ["resumos", "materiais"];
+
 export async function exportarTudo(): Promise<Backup> {
   const sb = supabase();
   const listas = await Promise.all(
-    TABELAS.map((t) => buscarTodos<Record<string, unknown>>((de, ate) => sb.from(t).select("*").range(de, ate))),
+    TABELAS.map((t) =>
+      buscarTodos<Record<string, unknown>>((de, ate) => sb.from(t).select("*").range(de, ate)).catch((e) => {
+        if (OPCIONAIS.includes(t)) return [];
+        throw e;
+      }),
+    ),
   );
   return {
     app: "caderno-tjdft",
@@ -64,6 +74,7 @@ export async function importar(backup: Backup, usuarioId: string, progresso: (te
   const sb = supabase();
   for (const t of TABELAS) {
     const linhas = (backup.dados[t] ?? []).map((l) => ({ ...l, user_id: usuarioId }));
+    if (!linhas.length) continue;
     for (let i = 0; i < linhas.length; i += 500) {
       progresso(`Importando ${t.replace(/_/g, " ")} (${Math.min(i + 500, linhas.length)} de ${linhas.length})`);
       const { error } = await sb.from(t).upsert(linhas.slice(i, i + 500), { onConflict: CONFLITO[t] ?? "id" });

@@ -19,6 +19,7 @@ export function ModalBisu({
   professores,
   ultimoProfessor,
   materiaInicial,
+  topicoInicial,
   fechar,
   aoSalvar,
 }: {
@@ -28,12 +29,13 @@ export function ModalBisu({
   professores: string[];
   ultimoProfessor: string;
   materiaInicial?: string;
+  topicoInicial?: string;
   fechar: () => void;
   aoSalvar: (b: Bisu, novo: boolean) => void;
 }) {
   const { usuario } = useApp();
   const [materiaId, setMateriaId] = useState(bisu?.materia_id ?? materiaInicial ?? "");
-  const [topicoId, setTopicoId] = useState(bisu?.topico_id ?? "");
+  const [topicoId, setTopicoId] = useState(bisu?.topico_id ?? topicoInicial ?? "");
   const [texto, setTexto] = useState(bisu?.texto ?? "");
   const [professor, setProfessor] = useState(bisu?.professor ?? ultimoProfessor);
   const [fonte, setFonte] = useState<FonteBisu>(bisu?.fonte ?? "videoaula_gran");

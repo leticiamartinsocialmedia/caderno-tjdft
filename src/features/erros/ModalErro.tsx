@@ -20,17 +20,21 @@ export function ModalErro({
   erro,
   materias,
   topicos,
+  materiaInicial,
+  topicoInicial,
   fechar,
   aoSalvar,
 }: {
   erro?: Erro;
   materias: MateriaBasica[];
   topicos: TopicoBasico[];
+  materiaInicial?: string;
+  topicoInicial?: string;
   fechar: () => void;
   aoSalvar: (e: Erro, novo: boolean) => void;
 }) {
-  const [materiaId, setMateriaId] = useState(erro?.materia_id ?? "");
-  const [topicoId, setTopicoId] = useState(erro?.topico_id ?? "");
+  const [materiaId, setMateriaId] = useState(erro?.materia_id ?? materiaInicial ?? "");
+  const [topicoId, setTopicoId] = useState(erro?.topico_id ?? topicoInicial ?? "");
   const [assertiva, setAssertiva] = useState(erro?.assertiva ?? "");
   const [gabarito, setGabarito] = useState<Erro["gabarito"] | "">(erro?.gabarito ?? "");
   const [motivo, setMotivo] = useState<MotivoErro | "">(erro?.motivo ?? "");

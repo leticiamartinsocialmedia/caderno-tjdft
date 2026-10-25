@@ -35,6 +35,23 @@ async function carregarEdital() {
   };
 }
 
+/** Junta matérias vizinhas do mesmo grupo do edital (Básicos, Específicos, Discursiva). */
+function agrupar(lista: MateriaComProgresso[], usarGrupos: boolean) {
+  const grupos: { grupo: string | null; materias: MateriaComProgresso[] }[] = [];
+  for (const m of lista) {
+    const g = usarGrupos ? (m.grupo ?? null) : null;
+    const ultimo = grupos.at(-1);
+    if (ultimo && ultimo.grupo === g) ultimo.materias.push(m);
+    else grupos.push({ grupo: g, materias: [m] });
+  }
+  return grupos;
+}
+
+function TituloGrupo({ grupo }: { grupo: string | null }) {
+  if (!grupo) return null;
+  return <h2 className="mt-2 mb-2.5 text-xs font-extrabold tracking-wide text-texto-2 uppercase">{grupo}</h2>;
+}
+
 export function PillProgresso({ p }: { p: Progresso }) {
   if (p.total > 0 && p.revisados === p.total) return <Pill tipo="concluido">Revisado</Pill>;
   if (p.estudados === 0) return <Pill>Não começada</Pill>;
@@ -194,26 +211,34 @@ export function EditalPagina() {
           <EstadoVazio icone={FolderOpen} titulo="Nenhuma matéria aqui" texto="Troque a aba para ver as outras matérias." />
         ) : (
           <ListaArrastavel ids={visiveis.map((m) => m.id)} aoMover={mover} grade={visualizacao === "cards"}>
-            {visualizacao === "cards" ? (
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {visiveis.map((m) => (
-                  <CardMateria
-                    key={m.id}
-                    materia={m}
-                    podeArrastar={podeArrastar}
-                    renomear={() => setModal({ materia: m })}
-                    excluir={() => excluir(m)}
-                  />
-                ))}
-              </div>
-            ) : (
-              <TabelaMaterias
-                materias={visiveis}
-                podeArrastar={podeArrastar}
-                renomear={(m) => setModal({ materia: m })}
-                excluir={excluir}
-              />
-            )}
+            <div className="flex flex-col gap-5">
+              {agrupar(visiveis, ordenacao === "minha").map((g, i) => (
+                <section key={`${g.grupo}-${i}`}>
+                  <TituloGrupo grupo={g.grupo} />
+                  {visualizacao === "cards" ? (
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {g.materias.map((m) => (
+                        <CardMateria
+                          key={m.id}
+                          materia={m}
+                          podeArrastar={podeArrastar}
+                          renomear={() => setModal({ materia: m })}
+                          excluir={() => excluir(m)}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <TabelaMaterias
+                      materias={g.materias}
+                      cabecalho={i === 0}
+                      podeArrastar={podeArrastar}
+                      renomear={(m) => setModal({ materia: m })}
+                      excluir={excluir}
+                    />
+                  )}
+                </section>
+              ))}
+            </div>
           </ListaArrastavel>
         )}
         {dados && materias.length > 0 && !podeArrastar && (
@@ -281,18 +306,20 @@ function CardMateria({
 
 function TabelaMaterias({
   materias,
+  cabecalho,
   podeArrastar,
   renomear,
   excluir,
 }: {
   materias: MateriaComProgresso[];
+  cabecalho: boolean;
   podeArrastar: boolean;
   renomear: (m: Materia) => void;
   excluir: (m: Materia) => void;
 }) {
   return (
     <div>
-      <div className="hidden grid-cols-[28px_minmax(0,1fr)_90px_170px_150px_76px] items-center gap-3 border-b border-borda px-2 pb-2.5 text-xs font-semibold text-texto-2 md:grid">
+      <div className={`${cabecalho ? "md:grid" : ""} hidden grid-cols-[28px_minmax(0,1fr)_90px_170px_150px_76px] items-center gap-3 border-b border-borda px-2 pb-2.5 text-xs font-semibold text-texto-2`}>
         <span />
         <span>Matéria</span>
         <span>Tópicos</span>

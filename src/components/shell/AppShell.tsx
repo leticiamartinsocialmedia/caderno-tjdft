@@ -64,9 +64,14 @@ export function AppShell({ usuario, children }: { usuario: Usuario; children: Re
 
     // Na primeira visita prepara o edital e a nomenclatura; nas outras as funções só conferem e saem.
     const sb = supabase();
+    // preparar_caderno (SQL 0003) também traz o edital 2022 e os termos novos; sem ele, usa as funções antigas.
     void sb
-      .rpc("semear_edital")
-      .then(() => sb.rpc("semear_termos"))
+      .rpc("preparar_caderno")
+      .then(async ({ error }) => {
+        if (!error) return;
+        await sb.rpc("semear_edital");
+        await sb.rpc("semear_termos");
+      })
       .then(() => atualizarContadores());
   }, [atualizarContadores, sair]);
 

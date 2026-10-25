@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BookA, BookX, FolderOpen, Lightbulb, Loader2, PenLine, Search, type LucideIcon } from "lucide-react";
+import { BookA, BookX, FolderOpen, Lightbulb, Loader2, NotebookText, PenLine, PlayCircle, Search, type LucideIcon } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir } from "@/lib/useConsulta";
 import { contem } from "@/lib/grifo";
@@ -13,18 +13,25 @@ type Resultado = { id: string; grupo: string; icone: LucideIcon; titulo: string;
 
 async function carregarIndice(): Promise<Resultado[]> {
   const sb = supabase();
-  const [materias, topicos, bisus, escritas, termos, erros] = await Promise.all([
+  const [materias, topicos, bisus, escritas, termos, erros, resumos, materiais] = await Promise.all([
     sb.from("materias").select("id, nome"),
     sb.from("topicos").select("id, nome, materia_id"),
     sb.from("bisus").select("id, texto, professor, materia_id").limit(2000),
     sb.from("escritas").select("id, titulo, formato, conteudo, topico_id, materia_id").limit(2000),
     sb.from("termos").select("id, termo, extenso, pratica, tecnica").limit(2000),
     sb.from("erros").select("id, assertiva, regra, materia_id").limit(2000),
+    sb.from("resumos").select("id, titulo, texto, topico_id").limit(2000),
+    sb.from("materiais").select("id, titulo, tipo, topico_id").limit(2000),
   ]);
   const nomeMateria = new Map((exigir(materias) as { id: string; nome: string }[]).map((m) => [m.id, m.nome]));
   const listaTopicos = exigir(topicos) as { id: string; nome: string; materia_id: string }[];
   const nomeTopico = new Map(listaTopicos.map((t) => [t.id, t.nome]));
+  const materiaDoTopico = new Map(listaTopicos.map((t) => [t.id, t.materia_id]));
   const corta = (s: string, n = 110) => (s.length > n ? `${s.slice(0, n)}…` : s);
+  const linkTopico = (id: string) => `/edital/${materiaDoTopico.get(id)}/${id}`;
+  // Resumos e materiais só existem depois do SQL 0003.
+  const listaResumos = (resumos.error ? [] : resumos.data) as { id: string; titulo: string | null; texto: string; topico_id: string }[];
+  const listaMateriais = (materiais.error ? [] : materiais.data) as { id: string; titulo: string; topico_id: string }[];
 
   return [
     ...listaTopicos.map((t) => ({
@@ -33,9 +40,31 @@ async function carregarIndice(): Promise<Resultado[]> {
       icone: FolderOpen,
       titulo: t.nome,
       detalhe: nomeMateria.get(t.materia_id) ?? "",
-      href: `/edital/${t.materia_id}`,
+      href: `/edital/${t.materia_id}/${t.id}`,
       textoBusca: `${t.nome} ${nomeMateria.get(t.materia_id) ?? ""}`,
     })),
+    ...listaResumos
+      .filter((r) => materiaDoTopico.has(r.topico_id))
+      .map((r) => ({
+        id: `s-${r.id}`,
+        grupo: "Resumos",
+        icone: NotebookText,
+        titulo: r.titulo || corta(r.texto.replace(/==/g, ""), 70),
+        detalhe: nomeTopico.get(r.topico_id) ?? "",
+        href: linkTopico(r.topico_id),
+        textoBusca: [r.titulo, r.texto].join(" "),
+      })),
+    ...listaMateriais
+      .filter((m) => materiaDoTopico.has(m.topico_id))
+      .map((m) => ({
+        id: `m-${m.id}`,
+        grupo: "Materiais",
+        icone: PlayCircle,
+        titulo: m.titulo,
+        detalhe: nomeTopico.get(m.topico_id) ?? "",
+        href: linkTopico(m.topico_id),
+        textoBusca: m.titulo,
+      })),
     ...(exigir(termos) as Termo[]).map((t) => ({
       id: `n-${t.id}`,
       grupo: "Nomenclatura",

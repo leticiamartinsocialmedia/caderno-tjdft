@@ -16,6 +16,8 @@ export function ModalSessao({
   minutosIniciais,
   materias,
   topicos,
+  materiaInicial,
+  topicoInicial,
   fechar,
   aoSalvar,
 }: {
@@ -23,12 +25,14 @@ export function ModalSessao({
   minutosIniciais?: number;
   materias: MateriaBasica[];
   topicos: TopicoBasico[];
+  materiaInicial?: string;
+  topicoInicial?: string;
   fechar: () => void;
   aoSalvar: (s: Sessao, nova: boolean) => void;
 }) {
   const [data, setData] = useState(sessao?.data ?? hojeSP());
-  const [materiaId, setMateriaId] = useState(sessao?.materia_id ?? "");
-  const [topicoId, setTopicoId] = useState(sessao?.topico_id ?? "");
+  const [materiaId, setMateriaId] = useState(sessao?.materia_id ?? materiaInicial ?? "");
+  const [topicoId, setTopicoId] = useState(sessao?.topico_id ?? topicoInicial ?? "");
   const [atividade, setAtividade] = useState<Atividade>(sessao?.atividade ?? "questoes_tec");
   const [minutos, setMinutos] = useState(String(sessao?.minutos ?? minutosIniciais ?? ""));
   const [questoes, setQuestoes] = useState(sessao?.questoes ? String(sessao.questoes) : "");

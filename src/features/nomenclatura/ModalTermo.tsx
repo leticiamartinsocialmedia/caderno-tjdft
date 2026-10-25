@@ -5,7 +5,7 @@ import { Search } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { contem } from "@/lib/grifo";
 import type { Termo } from "@/lib/tipos";
-import type { MateriaBasica } from "@/lib/useEditalBasico";
+import type { MateriaBasica, TopicoBasico } from "@/lib/useEditalBasico";
 import { ModalFormulario } from "@/components/ui/Modal";
 import { Campo, estiloInput } from "@/components/ui/Campo";
 
@@ -28,6 +28,9 @@ export function ModalTermo({
   relacionadosAtuais,
   todos,
   materias,
+  topicos,
+  materiaInicial,
+  topicoInicial,
   fechar,
   aoSalvar,
 }: {
@@ -35,6 +38,9 @@ export function ModalTermo({
   relacionadosAtuais: string[];
   todos: Termo[];
   materias: MateriaBasica[];
+  topicos: TopicoBasico[];
+  materiaInicial?: string;
+  topicoInicial?: string;
   fechar: () => void;
   aoSalvar: (t: Termo, relacionados: string[], novo: boolean) => void;
 }) {
@@ -42,7 +48,8 @@ export function ModalTermo({
   const [extenso, setExtenso] = useState(termo?.extenso ?? "");
   const [pratica, setPratica] = useState(termo?.pratica ?? "");
   const [tecnica, setTecnica] = useState(termo?.tecnica ?? "");
-  const [materiaIds, setMateriaIds] = useState<string[]>(termo?.materia_ids ?? []);
+  const [materiaIds, setMateriaIds] = useState<string[]>(termo?.materia_ids ?? (materiaInicial ? [materiaInicial] : []));
+  const [topicoIds, setTopicoIds] = useState<string[]>(termo?.topico_ids ?? (topicoInicial ? [topicoInicial] : []));
   const [dispositivo, setDispositivo] = useState(termo?.dispositivo ?? "");
   const [relacionados, setRelacionados] = useState<string[]>(relacionadosAtuais);
   const [buscaRel, setBuscaRel] = useState("");
@@ -76,6 +83,7 @@ export function ModalTermo({
       pratica: pratica.trim() || null,
       tecnica: tecnica.trim() || null,
       materia_ids: materiaIds,
+      topico_ids: topicoIds.filter((id) => materiaIds.includes(topicos.find((t) => t.id === id)?.materia_id ?? "")),
       dispositivo: dispositivo.trim() || null,
       tags: [...new Set(tags.split(",").map((t) => t.trim()).filter(Boolean))],
       status,
@@ -127,7 +135,11 @@ export function ModalTermo({
               key={m.id}
               type="button"
               aria-pressed={materiaIds.includes(m.id)}
-              onClick={() => setMateriaIds(alternar(materiaIds, m.id))}
+              onClick={() => {
+                const novas = alternar(materiaIds, m.id);
+                setMateriaIds(novas);
+                setTopicoIds(topicoIds.filter((id) => novas.includes(topicos.find((t) => t.id === id)?.materia_id ?? "")));
+              }}
               className={`min-h-9 rounded-full border px-3 py-1 text-[12.5px] font-semibold ${
                 materiaIds.includes(m.id) ? "border-texto bg-texto text-fundo" : "border-borda text-texto-2 hover:bg-hover"
               }`}
@@ -137,6 +149,37 @@ export function ModalTermo({
           ))}
         </div>
       </fieldset>
+      {materiaIds.length > 0 && (
+        <fieldset>
+          <legend className="mb-1.5 text-[13px] font-semibold">Tópicos do edital (opcional)</legend>
+          <div className="flex max-h-48 flex-col gap-3 overflow-y-auto rounded-md border border-borda p-3">
+            {materias
+              .filter((m) => materiaIds.includes(m.id))
+              .map((m) => (
+                <div key={m.id}>
+                  <p className="mb-1.5 text-xs font-bold text-texto-2">{m.nome}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {topicos
+                      .filter((t) => t.materia_id === m.id)
+                      .map((t) => (
+                        <button
+                          key={t.id}
+                          type="button"
+                          aria-pressed={topicoIds.includes(t.id)}
+                          onClick={() => setTopicoIds(alternar(topicoIds, t.id))}
+                          className={`min-h-8 rounded-full border px-2.5 py-1 text-left text-xs font-semibold ${
+                            topicoIds.includes(t.id) ? "border-texto bg-texto text-fundo" : "border-borda text-texto-2 hover:bg-hover"
+                          }`}
+                        >
+                          {t.nome}
+                        </button>
+                      ))}
+                  </div>
+                </div>
+              ))}
+          </div>
+        </fieldset>
+      )}
       <div className="grid gap-4 sm:grid-cols-2">
         <Campo id="termo-dispositivo" rotulo="Dispositivo legal (opcional)">
           <input id="termo-dispositivo" className={estiloInput} value={dispositivo} onChange={(e) => setDispositivo(e.target.value)} placeholder="Ex.: Lei 8.112/1990, art. 146" />

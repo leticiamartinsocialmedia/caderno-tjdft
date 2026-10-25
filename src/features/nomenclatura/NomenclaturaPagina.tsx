@@ -391,6 +391,7 @@ export function NomenclaturaPagina() {
           relacionadosAtuais={editando.termo ? (relacionadosDe.get(editando.termo.id) ?? []) : []}
           todos={termos}
           materias={edital.materias}
+          topicos={edital.topicos}
           fechar={() => setEditando(null)}
           aoSalvar={(t, rel, novo) => {
             if (dados) {
