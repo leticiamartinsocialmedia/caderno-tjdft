@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Paleta do Caderno: claro por padrão; .dark no <html> troca só o conteúdo.
+   A sidebar fica preta e o rosa se mantém nos dois temas. */
+:root {
+  --c-fundo: #ffffff;
+  --c-superficie: #ffffff;
+  --c-texto: #111114;
+  --c-texto-2: #6b6b73;
+  --c-borda: #e5e5e8;
+  --c-borda-card: #ececef;
+  --c-hover: #f7f7f8;
+  --c-rosa: #ff2e63;
+  /* Rosa mais fundo para texto rosa sobre branco (contraste AA). */
+  --c-rosa-texto: #e0164c;
+  --c-rosa-suave: #ffe8ee;
+  --c-sucesso: #16a34a;
+  --c-sucesso-suave: #e8f6ed;
+  --c-alerta: #d97706;
+  --c-alerta-suave: #fef3c7;
+  --c-erro: #dc2626;
+  --c-erro-suave: #fdecec;
+  --c-marca-texto: #fff1a8;
+  --c-papel: #fffdf7;
+  --c-pauta: #dbe4f0;
+  --c-margem: #f3b3b8;
+}
+
+.dark {
+  --c-fundo: #121214;
+  --c-superficie: #19191c;
+  --c-texto: #f2f2f4;
+  --c-texto-2: #a1a1aa;
+  --c-borda: #2c2c31;
+  --c-borda-card: #2c2c31;
+  --c-hover: #1f1f23;
+  --c-rosa-texto: #ff5a85;
+  --c-rosa-suave: #3a1520;
+  --c-sucesso-suave: #10291a;
+  --c-alerta-suave: #33240a;
+  --c-erro-suave: #351414;
+  --c-marca-texto: #6b5a12;
+  --c-papel: #1b1a17;
+  --c-pauta: #2b2f38;
+  --c-margem: #5c2a30;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-fundo: var(--c-fundo);
+  --color-superficie: var(--c-superficie);
+  --color-texto: var(--c-texto);
+  --color-texto-2: var(--c-texto-2);
+  --color-borda: var(--c-borda);
+  --color-borda-card: var(--c-borda-card);
+  --color-hover: var(--c-hover);
+  --color-rosa: var(--c-rosa);
+  --color-rosa-texto: var(--c-rosa-texto);
+  --color-rosa-suave: var(--c-rosa-suave);
+  --color-sucesso: var(--c-sucesso);
+  --color-sucesso-suave: var(--c-sucesso-suave);
+  --color-alerta: var(--c-alerta);
+  --color-alerta-suave: var(--c-alerta-suave);
+  --color-erro: var(--c-erro);
+  --color-erro-suave: var(--c-erro-suave);
+  --color-marca-texto: var(--c-marca-texto);
+  --color-papel: var(--c-papel);
+  --color-pauta: var(--c-pauta);
+  --color-margem: var(--c-margem);
+  --color-sidebar: #0b0b0c;
+  --color-sidebar-ativo: #232326;
+
+  --font-sans: var(--font-mulish), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--c-fundo);
+  color: var(--c-texto);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-rosa);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grifo de bisu: ==texto== vira marca-texto amarelo. */
+mark.grifo {
+  background: var(--c-marca-texto);
+  color: inherit;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+
+/* Folha de caderno da Escrita. */
+.folha {
+  --linha: 32px;
+  background-color: var(--c-papel);
+  background-image:
+    linear-gradient(to right, transparent 47px, var(--c-margem) 47px, var(--c-margem) 49px, transparent 49px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--linha) - 1px), var(--c-pauta) calc(var(--linha) - 1px), var(--c-pauta) var(--linha));
+  background-attachment: local;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: var(--linha);
+  padding: 0 16px 0 64px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--c-hover) 25%, var(--c-borda) 50%, var(--c-hover) 75%);
+  background-size: 200% 100%;
+  animation: brilho 1.4s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+@keyframes brilho {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
