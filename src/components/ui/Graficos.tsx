@@ -32,18 +32,21 @@ function Dica({ x, y, largura, children }: { x: number; y: number; largura: numb
 }
 
 function TabelaOculta({ titulo, pontos, formatar }: { titulo: string; pontos: Ponto[]; formatar: (v: number) => string }) {
+  // Tabela para leitor de tela; o div segura a largura (tabela ignora width: 1px).
   return (
-    <table className="sr-only">
-      <caption>{titulo}</caption>
-      <tbody>
-        {pontos.map((p) => (
-          <tr key={p.chave}>
-            <th scope="row">{p.rotulo}</th>
-            <td>{formatar(p.valor)}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="sr-only">
+      <table>
+        <caption>{titulo}</caption>
+        <tbody>
+          {pontos.map((p) => (
+            <tr key={p.chave}>
+              <th scope="row">{p.rotulo}</th>
+              <td>{formatar(p.valor)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -201,9 +204,7 @@ export function GraficoLinhaPct({
             const ultimo = i === pontos.length - 1;
             return (
               <g key={p.chave}>
-                {(ultimo || ativo === i) && (
-                  <circle cx={x(i)} cy={y(p.valor)} r={5} fill="var(--c-rosa)" stroke="var(--c-fundo)" strokeWidth={2} />
-                )}
+                {(ultimo || ativo === i) && <circle cx={x(i)} cy={y(p.valor)} r={5} fill="var(--c-rosa)" stroke="var(--c-fundo)" strokeWidth={2} />}
                 {ultimo && (
                   <text x={x(i)} y={y(p.valor) - 10} textAnchor="middle" fontSize={11} fontWeight={700} fill="var(--c-texto)" className="tabular">
                     {Math.round(p.valor)}%

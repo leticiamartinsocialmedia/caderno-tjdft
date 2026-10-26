@@ -314,37 +314,39 @@ export function CronogramaPagina() {
       )}
 
       <div className="flex flex-wrap items-end justify-between gap-x-4">
-        {visao === "lista" ? (
-          <Abas<Aba>
-            abas={[
-              {
-                id: "agenda",
-                rotulo: "A fazer",
-                icone: ListTodo,
-                contagem: total - contas.concluidas,
-              },
-              {
-                id: "concluidas",
-                rotulo: "Concluídas",
-                icone: CalendarCheck2,
-                contagem: contas.concluidas,
-              },
-              {
-                id: "todas",
-                rotulo: "Tudo",
-                icone: CalendarDays,
-                contagem: total,
-              },
-            ]}
-            ativa={aba}
-            aoTrocar={(a) => {
-              setAba(a);
-              setLimiteDias(14);
-            }}
-          />
-        ) : (
-          <span />
-        )}
+        <div className="min-w-0 flex-1 basis-full sm:basis-auto">
+          {visao === "lista" ? (
+            <Abas<Aba>
+              abas={[
+                {
+                  id: "agenda",
+                  rotulo: "A fazer",
+                  icone: ListTodo,
+                  contagem: total - contas.concluidas,
+                },
+                {
+                  id: "concluidas",
+                  rotulo: "Concluídas",
+                  icone: CalendarCheck2,
+                  contagem: contas.concluidas,
+                },
+                {
+                  id: "todas",
+                  rotulo: "Tudo",
+                  icone: CalendarDays,
+                  contagem: total,
+                },
+              ]}
+              ativa={aba}
+              aoTrocar={(a) => {
+                setAba(a);
+                setLimiteDias(14);
+              }}
+            />
+          ) : (
+            <span />
+          )}
+        </div>
         {disciplinas.length > 1 && (
           <div className="mt-3 w-full sm:w-64">
             <label htmlFor="filtro-disciplina" className="sr-only">

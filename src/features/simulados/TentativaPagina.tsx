@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BookX, CheckCircle2, ChevronLeft, ChevronRight, Flag, FileQuestion, PenLine, Timer, XCircle } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { useConsulta } from "@/lib/useConsulta";
+import { useTempoReal } from "@/lib/tempoReal";
 import { useEditalBasico } from "@/lib/useEditalBasico";
 import type { Erro, RespostaQuestao, SimuladoQuestao, SimuladoResposta } from "@/lib/tipos";
 import { CabecalhoPagina } from "@/components/ui/Cabecalho";
@@ -22,7 +23,12 @@ import { ROTULO_RESPOSTA, formatarRelogio, placar, placarPor, situacaoDa, type S
 type Dados = NonNullable<Awaited<ReturnType<typeof carregarTentativa>>>;
 
 export function TentativaPagina({ id }: { id: string }) {
-  const { dados, setDados, carregando, erro, recarregar } = useConsulta(() => carregarTentativa(id), id);
+  const { dados, setDados, carregando, erro, recarregar, atualizar } = useConsulta(() => carregarTentativa(id), id);
+  // Tempo real: respostas dadas em outro aparelho entram na hora; finalizar em outro aparelho mostra o resultado aqui.
+  // O relógio grava a cada 30 s, então mudanças só de tempo são ignoradas.
+  useTempoReal(["simulado_respostas", "simulado_tentativas"], atualizar, (tabela, linha) =>
+    tabela === "simulado_respostas" ? linha.tentativa_id === id : linha.id === id && Boolean(linha.finalizada_em),
+  );
 
   if (erro) return <EstadoErro texto="Não deu para abrir o simulado." tentarDeNovo={recarregar} />;
   if (carregando && !dados) {
@@ -41,18 +47,34 @@ export function TentativaPagina({ id }: { id: string }) {
       </div>
     );
   }
-  return dados.tentativa.finalizada_em ? <Resultado dados={dados} /> : <Resolver dados={dados} aoFinalizar={(d) => setDados(d)} />;
+  return dados.tentativa.finalizada_em ? (
+    <Resultado dados={dados} />
+  ) : (
+    <Resolver
+      dados={dados}
+      aoFinalizar={(d) => setDados(d)}
+      mudarRespostas={(f) => setDados((d) => (d ? { ...d, respostas: f(d.respostas) } : d))}
+    />
+  );
 }
 
 /* ------------------------------------------------------------------ */
 /* Resolver                                                            */
 /* ------------------------------------------------------------------ */
 
-function Resolver({ dados, aoFinalizar }: { dados: Dados; aoFinalizar: (d: Dados) => void }) {
+function Resolver({
+  dados,
+  aoFinalizar,
+  mudarRespostas,
+}: {
+  dados: Dados;
+  aoFinalizar: (d: Dados) => void;
+  mudarRespostas: (f: (m: Dados["respostas"]) => Dados["respostas"]) => void;
+}) {
   const { avisar } = useToast();
   const { tentativa, prova, questoes, textos, provas } = dados;
   const treino = tentativa.modo === "treino";
-  const [respostas, setRespostas] = useState(dados.respostas);
+  const respostas = dados.respostas;
   const [indice, setIndice] = useState(() => {
     const primeiraEmBranco = questoes.findIndex((q) => !dados.respostas.get(q.id)?.resposta);
     return primeiraEmBranco < 0 ? 0 : primeiraEmBranco;
@@ -115,12 +137,12 @@ function Resolver({ dados, aoFinalizar }: { dados: Dados; aoFinalizar: (d: Dados
   async function responder(questao: SimuladoQuestao, campos: Partial<Pick<SimuladoResposta, "resposta" | "marcada_para_revisar">>) {
     const antes = respostas.get(questao.id);
     const otimista = { id: antes?.id ?? "", tentativa_id: tentativa.id, questao_id: questao.id, resposta: antes?.resposta ?? null, marcada_para_revisar: antes?.marcada_para_revisar ?? false, ...campos };
-    setRespostas(new Map(respostas).set(questao.id, otimista));
+    mudarRespostas((m) => new Map(m).set(questao.id, otimista));
     try {
       const salvo = await salvarResposta(tentativa.id, questao.id, campos);
-      setRespostas((m) => new Map(m).set(questao.id, salvo));
+      mudarRespostas((m) => new Map(m).set(questao.id, salvo));
     } catch {
-      setRespostas((m) => {
+      mudarRespostas((m) => {
         const n = new Map(m);
         if (antes) n.set(questao.id, antes);
         else n.delete(questao.id);

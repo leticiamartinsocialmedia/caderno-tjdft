@@ -86,6 +86,11 @@ begin
     execute format('grant select on public.%I to authenticated', t);
     execute format('drop policy if exists "leitura" on public.%I', t);
     execute format('create policy "leitura" on public.%I for select to authenticated using (true)', t);
+    -- Tempo real: quando as questões forem carregadas, as provas aparecem sem recarregar a página.
+    if exists (select 1 from pg_publication where pubname = 'supabase_realtime')
+       and not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and schemaname = 'public' and tablename = t) then
+      execute format('alter publication supabase_realtime add table public.%I', t);
+    end if;
   end loop;
 
   foreach t in array array['simulado_tentativas', 'simulado_respostas'] loop

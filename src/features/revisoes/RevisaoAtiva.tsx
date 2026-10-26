@@ -49,7 +49,7 @@ export function RevisaoAtiva({ id }: { id: string }) {
   const { atualizarContadores } = useApp();
   const edital = useEditalBasico();
   const { dados, carregando, erro, recarregar, atualizar } = useConsulta(() => carregar(id), id);
-  useTempoReal(["revisao_historico"], atualizar);
+  useTempoReal(["revisao_historico", "revisoes", "escritas", "erros", "termos"], atualizar);
   const [reescrita, setReescrita] = useState("");
   const [mostrando, setMostrando] = useState(false);
   const [salvando, setSalvando] = useState<Avaliacao | null>(null);

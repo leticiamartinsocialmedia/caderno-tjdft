@@ -91,7 +91,7 @@ export function PainelPagina() {
     () => carregar(usuario.id, edital.nomeTopico),
     String(edital.nomeTopico.size),
   );
-  useTempoReal(["configuracoes", "sessoes", "topicos", "materias", "bisus", "erros", "revisoes", "cronograma"], atualizar);
+  useTempoReal(["configuracoes", "sessoes", "topicos", "materias", "bisus", "erros", "revisoes", "cronograma", "escritas", "termos"], atualizar);
   const [editando, setEditando] = useState<"prova" | "meta" | null>(null);
   const [valor, setValor] = useState("");
 

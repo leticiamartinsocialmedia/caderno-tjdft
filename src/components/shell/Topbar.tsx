@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Bell, LogOut, Moon, PanelLeft, Search, Settings, Sun, Timer } from "lucide-react";
 import { formatarRelogio, useCronometroEstudo } from "@/lib/cronometro";
 import { LogoIcone } from "@/components/Logo";
+import { useStatusTempoReal } from "@/lib/tempoReal";
 import { useApp } from "./AppContext";
 
 function useFecharAoClicarFora(aberto: boolean, fechar: () => void) {
@@ -43,6 +44,8 @@ export function Topbar({
   const refMenu = useFecharAoClicarFora(menuAberto, () => setMenuAberto(false));
   const inicial = (usuario.nome || usuario.email).trim().charAt(0).toUpperCase();
   const cronometro = useCronometroEstudo();
+  const aoVivo = useStatusTempoReal();
+  const rotuloAoVivo = { ao_vivo: "Ao vivo", conectando: "Conectando", offline: "Sem conexão" }[aoVivo];
 
   return (
     <header className="sticky top-[env(safe-area-inset-top)] z-20 flex h-16 items-center justify-between gap-3 border-b border-borda bg-fundo px-[max(16px,env(safe-area-inset-right))] lg:px-6">
@@ -62,6 +65,21 @@ export function Topbar({
       </div>
 
       <div className="flex items-center gap-1">
+        <span
+          className="mr-1 inline-flex h-8 items-center gap-1.5 rounded-full px-2 text-xs font-bold text-texto-2"
+          title={
+            aoVivo === "ao_vivo"
+              ? "Tempo real ligado: o que você muda aparece na hora em todos os aparelhos."
+              : aoVivo === "offline"
+                ? "Sem conexão: as mudanças sincronizam quando a internet voltar."
+                : "Ligando o tempo real…"
+          }
+          role="status"
+        >
+          <span className={`size-2 rounded-full ${aoVivo === "ao_vivo" ? "bg-sucesso" : aoVivo === "offline" ? "bg-erro" : "animate-pulse bg-alerta"}`} aria-hidden />
+          <span className="hidden sm:inline">{rotuloAoVivo}</span>
+          <span className="sr-only sm:hidden">{rotuloAoVivo}</span>
+        </span>
         {cronometro.rodando && (
           <Link
             href="/questoes"

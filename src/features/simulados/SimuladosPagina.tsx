@@ -32,7 +32,7 @@ export function SimuladosPagina() {
   const router = useRouter();
   const { avisar } = useToast();
   const { dados, carregando, erro, recarregar, atualizar } = useConsulta(carregarBanco);
-  useTempoReal(["simulado_tentativas", "simulado_respostas"], atualizar);
+  useTempoReal(["simulado_tentativas", "simulado_respostas", "simulado_provas", "simulado_questoes"], atualizar);
   const [banca, setBanca] = useState("");
   const [provaId, setProvaId] = useState("");
   const [materia, setMateria] = useState("");
@@ -128,8 +128,13 @@ export function SimuladosPagina() {
         <div className="mt-6">
           <EstadoVazio
             icone={ClipboardList}
-            titulo="Ainda não há provas no banco de questões"
-            texto="As provas de Técnico Judiciário – Área Administrativa do TJDFT entram aqui transcritas dos cadernos e gabaritos definitivos oficiais das bancas."
+            titulo="As provas ainda não foram carregadas"
+            texto="As provas de Técnico Judiciário – Área Administrativa do TJDFT (2022 FGV e 2015 Cebraspe) entram aqui transcritas dos cadernos e gabaritos definitivos oficiais. Assim que forem carregadas, aparecem nesta tela sozinhas, em todos os aparelhos."
+            acao={
+              <Link href="/configuracoes" className="text-[13px] font-bold text-rosa-texto underline underline-offset-4">
+                Ver a situação do banco
+              </Link>
+            }
           />
         </div>
       ) : (

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { AlertTriangle, Download, FileJson, FileSpreadsheet, Loader2, Moon, Sun, Upload, User } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir, useConsulta } from "@/lib/useConsulta";
+import { useTempoReal } from "@/lib/tempoReal";
 import { buscarTodos } from "@/lib/useEditalBasico";
 import { dataSP, formatarData } from "@/lib/datas";
 import type { Bisu, Configuracoes, Erro, Termo } from "@/lib/tipos";
@@ -16,6 +17,7 @@ import { useApp } from "@/components/shell/AppContext";
 import { ROTULO_FONTE } from "@/features/bisus/fontes";
 import { ROTULO_MOTIVO } from "@/features/erros/motivos";
 import { ROTULO_GABARITO } from "@/features/revisoes/dados";
+import { SituacaoBanco } from "./SituacaoBanco";
 import { baixar, exportarTudo, importar, lerBackup, nomeArquivo, paraCsv, TABELAS, type Backup } from "./backup";
 
 function Secao({ titulo, icone, texto, children }: { titulo: string; icone: ReactNode; texto?: string; children: ReactNode }) {
@@ -34,9 +36,10 @@ export function ConfiguracoesPagina() {
   const router = useRouter();
   const { usuario } = useApp();
   const { avisar } = useToast();
-  const { dados } = useConsulta(async () =>
+  const { dados, atualizar } = useConsulta(async () =>
     exigir(await supabase().from("configuracoes").select("*").eq("user_id", usuario.id).maybeSingle()) as Configuracoes | null,
   );
+  useTempoReal(["configuracoes"], atualizar);
   const [nome, setNome] = useState<string | null>(null);
   const [escuro, setEscuro] = useState(false);
   useEffect(() => {
@@ -184,7 +187,9 @@ export function ConfiguracoesPagina() {
 
   return (
     <div className="flex max-w-3xl flex-col gap-5">
-      <CabecalhoPagina titulo="Configurações" subtitulo="Seu nome, o tema e o backup dos seus dados." />
+      <CabecalhoPagina titulo="Configurações" subtitulo="Seu nome, o tema, o banco de dados e o backup." />
+
+      <SituacaoBanco />
 
       <Secao titulo="Perfil" icone={<User size={17} />}>
         <form
