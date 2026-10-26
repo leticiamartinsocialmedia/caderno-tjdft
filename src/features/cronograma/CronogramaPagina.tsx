@@ -2,73 +2,40 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import {
-  CalendarCheck2,
-  CalendarDays,
-  CheckCircle2,
-  Circle,
-  ExternalLink,
-  FolderOpen,
-  ListTodo,
-  Pencil,
-  Plus,
-  Trash2,
-  Upload,
-} from "lucide-react";
+import { CalendarCheck2, CalendarDays, CheckCircle2, Circle, ExternalLink, FolderOpen, List, ListTodo, Pencil, Plus, Trash2, Upload } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { useConsulta } from "@/lib/useConsulta";
 import { useTempoReal } from "@/lib/tempoReal";
-import {
-  buscarTodos,
-  useEditalBasico,
-  type MateriaBasica,
-  type TopicoBasico,
-} from "@/lib/useEditalBasico";
+import { buscarTodos, useEditalBasico, type MateriaBasica, type TopicoBasico } from "@/lib/useEditalBasico";
 import { formatarData, hojeSP, somarDias } from "@/lib/datas";
 import { normalizarLink } from "@/features/bisus/fontes";
 import type { ItemCronograma, TipoAula } from "@/lib/tipos";
 import { Abas, CabecalhoPagina } from "@/components/ui/Cabecalho";
 import { Botao } from "@/components/ui/Botao";
 import { MenuAcoes } from "@/components/ui/Menu";
-import {
-  EstadoErro,
-  EstadoVazio,
-  EsqueletoLista,
-} from "@/components/ui/Estados";
+import { EstadoErro, EstadoVazio, EsqueletoLista } from "@/components/ui/Estados";
 import { Pill } from "@/components/ui/Selos";
 import { BarraProgresso } from "@/components/ui/Barra";
 import { Modal, ModalFormulario } from "@/components/ui/Modal";
 import { Campo, estiloInput } from "@/components/ui/Campo";
 import { useToast } from "@/components/ui/Toast";
+import { usePreferencia } from "@/lib/preferencias";
 import { ModalSessao } from "@/features/questoes/ModalSessao";
 import { lerCronogramaGran, materiaDaDisciplina, nomeCurto } from "./gran";
-import {
-  TIPO_AULA,
-  importarAulas,
-  rotuloDia,
-  situacao,
-  tituloDia,
-} from "./dados";
+import { TIPO_AULA, importarAulas, rotuloDia, situacao, tituloDia } from "./dados";
+import { Calendario } from "./Calendario";
 
 type Aba = "agenda" | "concluidas" | "todas";
 
 async function carregar() {
   const sb = supabase();
   try {
-    const itens = await buscarTodos<ItemCronograma>((de, ate) =>
-      sb
-        .from("cronograma")
-        .select("*")
-        .order("data")
-        .order("ordem")
-        .range(de, ate),
-    );
+    const itens = await buscarTodos<ItemCronograma>((de, ate) => sb.from("cronograma").select("*").order("data").order("ordem").range(de, ate));
     itens.sort((a, b) => a.data.localeCompare(b.data) || a.ordem - b.ordem);
     return { itens, semTabela: false };
   } catch (e) {
     // Antes do SQL 0004 a tabela não existe: a página explica o que fazer em vez de dar erro.
-    if (["42P01", "PGRST205"].includes(String((e as { code?: string })?.code)))
-      return { itens: [], semTabela: true };
+    if (["42P01", "PGRST205"].includes(String((e as { code?: string })?.code))) return { itens: [], semTabela: true };
     throw e;
   }
 }
@@ -77,17 +44,17 @@ export function CronogramaPagina() {
   const { avisar, excluirComDesfazer } = useToast();
   const edital = useEditalBasico();
   const hoje = hojeSP();
-  const { dados, setDados, carregando, erro, recarregar, atualizar } =
-    useConsulta(carregar);
+  const { dados, setDados, carregando, erro, recarregar, atualizar } = useConsulta(carregar);
   useTempoReal(["cronograma"], atualizar);
   const [aba, setAba] = useState<Aba>("agenda");
   const [materiaFiltro, setMateriaFiltro] = useState("");
-  const [modal, setModal] = useState<
-    null | "importar" | { item?: ItemCronograma }
-  >(null);
+  const [modal, setModal] = useState<null | "importar" | { item?: ItemCronograma }>(null);
   const [sessao, setSessao] = useState<ItemCronograma | null>(null);
   // Com o cronograma inteiro (centenas de dias), a lista mostra 14 dias por vez.
   const [limiteDias, setLimiteDias] = useState(14);
+  const [visao, setVisao] = usePreferencia<"lista" | "calendario">("cronograma:visao", "lista");
+  const [mes, setMes] = useState(hoje.slice(0, 7));
+  const [escolhido, setEscolhido] = useState<string | null>(hoje);
 
   const itens = useMemo(() => dados?.itens ?? [], [dados]);
   const contas = useMemo(() => {
@@ -103,13 +70,7 @@ export function CronogramaPagina() {
     return c;
   }, [itens, hoje]);
 
-  const disciplinas = useMemo(
-    () =>
-      [...new Set(itens.map((i) => i.disciplina))].sort((a, b) =>
-        a.localeCompare(b, "pt-BR"),
-      ),
-    [itens],
-  );
+  const disciplinas = useMemo(() => [...new Set(itens.map((i) => i.disciplina))].sort((a, b) => a.localeCompare(b, "pt-BR")), [itens]);
 
   const visiveis = useMemo(
     () =>
@@ -122,11 +83,17 @@ export function CronogramaPagina() {
     [itens, aba, materiaFiltro],
   );
 
+  // O calendário mostra tudo (concluídas, atrasadas e a fazer); só o filtro de disciplina vale.
+  const porDia = useMemo(() => {
+    const mapa = new Map<string, ItemCronograma[]>();
+    for (const i of itens) if (!materiaFiltro || i.disciplina === materiaFiltro) mapa.set(i.data, [...(mapa.get(i.data) ?? []), i]);
+    return mapa;
+  }, [itens, materiaFiltro]);
+
   // Agrupa por dia; na agenda, as atrasadas ficam em cima, no dia original delas.
   const dias = useMemo(() => {
     const mapa = new Map<string, ItemCronograma[]>();
-    for (const i of visiveis)
-      mapa.set(i.data, [...(mapa.get(i.data) ?? []), i]);
+    for (const i of visiveis) mapa.set(i.data, [...(mapa.get(i.data) ?? []), i]);
     const lista = [...mapa.entries()].map(([data, aulas]) => ({ data, aulas }));
     return aba === "concluidas" ? lista.reverse() : lista;
   }, [visiveis, aba]);
@@ -139,15 +106,8 @@ export function CronogramaPagina() {
     const antes = itens;
     const concluido = !item.concluido;
     const concluido_em = concluido ? new Date().toISOString() : null;
-    trocar(
-      itens.map((i) =>
-        i.id === item.id ? { ...i, concluido, concluido_em } : i,
-      ),
-    );
-    const { error } = await supabase()
-      .from("cronograma")
-      .update({ concluido, concluido_em })
-      .eq("id", item.id);
+    trocar(itens.map((i) => (i.id === item.id ? { ...i, concluido, concluido_em } : i)));
+    const { error } = await supabase().from("cronograma").update({ concluido, concluido_em }).eq("id", item.id);
     if (error) {
       trocar(antes);
       avisar({ texto: "Não deu para salvar. Tente de novo.", tipo: "erro" });
@@ -169,27 +129,97 @@ export function CronogramaPagina() {
       esconder: () => trocar(copia.filter((i) => i.id !== item.id)),
       restaurar: () => trocar(copia),
       apagar: async () => {
-        const { error } = await supabase()
-          .from("cronograma")
-          .delete()
-          .eq("id", item.id);
+        const { error } = await supabase().from("cronograma").delete().eq("id", item.id);
         if (error) throw error;
       },
     });
   }
 
-  if (erro)
-    return (
-      <EstadoErro
-        texto="Não deu para carregar o cronograma."
-        tentarDeNovo={recarregar}
-      />
-    );
+  if (erro) return <EstadoErro texto="Não deu para carregar o cronograma." tentarDeNovo={recarregar} />;
 
   const total = itens.length;
   const pct = total ? (contas.concluidas / total) * 100 : 0;
   const nomeMateria = new Map(edital.materias.map((m) => [m.id, m.nome]));
   const materiaDoTopico = new Map(edital.topicos.map((t) => [t.id, t]));
+
+  // Lista das aulas de um dia: a mesma na visão em lista e no dia escolhido do calendário.
+  function listaDoDia(aulas: ItemCronograma[], atrasado: boolean) {
+    return (
+      <ul className="rounded-lg border border-borda-card bg-superficie">
+        {aulas.map((a) => {
+          const Tipo = TIPO_AULA[a.tipo];
+          const topico = a.topico_id ? materiaDoTopico.get(a.topico_id) : undefined;
+          return (
+            <li key={a.id} className="flex items-start gap-3 border-b border-borda px-3 py-2.5 last:border-b-0">
+              <button
+                type="button"
+                onClick={() => alternar(a)}
+                aria-pressed={a.concluido}
+                aria-label={a.concluido ? `Desmarcar ${a.aula}` : `Concluir ${a.aula}`}
+                title={a.concluido ? "Desmarcar" : "Marcar como concluída"}
+                className="-m-1.5 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-hover"
+              >
+                {a.concluido ? <CheckCircle2 size={22} className="text-sucesso" /> : <Circle size={22} className={atrasado ? "text-erro" : "text-texto-2"} />}
+              </button>
+              <button type="button" onClick={() => setModal({ item: a })} className="min-w-0 flex-1 py-0.5 text-left">
+                <span className="block text-xs font-bold text-texto-2">
+                  {a.tipo === "revisao" && a.disciplina === "Revisão" ? "Revisão" : nomeCurto(a.disciplina)}
+                  {!a.materia_id && a.tipo !== "revisao" && <span className="font-semibold"> · fora do edital</span>}
+                </span>
+                <span className={`block text-[14px] leading-snug font-semibold ${a.concluido ? "text-texto-2 line-through decoration-texto-2/50" : ""}`}>
+                  {a.aula}
+                </span>
+              </button>
+              <span className="flex shrink-0 items-center gap-1 self-center">
+                <span className="hidden items-center gap-1 text-xs text-texto-2 sm:inline-flex">
+                  <Tipo.icone size={14} aria-hidden /> {Tipo.rotulo}
+                </span>
+                {a.link && (
+                  <a
+                    href={a.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex size-9 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
+                    title="Abrir a aula"
+                  >
+                    <ExternalLink size={15} />
+                    <span className="sr-only">Abrir a aula</span>
+                  </a>
+                )}
+                {(topico || a.materia_id) && (
+                  <Link
+                    href={topico ? `/edital/${topico.materia_id}/${topico.id}` : `/edital/${a.materia_id}`}
+                    className="flex size-9 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
+                    title={topico ? `Abrir o tópico: ${topico.nome}` : `Abrir a matéria: ${nomeMateria.get(a.materia_id!) ?? ""}`}
+                  >
+                    <FolderOpen size={15} />
+                    <span className="sr-only">Abrir no edital</span>
+                  </Link>
+                )}
+                <MenuAcoes
+                  rotulo={`Ações de ${a.aula}`}
+                  itens={[
+                    {
+                      rotulo: "Editar",
+                      icone: <Pencil size={15} />,
+                      aoClicar: () => setModal({ item: a }),
+                    },
+                    "separador",
+                    {
+                      rotulo: "Tirar do cronograma",
+                      icone: <Trash2 size={15} />,
+                      aoClicar: () => excluir(a),
+                      perigo: true,
+                    },
+                  ]}
+                />
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
 
   return (
     <div className="flex flex-col">
@@ -204,19 +234,10 @@ export function CronogramaPagina() {
         }
         acoes={
           <>
-            <Botao
-              icone={<Upload size={15} />}
-              onClick={() => setModal("importar")}
-              disabled={dados?.semTabela}
-            >
+            <Botao icone={<Upload size={15} />} onClick={() => setModal("importar")} disabled={dados?.semTabela}>
               Importar do Gran
             </Botao>
-            <Botao
-              variante="primario"
-              icone={<Plus size={15} />}
-              onClick={() => setModal({})}
-              disabled={dados?.semTabela}
-            >
+            <Botao variante="primario" icone={<Plus size={15} />} onClick={() => setModal({})} disabled={dados?.semTabela}>
               Adicionar aula
             </Botao>
           </>
@@ -224,12 +245,8 @@ export function CronogramaPagina() {
       />
 
       {dados?.semTabela && (
-        <p
-          className="mt-4 rounded-md border border-alerta bg-alerta-suave px-3 py-2 text-[13px]"
-          role="alert"
-        >
-          O cronograma fica disponível depois que o SQL 0004 for rodado no
-          Supabase.
+        <p className="mt-4 rounded-md border border-alerta bg-alerta-suave px-3 py-2 text-[13px]" role="alert">
+          O cronograma fica disponível depois que o SQL 0004 for rodado no Supabase.
         </p>
       )}
 
@@ -262,58 +279,72 @@ export function CronogramaPagina() {
                 d: `de ${total}`,
               },
             ].map((x) => (
-              <div
-                key={x.r}
-                className="rounded-lg border border-borda-card p-3"
-              >
+              <div key={x.r} className="rounded-lg border border-borda-card p-3">
                 <dt className="text-xs font-semibold text-texto-2">{x.r}</dt>
-                <dd
-                  className={`tabular mt-1 text-[22px] leading-none font-extrabold ${x.cor}`}
-                >
-                  {x.v}
-                </dd>
+                <dd className={`tabular mt-1 text-[22px] leading-none font-extrabold ${x.cor}`}>{x.v}</dd>
                 <dd className="mt-1 text-xs text-texto-2">{x.d}</dd>
               </div>
             ))}
           </dl>
           <div className="mt-4 max-w-md">
-            <BarraProgresso
-              valor={pct}
-              cor="verde"
-              rotulo={`${Math.round(pct)}% do cronograma concluído`}
-            />
+            <BarraProgresso valor={pct} cor="verde" rotulo={`${Math.round(pct)}% do cronograma concluído`} />
           </div>
         </>
       )}
 
+      {total > 0 && (
+        <div className="mt-5 flex w-fit rounded-md border border-borda bg-hover p-0.5" role="group" aria-label="Formato do cronograma">
+          {(
+            [
+              ["lista", "Lista", List],
+              ["calendario", "Calendário", CalendarDays],
+            ] as const
+          ).map(([v, rotulo, Icone]) => (
+            <button
+              key={v}
+              type="button"
+              onClick={() => setVisao(v)}
+              aria-pressed={visao === v}
+              className={`inline-flex h-9 items-center gap-1.5 rounded px-3 text-[13px] font-bold ${visao === v ? "bg-superficie text-texto shadow-sm" : "text-texto-2 hover:text-texto"}`}
+            >
+              <Icone size={15} /> {rotulo}
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="flex flex-wrap items-end justify-between gap-x-4">
-        <Abas<Aba>
-          abas={[
-            {
-              id: "agenda",
-              rotulo: "A fazer",
-              icone: ListTodo,
-              contagem: total - contas.concluidas,
-            },
-            {
-              id: "concluidas",
-              rotulo: "Concluídas",
-              icone: CalendarCheck2,
-              contagem: contas.concluidas,
-            },
-            {
-              id: "todas",
-              rotulo: "Tudo",
-              icone: CalendarDays,
-              contagem: total,
-            },
-          ]}
-          ativa={aba}
-          aoTrocar={(a) => {
-            setAba(a);
-            setLimiteDias(14);
-          }}
-        />
+        {visao === "lista" ? (
+          <Abas<Aba>
+            abas={[
+              {
+                id: "agenda",
+                rotulo: "A fazer",
+                icone: ListTodo,
+                contagem: total - contas.concluidas,
+              },
+              {
+                id: "concluidas",
+                rotulo: "Concluídas",
+                icone: CalendarCheck2,
+                contagem: contas.concluidas,
+              },
+              {
+                id: "todas",
+                rotulo: "Tudo",
+                icone: CalendarDays,
+                contagem: total,
+              },
+            ]}
+            ativa={aba}
+            aoTrocar={(a) => {
+              setAba(a);
+              setLimiteDias(14);
+            }}
+          />
+        ) : (
+          <span />
+        )}
         {disciplinas.length > 1 && (
           <div className="mt-3 w-full sm:w-64">
             <label htmlFor="filtro-disciplina" className="sr-only">
@@ -349,25 +380,40 @@ export function CronogramaPagina() {
             texto="Abra o cronograma no Gran, copie a página inteira e cole aqui. As aulas entram com a data, a matéria e o que você já concluiu."
             acao={
               !dados?.semTabela && (
-                <Botao
-                  variante="primario"
-                  icone={<Upload size={15} />}
-                  onClick={() => setModal("importar")}
-                >
+                <Botao variante="primario" icone={<Upload size={15} />} onClick={() => setModal("importar")}>
                   Importar do Gran
                 </Botao>
               )
             }
           />
+        ) : visao === "calendario" ? (
+          <div className="flex flex-col gap-4">
+            <Calendario porDia={porDia} hoje={hoje} mes={mes} aoMudarMes={setMes} escolhido={escolhido} aoEscolher={setEscolhido} />
+            {escolhido && escolhido.startsWith(mes) && (
+              <section aria-live="polite">
+                <div className="mb-1.5 flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+                  <h2 className="text-[14px] font-extrabold first-letter:uppercase">{tituloDia(escolhido)}</h2>
+                  {escolhido === hoje ? (
+                    <Pill tipo="andamento">Hoje</Pill>
+                  ) : escolhido < hoje && (porDia.get(escolhido) ?? []).some((a) => !a.concluido) ? (
+                    <Pill tipo="vermelho">Atrasado · {rotuloDia(escolhido, hoje).toLowerCase()}</Pill>
+                  ) : (
+                    <span className="text-xs text-texto-2">{rotuloDia(escolhido, hoje)}</span>
+                  )}
+                </div>
+                {(porDia.get(escolhido) ?? []).length ? (
+                  listaDoDia(porDia.get(escolhido)!, escolhido < hoje)
+                ) : (
+                  <p className="rounded-lg border border-dashed border-borda px-3 py-4 text-center text-[13px] text-texto-2">Nenhuma aula neste dia.</p>
+                )}
+              </section>
+            )}
+          </div>
         ) : dias.length === 0 ? (
           <EstadoVazio
             icone={CheckCircle2}
             titulo={aba === "agenda" ? "Tudo em dia" : "Nada aqui"}
-            texto={
-              aba === "agenda"
-                ? "Não há aulas pendentes com esse filtro."
-                : "Troque a aba ou o filtro."
-            }
+            texto={aba === "agenda" ? "Não há aulas pendentes com esse filtro." : "Troque a aba ou o filtro."}
           />
         ) : (
           <>
@@ -378,19 +424,13 @@ export function CronogramaPagina() {
                 return (
                   <li key={data}>
                     <div className="mb-1.5 flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-                      <h2 className="text-[14px] font-extrabold first-letter:uppercase">
-                        {tituloDia(data)}
-                      </h2>
+                      <h2 className="text-[14px] font-extrabold first-letter:uppercase">{tituloDia(data)}</h2>
                       {data === hoje ? (
                         <Pill tipo="andamento">Hoje</Pill>
                       ) : atrasado ? (
-                        <Pill tipo="vermelho">
-                          Atrasado · {rotuloDia(data, hoje).toLowerCase()}
-                        </Pill>
+                        <Pill tipo="vermelho">Atrasado · {rotuloDia(data, hoje).toLowerCase()}</Pill>
                       ) : (
-                        <span className="text-xs text-texto-2">
-                          {rotuloDia(data, hoje)}
-                        </span>
+                        <span className="text-xs text-texto-2">{rotuloDia(data, hoje)}</span>
                       )}
                       {aba === "todas" && (
                         <span className="tabular ml-auto text-xs text-texto-2">
@@ -398,138 +438,14 @@ export function CronogramaPagina() {
                         </span>
                       )}
                     </div>
-                    <ul className="rounded-lg border border-borda-card bg-superficie">
-                      {aulas.map((a) => {
-                        const Tipo = TIPO_AULA[a.tipo];
-                        const topico = a.topico_id
-                          ? materiaDoTopico.get(a.topico_id)
-                          : undefined;
-                        return (
-                          <li
-                            key={a.id}
-                            className="flex items-start gap-3 border-b border-borda px-3 py-2.5 last:border-b-0"
-                          >
-                            <button
-                              type="button"
-                              onClick={() => alternar(a)}
-                              aria-pressed={a.concluido}
-                              aria-label={
-                                a.concluido
-                                  ? `Desmarcar ${a.aula}`
-                                  : `Concluir ${a.aula}`
-                              }
-                              title={
-                                a.concluido
-                                  ? "Desmarcar"
-                                  : "Marcar como concluída"
-                              }
-                              className="-m-1.5 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-hover"
-                            >
-                              {a.concluido ? (
-                                <CheckCircle2
-                                  size={22}
-                                  className="text-sucesso"
-                                />
-                              ) : (
-                                <Circle
-                                  size={22}
-                                  className={
-                                    atrasado ? "text-erro" : "text-texto-2"
-                                  }
-                                />
-                              )}
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => setModal({ item: a })}
-                              className="min-w-0 flex-1 py-0.5 text-left"
-                            >
-                              <span className="block text-xs font-bold text-texto-2">
-                                {a.tipo === "revisao" &&
-                                a.disciplina === "Revisão"
-                                  ? "Revisão"
-                                  : nomeCurto(a.disciplina)}
-                                {!a.materia_id && a.tipo !== "revisao" && (
-                                  <span className="font-semibold">
-                                    {" "}
-                                    · fora do edital
-                                  </span>
-                                )}
-                              </span>
-                              <span
-                                className={`block text-[14px] leading-snug font-semibold ${a.concluido ? "text-texto-2 line-through decoration-texto-2/50" : ""}`}
-                              >
-                                {a.aula}
-                              </span>
-                            </button>
-                            <span className="flex shrink-0 items-center gap-1 self-center">
-                              <span className="hidden items-center gap-1 text-xs text-texto-2 sm:inline-flex">
-                                <Tipo.icone size={14} aria-hidden />{" "}
-                                {Tipo.rotulo}
-                              </span>
-                              {a.link && (
-                                <a
-                                  href={a.link}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="flex size-9 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
-                                  title="Abrir a aula"
-                                >
-                                  <ExternalLink size={15} />
-                                  <span className="sr-only">Abrir a aula</span>
-                                </a>
-                              )}
-                              {(topico || a.materia_id) && (
-                                <Link
-                                  href={
-                                    topico
-                                      ? `/edital/${topico.materia_id}/${topico.id}`
-                                      : `/edital/${a.materia_id}`
-                                  }
-                                  className="flex size-9 items-center justify-center rounded-md text-texto-2 hover:bg-hover hover:text-texto"
-                                  title={
-                                    topico
-                                      ? `Abrir o tópico: ${topico.nome}`
-                                      : `Abrir a matéria: ${nomeMateria.get(a.materia_id!) ?? ""}`
-                                  }
-                                >
-                                  <FolderOpen size={15} />
-                                  <span className="sr-only">
-                                    Abrir no edital
-                                  </span>
-                                </Link>
-                              )}
-                              <MenuAcoes
-                                rotulo={`Ações de ${a.aula}`}
-                                itens={[
-                                  {
-                                    rotulo: "Editar",
-                                    icone: <Pencil size={15} />,
-                                    aoClicar: () => setModal({ item: a }),
-                                  },
-                                  "separador",
-                                  {
-                                    rotulo: "Tirar do cronograma",
-                                    icone: <Trash2 size={15} />,
-                                    aoClicar: () => excluir(a),
-                                    perigo: true,
-                                  },
-                                ]}
-                              />
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                    {listaDoDia(aulas, atrasado)}
                   </li>
                 );
               })}
             </ol>
             {dias.length > limiteDias && (
               <div className="mt-5 flex flex-wrap items-center gap-3">
-                <Botao onClick={() => setLimiteDias((n) => n + 14)}>
-                  Mostrar mais dias
-                </Botao>
+                <Botao onClick={() => setLimiteDias((n) => n + 14)}>Mostrar mais dias</Botao>
                 <span className="tabular text-xs text-texto-2">
                   {limiteDias} de {dias.length} dias
                 </span>
@@ -562,14 +478,8 @@ export function CronogramaPagina() {
           proximaOrdem={(d) => itens.filter((i) => i.data === d).length}
           fechar={() => setModal(null)}
           aoSalvar={(salvo, novo) => {
-            const lista = novo
-              ? [...itens, salvo]
-              : itens.map((i) => (i.id === salvo.id ? salvo : i));
-            trocar(
-              lista.sort(
-                (a, b) => a.data.localeCompare(b.data) || a.ordem - b.ordem,
-              ),
-            );
+            const lista = novo ? [...itens, salvo] : itens.map((i) => (i.id === salvo.id ? salvo : i));
+            trocar(lista.sort((a, b) => a.data.localeCompare(b.data) || a.ordem - b.ordem));
             setModal(null);
             avisar({ texto: novo ? "Aula adicionada" : "Aula atualizada" });
           }}
@@ -608,30 +518,15 @@ function ModalImportar({
   const [texto, setTexto] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [erro, setErro] = useState("");
-  const [modo, setModo] = useState<"juntar" | "limpar">(
-    existentes > 0 ? "limpar" : "juntar",
-  );
-  const leitura = useMemo(
-    () => (texto.trim() ? lerCronogramaGran(texto, hoje) : null),
-    [texto, hoje],
-  );
+  const [modo, setModo] = useState<"juntar" | "limpar">(existentes > 0 ? "limpar" : "juntar");
+  const leitura = useMemo(() => (texto.trim() ? lerCronogramaGran(texto, hoje) : null), [texto, hoje]);
   const aulas = useMemo(() => leitura?.aulas ?? [], [leitura]);
   const resumo = useMemo(() => {
     if (!aulas.length) return null;
     const datas = aulas.map((a) => a.data).sort();
     const feitas = aulas.filter((a) => a.concluido).length;
     const atrasadas = aulas.filter((a) => !a.concluido && a.data < hoje).length;
-    const semMateria = [
-      ...new Set(
-        aulas
-          .filter(
-            (a) =>
-              a.tipo !== "revisao" &&
-              !materiaDaDisciplina(a.disciplina, materias),
-          )
-          .map((a) => a.disciplina),
-      ),
-    ];
+    const semMateria = [...new Set(aulas.filter((a) => a.tipo !== "revisao" && !materiaDaDisciplina(a.disciplina, materias)).map((a) => a.disciplina))];
     return { de: datas[0], ate: datas.at(-1)!, feitas, atrasadas, semMateria };
   }, [aulas, hoje, materias]);
 
@@ -644,19 +539,11 @@ function ModalImportar({
         aoImportar(`Cronograma substituído: ${r.novas} aulas, iguais ao Gran`);
         return;
       }
-      const partes = [
-        `${r.novas} ${r.novas === 1 ? "aula nova" : "aulas novas"}`,
-      ];
+      const partes = [`${r.novas} ${r.novas === 1 ? "aula nova" : "aulas novas"}`];
       if (r.concluidas) partes.push(`${r.concluidas} marcadas como concluídas`);
-      aoImportar(
-        r.novas || r.concluidas
-          ? `Cronograma importado: ${partes.join(", ")}`
-          : "Nada novo: essas aulas já estavam no cronograma",
-      );
+      aoImportar(r.novas || r.concluidas ? `Cronograma importado: ${partes.join(", ")}` : "Nada novo: essas aulas já estavam no cronograma");
     } catch {
-      setErro(
-        "Não deu para importar. Confira se o SQL 0004 foi rodado no Supabase e tente de novo.",
-      );
+      setErro("Não deu para importar. Confira se o SQL 0004 foi rodado no Supabase e tente de novo.");
       setEnviando(false);
     }
   }
@@ -669,34 +556,19 @@ function ModalImportar({
       rodape={
         <>
           <Botao onClick={fechar}>Cancelar</Botao>
-          <Botao
-            variante="primario"
-            onClick={importar}
-            disabled={!aulas.length || enviando}
-          >
-            {aulas.length
-              ? modo === "limpar"
-                ? `Substituir por ${aulas.length} aulas`
-                : `Importar ${aulas.length} aulas`
-              : "Importar"}
+          <Botao variante="primario" onClick={importar} disabled={!aulas.length || enviando}>
+            {aulas.length ? (modo === "limpar" ? `Substituir por ${aulas.length} aulas` : `Importar ${aulas.length} aulas`) : "Importar"}
           </Botao>
         </>
       }
     >
       <div className="flex flex-col gap-4">
         <ol className="flex list-decimal flex-col gap-1 pl-5 text-[13.5px] leading-relaxed">
+          <li>No Gran, abra o seu cronograma (a página com a tabela &quot;Dia de estudo, Aula, Tipo, Concluído&quot;).</li>
           <li>
-            No Gran, abra o seu cronograma (a página com a tabela &quot;Dia de
-            estudo, Aula, Tipo, Concluído&quot;).
+            Aperte <b>Ctrl+A</b> e depois <b>Ctrl+C</b> (no Mac, <b>⌘A</b> e <b>⌘C</b>).
           </li>
-          <li>
-            Aperte <b>Ctrl+A</b> e depois <b>Ctrl+C</b> (no Mac, <b>⌘A</b> e{" "}
-            <b>⌘C</b>).
-          </li>
-          <li>
-            Cole aqui embaixo. Pode colar o mês inteiro ou vários meses de uma
-            vez.
-          </li>
+          <li>Cole aqui embaixo. Pode colar o mês inteiro ou vários meses de uma vez.</li>
         </ol>
         <Campo id="cronograma-texto" rotulo="Cronograma copiado" erro={erro}>
           <textarea
@@ -712,9 +584,7 @@ function ModalImportar({
         </Campo>
         {existentes > 0 && (
           <fieldset className="flex flex-col gap-2">
-            <legend className="mb-1 text-[13px] font-semibold">
-              O que fazer com as {existentes} aulas que já estão no cronograma?
-            </legend>
+            <legend className="mb-1 text-[13px] font-semibold">O que fazer com as {existentes} aulas que já estão no cronograma?</legend>
             {(
               [
                 [
@@ -722,24 +592,14 @@ function ModalImportar({
                   "Limpar tudo e substituir pelo que colei",
                   "Apaga o cronograma atual, inclusive aulas adicionadas à mão, e grava exatamente o que veio do Gran: datas, ordem e o que está concluído.",
                 ],
-                [
-                  "juntar",
-                  "Juntar ao que já está",
-                  "Só entram as aulas que faltam. O que você concluiu no app continua concluído.",
-                ],
+                ["juntar", "Juntar ao que já está", "Só entram as aulas que faltam. O que você concluiu no app continua concluído."],
               ] as const
             ).map(([id, titulo, texto]) => (
               <label
                 key={id}
                 className={`flex items-start gap-2.5 rounded-md border px-3 py-2.5 text-[13px] leading-relaxed ${modo === id ? "border-texto" : "border-borda"}`}
               >
-                <input
-                  type="radio"
-                  name="modo-importar"
-                  checked={modo === id}
-                  onChange={() => setModo(id)}
-                  className="mt-0.5 size-5 shrink-0 accent-rosa"
-                />
+                <input type="radio" name="modo-importar" checked={modo === id} onChange={() => setModo(id)} className="mt-0.5 size-5 shrink-0 accent-rosa" />
                 <span>
                   <b className="block text-[13.5px]">{titulo}</b>
                   {texto}
@@ -749,38 +609,22 @@ function ModalImportar({
           </fieldset>
         )}
         {leitura && (
-          <div
-            className="rounded-md border border-borda bg-hover/50 px-3 py-2.5 text-[13px] leading-relaxed"
-            aria-live="polite"
-          >
+          <div className="rounded-md border border-borda bg-hover/50 px-3 py-2.5 text-[13px] leading-relaxed" aria-live="polite">
             {resumo ? (
               <>
                 <p className="font-bold">
-                  {aulas.length} aulas de {formatarData(resumo.de)} a{" "}
-                  {formatarData(resumo.ate)}
+                  {aulas.length} aulas de {formatarData(resumo.de)} a {formatarData(resumo.ate)}
                 </p>
                 <p className="text-texto-2">
-                  {resumo.feitas} já concluídas · {resumo.atrasadas} atrasadas ·{" "}
-                  {aulas.length - resumo.feitas - resumo.atrasadas} para frente
+                  {resumo.feitas} já concluídas · {resumo.atrasadas} atrasadas · {aulas.length - resumo.feitas - resumo.atrasadas} para frente
                 </p>
-                {resumo.semMateria.length > 0 && (
-                  <p className="mt-1 text-texto-2">
-                    Fora do edital (entram sem matéria):{" "}
-                    {resumo.semMateria.join(", ")}.
-                  </p>
-                )}
+                {resumo.semMateria.length > 0 && <p className="mt-1 text-texto-2">Fora do edital (entram sem matéria): {resumo.semMateria.join(", ")}.</p>}
                 {modo === "juntar" && (
-                  <p className="mt-1 text-texto-2">
-                    Aulas que já estão aqui não se repetem, e nada que você
-                    concluiu volta a ficar pendente.
-                  </p>
+                  <p className="mt-1 text-texto-2">Aulas que já estão aqui não se repetem, e nada que você concluiu volta a ficar pendente.</p>
                 )}
               </>
             ) : (
-              <p className="font-semibold text-erro">
-                Não achei nenhuma aula nesse texto. Copie a página inteira do
-                cronograma e cole de novo.
-              </p>
+              <p className="font-semibold text-erro">Não achei nenhuma aula nesse texto. Copie a página inteira do cronograma e cole de novo.</p>
             )}
             {leitura.avisos.slice(0, 3).map((a) => (
               <p key={a} className="mt-1 text-alerta">
@@ -823,10 +667,7 @@ function ModalAula({
   const [concluido, setConcluido] = useState(item?.concluido ?? false);
   const [erros, setErros] = useState<Record<string, string>>({});
   const [enviando, setEnviando] = useState(false);
-  const opcoesDisciplina = useMemo(
-    () => [...new Set([...disciplinas, ...materias.map((m) => m.nome)])],
-    [disciplinas, materias],
-  );
+  const opcoesDisciplina = useMemo(() => [...new Set([...disciplinas, ...materias.map((m) => m.nome)])], [disciplinas, materias]);
 
   function mudarDisciplina(v: string) {
     setDisciplina(v);
@@ -854,18 +695,11 @@ function ModalAula({
       topico_id: materiaId ? topicoId || null : null,
       link: linkOk,
       concluido,
-      concluido_em: concluido
-        ? (item?.concluido_em ?? new Date().toISOString())
-        : null,
+      concluido_em: concluido ? (item?.concluido_em ?? new Date().toISOString()) : null,
     };
     const sb = supabase();
     const { data: salvo, error } = item
-      ? await sb
-          .from("cronograma")
-          .update(registro)
-          .eq("id", item.id)
-          .select()
-          .single()
+      ? await sb.from("cronograma").update(registro).eq("id", item.id).select().single()
       : await sb
           .from("cronograma")
           .insert({ ...registro, ordem: proximaOrdem(data), origem: "manual" })
@@ -873,10 +707,7 @@ function ModalAula({
           .single();
     if (error || !salvo) {
       setErros({
-        geral:
-          error?.code === "23505"
-            ? "Essa aula já está nesse dia."
-            : "Não deu para guardar. Tente de novo.",
+        geral: error?.code === "23505" ? "Essa aula já está nesse dia." : "Não deu para guardar. Tente de novo.",
       });
       setEnviando(false);
       return;
@@ -895,13 +726,7 @@ function ModalAula({
     >
       <div className="grid gap-4 sm:grid-cols-[160px_1fr]">
         <Campo id="aula-data" rotulo="Dia" erro={erros.data}>
-          <input
-            id="aula-data"
-            type="date"
-            className={estiloInput}
-            value={data}
-            onChange={(e) => setData(e.target.value)}
-          />
+          <input id="aula-data" type="date" className={estiloInput} value={data} onChange={(e) => setData(e.target.value)} />
         </Campo>
         <Campo id="aula-disciplina" rotulo="Disciplina" erro={erros.disciplina}>
           <input
@@ -945,11 +770,7 @@ function ModalAula({
         </div>
       </fieldset>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Campo
-          id="aula-materia"
-          rotulo="Matéria do edital"
-          dica="Liga a aula ao edital."
-        >
+        <Campo id="aula-materia" rotulo="Matéria do edital" dica="Liga a aula ao edital.">
           <select
             id="aula-materia"
             className={estiloInput}
@@ -968,13 +789,7 @@ function ModalAula({
           </select>
         </Campo>
         <Campo id="aula-topico" rotulo="Tópico (opcional)">
-          <select
-            id="aula-topico"
-            className={estiloInput}
-            value={topicoId}
-            onChange={(e) => setTopicoId(e.target.value)}
-            disabled={!materiaId}
-          >
+          <select id="aula-topico" className={estiloInput} value={topicoId} onChange={(e) => setTopicoId(e.target.value)} disabled={!materiaId}>
             <option value="">Nenhum</option>
             {topicos
               .filter((t) => t.materia_id === materiaId)
@@ -998,19 +813,11 @@ function ModalAula({
         />
       </Campo>
       <label className="flex min-h-10 items-center gap-2.5 text-[13.5px] font-semibold">
-        <input
-          type="checkbox"
-          checked={concluido}
-          onChange={(e) => setConcluido(e.target.checked)}
-          className="size-5 accent-rosa"
-        />
+        <input type="checkbox" checked={concluido} onChange={(e) => setConcluido(e.target.checked)} className="size-5 accent-rosa" />
         Já concluí esta aula
       </label>
       {erros.geral && (
-        <p
-          className="rounded-md bg-erro-suave px-3 py-2 text-[13px] font-medium text-erro"
-          role="alert"
-        >
+        <p className="rounded-md bg-erro-suave px-3 py-2 text-[13px] font-medium text-erro" role="alert">
           {erros.geral}
         </p>
       )}
