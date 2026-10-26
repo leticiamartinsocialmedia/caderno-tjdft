@@ -23,6 +23,14 @@ const ETAPAS = [
       return { error: r.error ?? (r.data?.length ? null : { message: "sem a prova" }) };
     },
   },
+  {
+    arquivo: "0007_simulado_tjdft_2013_cebraspe.sql",
+    oQue: "Prova TJDFT 2013 (Cebraspe) nos simulados",
+    marca: async () => {
+      const r = await supabase().from("simulado_provas").select("id").eq("id", "tjdft-2013-cebraspe-tecnico-adm");
+      return { error: r.error ?? (r.data?.length ? null : { message: "sem a prova" }) };
+    },
+  },
 ];
 
 async function verificar() {

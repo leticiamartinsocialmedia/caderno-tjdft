@@ -18,7 +18,7 @@ import { useToast } from "@/components/ui/Toast";
 import { ModalErro } from "@/features/erros/ModalErro";
 import { materiaDaDisciplina } from "@/features/cronograma/gran";
 import { carregarTentativa, salvarResposta } from "./dados";
-import { TextoProva, textoSimples } from "./TextoProva";
+import { TextoApoio, TextoProva, textoSimples } from "./TextoProva";
 import { ROTULO_RESPOSTA, formatarRelogio, placar, placarPor, situacaoDa, type Situacao } from "./correcao";
 
 type Dados = NonNullable<Awaited<ReturnType<typeof carregarTentativa>>>;
@@ -203,7 +203,11 @@ function Resolver({
             <p className="mb-3 rounded-md bg-texto px-3 py-2 text-[12.5px] font-extrabold tracking-wide text-fundo uppercase">{q.bloco}</p>
           )}
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <h2 className="text-[17px] font-extrabold">{treino ? `${provas.get(q.prova_id)?.ano ?? ""} · Questão ${q.numero}` : `Questão ${q.numero}`}</h2>
+            <h2 className="text-[17px] font-extrabold">
+              {treino
+                ? `${provas.get(q.prova_id)?.ano ?? ""} · ${q.alternativas ? "Questão" : "Item"} ${q.numero}`
+                : `${q.alternativas ? "Questão" : "Item"} ${q.numero}`}
+            </h2>
             <span className="text-[13px] text-texto-2">
               {q.materia} · {q.assunto}
             </span>
@@ -213,13 +217,18 @@ function Resolver({
           {texto && (
             <details className="mt-3 rounded-lg border border-borda-card bg-superficie" open>
               <summary className="cursor-pointer px-4 py-2.5 text-[13px] font-bold">{texto.titulo ?? "Texto de apoio"}</summary>
-              <div className="max-h-[50vh] overflow-y-auto border-t border-borda px-4 py-3 font-serif text-[15.5px] leading-relaxed whitespace-pre-line">
-                <TextoProva texto={texto.conteudo} />
+              <div className="max-h-[55vh] overflow-y-auto border-t border-borda px-3 py-3 sm:px-4">
+                <TextoApoio texto={texto} />
               </div>
             </details>
           )}
 
-          <p className="mt-4 text-[15.5px] leading-relaxed whitespace-pre-line">
+          {q.comando && (
+            <p className="mt-4 text-[14px] leading-relaxed text-texto-2">
+              <TextoProva texto={q.comando} />
+            </p>
+          )}
+          <p className={`${q.comando ? "mt-2" : "mt-4"} text-[15.5px] leading-relaxed whitespace-pre-line`}>
             <TextoProva texto={q.enunciado} />
           </p>
 
@@ -457,7 +466,10 @@ function Resultado({ dados }: { dados: Dados }) {
 
   function textoDoErro(q: SimuladoQuestao) {
     const origem = `${provas.get(q.prova_id)?.orgao ?? "TJDFT"} ${provas.get(q.prova_id)?.ano ?? ""} · ${provas.get(q.prova_id)?.banca ?? ""} · questão ${q.numero}`;
-    if (!q.alternativas) return `${textoSimples(q.enunciado)}\n\n(${origem})`;
+    if (!q.alternativas)
+      return textoSimples(
+        `${q.comando ? `${q.comando}\n\n` : ""}${q.enunciado}\n\nGabarito: ${q.gabarito === "CERTO" ? "Certo" : "Errado"}\n(${origem.replace("questão", "item")})`,
+      );
     const certa = q.alternativas.find((a) => a.letra === q.gabarito);
     return textoSimples(
       `${q.enunciado}\n\n${q.alternativas.map((a) => `${a.letra}) ${a.texto}`).join("\n")}\n\nGabarito: ${q.gabarito}${certa ? `) ${certa.texto}` : ""}\n(${origem})`,
@@ -548,7 +560,9 @@ function Resultado({ dados }: { dados: Dados }) {
       {prova?.discursiva && (
         <section className="mt-4 rounded-lg border border-borda-card bg-superficie p-4">
           <h2 className="text-[14px] font-extrabold">Prova discursiva</h2>
-          <p className="mt-2 text-[14px] leading-relaxed whitespace-pre-line">{prova.discursiva}</p>
+          <p className="mt-2 text-[14px] leading-relaxed whitespace-pre-line">
+            <TextoProva texto={prova.discursiva} />
+          </p>
           <Link
             href={`/escrita/nova?formato=folha_branca${materiaRedacao ? `&materia=${materiaRedacao.id}` : ""}`}
             className="mt-3 inline-flex h-10 items-center gap-2 rounded-md bg-rosa px-3.5 text-[13px] font-bold text-white hover:brightness-95 sm:h-9"
@@ -593,7 +607,9 @@ function Resultado({ dados }: { dados: Dados }) {
               return (
                 <li key={q.id} className="rounded-lg border border-borda-card bg-superficie p-4">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span className="text-[14px] font-extrabold">Questão {q.numero}</span>
+                    <span className="text-[14px] font-extrabold">
+                      {q.alternativas ? "Questão" : "Item"} {q.numero}
+                    </span>
                     <span className="text-xs text-texto-2">
                       {q.materia} · {q.assunto}
                     </span>
@@ -609,6 +625,11 @@ function Resultado({ dados }: { dados: Dados }) {
                       )}
                     </span>
                   </div>
+                  {aberta && q.comando && (
+                    <p className="mt-2 text-[13px] leading-relaxed text-texto-2">
+                      <TextoProva texto={q.comando} />
+                    </p>
+                  )}
                   <p className={`mt-2 text-[14px] leading-relaxed whitespace-pre-line ${aberta ? "" : "line-clamp-4"}`}>
                     <TextoProva texto={q.enunciado} />
                   </p>

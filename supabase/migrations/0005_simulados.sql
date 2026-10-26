@@ -25,7 +25,8 @@ create table if not exists public.simulado_textos (
   id text primary key, -- ex.: 'tjdft-2022-fgv-tecnico-adm/texto-1'
   prova_id text not null references public.simulado_provas (id) on delete cascade,
   titulo text,
-  conteudo text not null
+  conteudo text not null,
+  linhas_numeradas boolean not null default false -- Cebraspe: os itens citam "linha 30", "ℓ.11-14"
 );
 
 create table if not exists public.simulado_questoes (
@@ -36,12 +37,16 @@ create table if not exists public.simulado_questoes (
   materia text not null, -- nome da matéria como no edital (liga com o Edital do app)
   assunto text not null,
   texto_id text references public.simulado_textos (id) on delete set null,
+  comando text, -- Cebraspe: "Julgue os itens que se seguem...", comum a um grupo de itens
   enunciado text not null,
   alternativas jsonb, -- [{"letra": "A", "texto": "..."}]; null nas de certo/errado
   gabarito text not null check (gabarito in ('A', 'B', 'C', 'D', 'E', 'CERTO', 'ERRADO')),
   anulada boolean not null default false,
   unique (prova_id, numero)
 );
+
+alter table public.simulado_textos add column if not exists linhas_numeradas boolean not null default false;
+alter table public.simulado_questoes add column if not exists comando text;
 
 create index if not exists simulado_questoes_filtro_idx on public.simulado_questoes (materia, assunto);
 

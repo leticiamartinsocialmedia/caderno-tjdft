@@ -230,7 +230,7 @@ export type SimuladoProva = {
   ordem: number;
 };
 
-export type SimuladoTexto = { id: string; prova_id: string; titulo: string | null; conteudo: string };
+export type SimuladoTexto = { id: string; prova_id: string; titulo: string | null; conteudo: string; linhas_numeradas?: boolean };
 
 export type SimuladoQuestao = {
   id: string;
@@ -240,6 +240,8 @@ export type SimuladoQuestao = {
   materia: string;
   assunto: string;
   texto_id: string | null;
+  /** Cebraspe: comando comum a um grupo de itens ("Julgue os itens a seguir..."). */
+  comando?: string | null;
   enunciado: string;
   alternativas: { letra: string; texto: string }[] | null;
   gabarito: RespostaQuestao;

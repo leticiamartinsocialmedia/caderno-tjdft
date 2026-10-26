@@ -12,7 +12,7 @@ if (!entrada || !saida) {
   process.exit(1);
 }
 
-const { prova, questoes } = JSON.parse(readFileSync(entrada, "utf8"));
+const { prova, questoes, textos = [] } = JSON.parse(readFileSync(entrada, "utf8"));
 
 // Conferências: a numeração tem que ser contínua, cada questão com 5 alternativas A–E e gabarito válido.
 const erros = [];
@@ -25,6 +25,8 @@ questoes.forEach((q, i) => {
   } else if (!["CERTO", "ERRADO"].includes(q.gabarito)) erros.push(`item ${q.numero}: gabarito ${q.gabarito}`);
   if (!q.enunciado?.trim() || !q.materia || !q.assunto || !q.bloco) erros.push(`questão ${q.numero}: campo vazio`);
 });
+const chaves = new Set(textos.map((t) => t.chave));
+questoes.forEach((q) => q.texto && !chaves.has(q.texto) && erros.push(`questão ${q.numero}: texto ${q.texto} não existe`));
 const ultima = prova.estrutura.at(-1)?.ate;
 if (ultima !== questoes.length) erros.push(`estrutura termina em ${ultima}, mas há ${questoes.length} questões`);
 if (erros.length) {
@@ -39,9 +41,10 @@ const txt = (s) => {
   return `$t$${s}$t$`;
 };
 
+const idTexto = (chave) => `${prova.id}/texto-${chave}`;
 const linhas = questoes.map(
   (q) =>
-    `  (${txt(`${prova.id}/${q.numero}`)}, ${txt(prova.id)}, ${q.numero}, ${txt(q.bloco)}, ${txt(q.materia)}, ${txt(q.assunto)}, null, ${txt(q.enunciado)}, ${
+    `  (${txt(`${prova.id}/${q.numero}`)}, ${txt(prova.id)}, ${q.numero}, ${txt(q.bloco)}, ${txt(q.materia)}, ${txt(q.assunto)}, ${q.texto ? txt(idTexto(q.texto)) : "null"}, ${txt(q.comando ?? null)}, ${txt(q.enunciado)}, ${
       q.alternativas ? `${txt(JSON.stringify(q.alternativas))}::jsonb` : "null"
     }, ${txt(q.gabarito)}, ${q.anulada ? "true" : "false"})`,
 );
@@ -50,6 +53,10 @@ const sql = `-- Caderno TJDFT · simulado: ${prova.orgao} ${prova.ano} · ${prov
 -- Gerado por scripts/gerar-sql-simulados.mjs a partir de ${entrada}. Não edite à mão.
 -- Fonte: ${prova.fonte}
 -- Rode depois do 0005. Pode rodar de novo: atualiza as questões sem apagar suas tentativas.
+
+-- Campos usados pelas provas do Cebraspe (comando do grupo de itens e textos com linhas numeradas).
+alter table public.simulado_questoes add column if not exists comando text;
+alter table public.simulado_textos add column if not exists linhas_numeradas boolean not null default false;
 
 insert into public.simulado_provas (id, orgao, ano, banca, cargo, estilo, duracao_min, errada_desconta, estrutura, discursiva, fonte, ordem)
 values (${txt(prova.id)}, ${txt(prova.orgao)}, ${prova.ano}, ${txt(prova.banca)}, ${txt(prova.cargo)}, ${txt(prova.estilo)}, ${prova.duracao_min}, ${
@@ -60,14 +67,23 @@ on conflict (id) do update set
   duracao_min = excluded.duracao_min, errada_desconta = excluded.errada_desconta, estrutura = excluded.estrutura,
   discursiva = excluded.discursiva, fonte = excluded.fonte, ordem = excluded.ordem;
 
-insert into public.simulado_questoes (id, prova_id, numero, bloco, materia, assunto, texto_id, enunciado, alternativas, gabarito, anulada)
+${
+  textos.length
+    ? `insert into public.simulado_textos (id, prova_id, titulo, conteudo, linhas_numeradas)
+values
+${textos.map((t) => `  (${txt(idTexto(t.chave))}, ${txt(prova.id)}, ${txt(t.titulo)}, ${txt(t.conteudo)}, ${t.linhas_numeradas ? "true" : "false"})`).join(",\n")}
+on conflict (id) do update set titulo = excluded.titulo, conteudo = excluded.conteudo, linhas_numeradas = excluded.linhas_numeradas;
+
+`
+    : ""
+}insert into public.simulado_questoes (id, prova_id, numero, bloco, materia, assunto, texto_id, comando, enunciado, alternativas, gabarito, anulada)
 values
 ${linhas.join(",\n")}
 on conflict (id) do update set
   numero = excluded.numero, bloco = excluded.bloco, materia = excluded.materia, assunto = excluded.assunto,
-  texto_id = excluded.texto_id, enunciado = excluded.enunciado, alternativas = excluded.alternativas,
+  texto_id = excluded.texto_id, comando = excluded.comando, enunciado = excluded.enunciado, alternativas = excluded.alternativas,
   gabarito = excluded.gabarito, anulada = excluded.anulada;
 `;
 
 writeFileSync(saida, sql);
-console.log(`OK: ${prova.id}, ${questoes.length} questões → ${saida}`);
+console.log(`OK: ${prova.id}, ${questoes.length} questões, ${textos.length} textos → ${saida}`);
