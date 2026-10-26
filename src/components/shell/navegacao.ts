@@ -1,6 +1,7 @@
 import {
   BookA,
   BookX,
+  CalendarDays,
   Compass,
   FolderOpen,
   LayoutDashboard,
@@ -15,6 +16,7 @@ export type ItemNav = { href: string; rotulo: string; icone: LucideIcon; contado
 
 export const NAVEGACAO: ItemNav[] = [
   { href: "/painel", rotulo: "Painel", icone: LayoutDashboard },
+  { href: "/cronograma", rotulo: "Cronograma", icone: CalendarDays },
   { href: "/edital", rotulo: "Edital", icone: FolderOpen },
   { href: "/bisus", rotulo: "Bisus", icone: Lightbulb },
   { href: "/escrita", rotulo: "Escrita", icone: PenLine },

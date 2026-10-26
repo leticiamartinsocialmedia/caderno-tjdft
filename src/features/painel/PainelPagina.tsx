@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState, type ReactNode } from "react";
-import { ArrowRight, BookX, CalendarClock, CheckCircle2, Flame, Lightbulb, Pencil, RotateCcw, Target } from "lucide-react";
+import { ArrowRight, BookX, CalendarClock, CalendarDays, CheckCircle2, Circle, Flame, Lightbulb, Pencil, RotateCcw, Target } from "lucide-react";
 import { supabase } from "@/lib/supabase/client";
 import { exigir, useConsulta } from "@/lib/useConsulta";
 import { useTempoReal } from "@/lib/tempoReal";
@@ -10,7 +10,7 @@ import { useEditalBasico } from "@/lib/useEditalBasico";
 import { diaDaSemanaCurto, diasEntre, formatarData, hojeSP, somarDias } from "@/lib/datas";
 import { formatarMinutos, formatarPct, minutosDaSemana, porDia, somar } from "@/lib/desempenho";
 import { TextoGrifado } from "@/lib/grifo";
-import type { Bisu, Configuracoes, Erro, Sessao, StatusTopico } from "@/lib/tipos";
+import type { Bisu, Configuracoes, Erro, ItemCronograma, Sessao, StatusTopico } from "@/lib/tipos";
 import { CabecalhoPagina } from "@/components/ui/Cabecalho";
 import { Botao } from "@/components/ui/Botao";
 import { EstadoErro, Esqueleto } from "@/components/ui/Estados";
@@ -23,11 +23,12 @@ import { useApp } from "@/components/shell/AppContext";
 import { calcularProgresso } from "@/features/edital/status";
 import { carregarFila, TIPO_ITEM } from "@/features/revisoes/dados";
 import { ROTULO_MOTIVO } from "@/features/erros/motivos";
+import { nomeCurto } from "@/features/cronograma/gran";
 
 async function carregar(usuarioId: string, nomeTopico: Map<string, string>) {
   const sb = supabase();
   const hoje = hojeSP();
-  const [cfg, sessoes, topicos, bisus, erros, totalErros, fila] = await Promise.all([
+  const [cfg, sessoes, topicos, bisus, erros, totalErros, fila, aulasHoje, atrasadas] = await Promise.all([
     sb.from("configuracoes").select("*").eq("user_id", usuarioId).maybeSingle(),
     sb.from("sessoes").select("data, materia_id, minutos, questoes, acertos").gte("data", somarDias(hoje, -13)).lte("data", hoje),
     sb.from("topicos").select("materia_id, status"),
@@ -35,6 +36,8 @@ async function carregar(usuarioId: string, nomeTopico: Map<string, string>) {
     sb.from("erros").select("*").eq("revisado", false).order("created_at", { ascending: false }).limit(3),
     sb.from("erros").select("id", { count: "exact", head: true }).eq("revisado", false),
     carregarFila(hoje, nomeTopico),
+    sb.from("cronograma").select("*").eq("data", hoje).order("ordem"),
+    sb.from("cronograma").select("id", { count: "exact", head: true }).lt("data", hoje).eq("concluido", false),
   ]);
   return {
     cfg: exigir(cfg) as Configuracoes | null,
@@ -44,6 +47,8 @@ async function carregar(usuarioId: string, nomeTopico: Map<string, string>) {
     erros: exigir(erros) as Erro[],
     errosPendentes: totalErros.count ?? 0,
     fila,
+    // O cronograma só existe depois do SQL 0004; sem ele o cartão some.
+    cronograma: aulasHoje.error ? null : { hoje: aulasHoje.data as ItemCronograma[], atrasadas: atrasadas.count ?? 0 },
   };
 }
 
@@ -86,7 +91,7 @@ export function PainelPagina() {
     () => carregar(usuario.id, edital.nomeTopico),
     String(edital.nomeTopico.size),
   );
-  useTempoReal(["configuracoes", "sessoes", "topicos", "materias", "bisus", "erros", "revisoes"], atualizar);
+  useTempoReal(["configuracoes", "sessoes", "topicos", "materias", "bisus", "erros", "revisoes", "cronograma"], atualizar);
   const [editando, setEditando] = useState<"prova" | "meta" | null>(null);
   const [valor, setValor] = useState("");
 
@@ -99,6 +104,19 @@ export function PainelPagina() {
     [edital.materias, dados],
   );
   const bisu = useMemo(() => bisuDoDia(dados?.bisus ?? [], hoje), [dados, hoje]);
+
+  async function alternarAula(a: ItemCronograma) {
+    if (!dados?.cronograma) return;
+    const antes = dados;
+    const concluido = !a.concluido;
+    const concluido_em = concluido ? new Date().toISOString() : null;
+    setDados({ ...dados, cronograma: { ...dados.cronograma, hoje: dados.cronograma.hoje.map((x) => (x.id === a.id ? { ...x, concluido, concluido_em } : x)) } });
+    const { error } = await supabase().from("cronograma").update({ concluido, concluido_em }).eq("id", a.id);
+    if (error) {
+      setDados(antes);
+      avisar({ texto: "Não deu para salvar.", tipo: "erro" });
+    }
+  }
 
   async function salvarConfig(campo: "data_prova" | "meta_semanal_horas", v: string | number | null) {
     const { error } = await supabase().from("configuracoes").upsert({ user_id: usuario.id, [campo]: v }, { onConflict: "user_id" });
@@ -251,6 +269,40 @@ export function PainelPagina() {
               )}
             </Cartao>
           </div>
+
+          {/* Aulas de hoje no cronograma */}
+          {dados?.cronograma && (dados.cronograma.hoje.length > 0 || dados.cronograma.atrasadas > 0) && (
+            <Cartao titulo="Aulas de hoje" icone={<CalendarDays size={16} />} acao={<LinkVerTudo href="/cronograma">Cronograma</LinkVerTudo>}>
+              {dados.cronograma.atrasadas > 0 && (
+                <Link href="/cronograma" className="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-erro-suave px-2.5 py-1 text-xs font-bold text-erro hover:underline">
+                  {dados.cronograma.atrasadas} {dados.cronograma.atrasadas === 1 ? "aula atrasada" : "aulas atrasadas"}
+                </Link>
+              )}
+              {dados.cronograma.hoje.length === 0 ? (
+                <p className="text-[13px] text-texto-2">Nenhuma aula marcada para hoje.</p>
+              ) : (
+                <ul className="flex flex-col">
+                  {dados.cronograma.hoje.map((a) => (
+                    <li key={a.id} className="flex items-center gap-2.5 border-b border-borda py-1.5 last:border-b-0">
+                      <button
+                        type="button"
+                        onClick={() => void alternarAula(a)}
+                        aria-pressed={a.concluido}
+                        aria-label={a.concluido ? `Desmarcar ${a.aula}` : `Concluir ${a.aula}`}
+                        className="-m-1 flex size-9 shrink-0 items-center justify-center rounded-full hover:bg-hover"
+                      >
+                        {a.concluido ? <CheckCircle2 size={20} className="text-sucesso" /> : <Circle size={20} className="text-texto-2" />}
+                      </button>
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-xs font-bold text-texto-2">{nomeCurto(a.disciplina)}</span>
+                        <span className={`block truncate text-[13px] font-semibold ${a.concluido ? "text-texto-2 line-through" : ""}`}>{a.aula}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Cartao>
+          )}
 
           {/* Últimos 7 dias */}
           <Cartao titulo="Últimos 7 dias" icone={<CalendarClock size={16} />} acao={<LinkVerTudo href="/questoes">Questões</LinkVerTudo>}>

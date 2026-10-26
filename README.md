@@ -10,6 +10,7 @@ Funciona no computador e no celular, e o que você muda num aparelho aparece soz
 | Seção | Para que serve |
 |---|---|
 | Painel | Revisões do dia, horas e acerto dos últimos 7 dias, progresso do edital, contagem até a prova, meta semanal, bisu do dia e erros pendentes |
+| Cronograma | Aulas do dia, atrasadas e próximas. Importa o cronograma do Gran colando a página (Ctrl+A, Ctrl+C) e liga cada aula à matéria do edital. Concluir uma aula oferece registrar a sessão de estudo |
 | Edital | Edital TJDFT 2022 (Técnico – Administrativa) com status por tópico. Cada tópico abre uma página com materiais (links de aula, PDFs anexados), resumos, escritas, bisus, questões, nomenclatura, flashcards, erros e um "O que revisar" calculado a partir dos erros e do acerto |
 | Bisus | Dicas dos professores, com grifo `==assim==`, professor, fonte e "Cai muito" |
 | Escrita | Folha de caderno com 5 formatos, salvamento automático, versões, revisão agendada e correção por IA (opcional) |
@@ -40,6 +41,7 @@ Código organizado por funcionalidade em `src/features/<seção>`. Componentes c
    1. `0001_schema.sql`: tabelas, segurança e o edital inicial
    2. `0002_tempo_real_e_nomenclatura.sql`: tempo real, histórico de versões por formato e os termos iniciais da Nomenclatura
    3. `0003_edital_2022_e_estudo_por_topico.sql`: edital 2022 completo (Técnico Judiciário – Administrativa), resumos, materiais, anexos em PDF (Storage) e mais 300 termos ligados aos tópicos. Contas que já existem são atualizadas sem perder o que você já marcou.
+   4. `0004_cronograma.sql`: cronograma de estudos (importado do Gran ou montado à mão)
 
    Cole o conteúdo inteiro, clique em **Run** e espere "Success". Rodar de novo não estraga nada.
 3. Copie a **Project URL** (Project Settings → Data API) e a **Publishable key** (Project Settings → API Keys).

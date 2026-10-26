@@ -192,3 +192,22 @@ export type Material = {
   created_at: string;
   updated_at: string;
 };
+
+export type TipoAula = "videoaula" | "pdf" | "questoes" | "revisao" | "outro";
+
+export type ItemCronograma = {
+  id: string;
+  data: string;
+  ordem: number;
+  disciplina: string;
+  aula: string;
+  tipo: TipoAula;
+  materia_id: string | null;
+  topico_id: string | null;
+  link: string | null;
+  concluido: boolean;
+  concluido_em: string | null;
+  origem: "gran" | "manual";
+  created_at: string;
+  updated_at: string;
+};
