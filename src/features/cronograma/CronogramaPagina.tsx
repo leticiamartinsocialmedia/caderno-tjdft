@@ -306,6 +306,7 @@ export function CronogramaPagina() {
       {modal === "importar" && (
         <ModalImportar
           hoje={hoje}
+          importadasAntes={itens.filter((i) => i.origem === "gran").length}
           materias={edital.materias}
           fechar={() => setModal(null)}
           aoImportar={(texto) => {
@@ -351,11 +352,13 @@ export function CronogramaPagina() {
 
 function ModalImportar({
   hoje,
+  importadasAntes,
   materias,
   fechar,
   aoImportar,
 }: {
   hoje: string;
+  importadasAntes: number;
   materias: MateriaBasica[];
   fechar: () => void;
   aoImportar: (resumo: string) => void;
@@ -363,6 +366,7 @@ function ModalImportar({
   const [texto, setTexto] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [erro, setErro] = useState("");
+  const [substituir, setSubstituir] = useState(importadasAntes > 0);
   const leitura = useMemo(() => (texto.trim() ? lerCronogramaGran(texto, hoje) : null), [texto, hoje]);
   const aulas = useMemo(() => leitura?.aulas ?? [], [leitura]);
   const resumo = useMemo(() => {
@@ -378,7 +382,11 @@ function ModalImportar({
     setEnviando(true);
     setErro("");
     try {
-      const r = await importarAulas(aulas, materias);
+      const r = await importarAulas(aulas, materias, substituir);
+      if (r.substituidas) {
+        aoImportar(`Cronograma atualizado: ${aulas.length} aulas nas datas do Gran`);
+        return;
+      }
       const partes = [`${r.novas} ${r.novas === 1 ? "aula nova" : "aulas novas"}`];
       if (r.concluidas) partes.push(`${r.concluidas} marcadas como concluídas`);
       aoImportar(r.novas || r.concluidas ? `Cronograma importado: ${partes.join(", ")}` : "Nada novo: essas aulas já estavam no cronograma");
@@ -420,6 +428,16 @@ function ModalImportar({
             placeholder={"Outubro/2026\nDia de estudo\tAula\tTipo\tConcluído\n13 - Terça-feira\tNoções de Direito Constitucional | 1 - Teoria da Constituição\tVideoaula\tSim"}
           />
         </Campo>
+        {importadasAntes > 0 && (
+          <label className="flex items-start gap-2.5 rounded-md border border-borda px-3 py-2.5 text-[13px] leading-relaxed">
+            <input type="checkbox" checked={substituir} onChange={(e) => setSubstituir(e.target.checked)} className="mt-0.5 size-5 shrink-0 accent-rosa" />
+            <span>
+              <b className="block text-[13.5px]">Substituir as aulas que vieram do Gran</b>
+              Corrige datas e ordem pelo que você colou agora. O que você concluiu continua concluído, com os links e tópicos que ligou. As
+              aulas que você adicionou à mão e os meses que não estão na colagem não mudam.
+            </span>
+          </label>
+        )}
         {leitura && (
           <div className="rounded-md border border-borda bg-hover/50 px-3 py-2.5 text-[13px] leading-relaxed" aria-live="polite">
             {resumo ? (
@@ -433,7 +451,7 @@ function ModalImportar({
                 {resumo.semMateria.length > 0 && (
                   <p className="mt-1 text-texto-2">Fora do edital (entram sem matéria): {resumo.semMateria.join(", ")}.</p>
                 )}
-                <p className="mt-1 text-texto-2">Aulas que já estão aqui não se repetem, e nada que você concluiu volta a ficar pendente.</p>
+                {!substituir && <p className="mt-1 text-texto-2">Aulas que já estão aqui não se repetem, e nada que você concluiu volta a ficar pendente.</p>}
               </>
             ) : (
               <p className="font-semibold text-erro">Não achei nenhuma aula nesse texto. Copie a página inteira do cronograma e cole de novo.</p>

@@ -1,6 +1,6 @@
 // Lê o cronograma do Gran copiado da página (Ctrl+A, Ctrl+C) e liga cada aula à matéria do edital.
 
-import { somarDias } from "@/lib/datas";
+import { diasEntre } from "@/lib/datas";
 import type { TipoAula } from "@/lib/tipos";
 
 export type AulaLida = {
@@ -40,15 +40,17 @@ function diaDaSemana(data: string) {
   return new Date(`${data}T12:00:00Z`).getUTCDay();
 }
 
-/** Primeira data a partir de `desde` em que o dia do mês cai nesse dia da semana. */
-function proximaData(dia: number, semana: number, desde: string): string | null {
-  const [a, m] = desde.split("-").map(Number);
-  for (let delta = 0; delta <= 12; delta++) {
+/** Data mais próxima de `perto` (antes ou depois) em que o dia do mês cai nesse dia da semana. */
+function dataMaisProxima(dia: number, semana: number, perto: string): string | null {
+  const [a, m] = perto.split("-").map(Number);
+  let melhor: string | null = null;
+  for (let delta = -12; delta <= 12; delta++) {
     const mesAbs = a * 12 + (m - 1) + delta;
     const data = iso(Math.floor(mesAbs / 12), (mesAbs % 12) + 1, dia);
-    if (data && data >= desde && diaDaSemana(data) === semana) return data;
+    if (!data || diaDaSemana(data) !== semana) continue;
+    if (!melhor || Math.abs(diasEntre(perto, data)) < Math.abs(diasEntre(perto, melhor))) melhor = data;
   }
-  return null;
+  return melhor;
 }
 
 function lerTipo(t: string): TipoAula {
@@ -105,13 +107,13 @@ export function lerCronogramaGran(texto: string, hoje: string): Leitura {
     i += 3;
     const dia = Number(d[1]);
     const semana = DIAS.indexOf(d[2]);
-    // O cronograma vem em ordem: cada data é igual ou depois da anterior. Se o dia não bate com o mês
-    // do cabeçalho (ou não há cabeçalho), vale a próxima data em que esse dia cai nesse dia da semana.
+    // O cabeçalho "Outubro/2026" manda, em qualquer ordem que os meses venham. Sem cabeçalho (ou se o dia
+    // da semana não bate), vale a data mais próxima da linha anterior em que esse dia cai nesse dia da semana.
     const doCabecalho = mes ? iso(mes.ano, mes.mes, dia) : null;
     const data: string | null =
-      doCabecalho && diaDaSemana(doCabecalho) === semana && (!ultima || doCabecalho >= ultima)
+      doCabecalho && diaDaSemana(doCabecalho) === semana
         ? doCabecalho
-        : proximaData(dia, semana, ultima ?? (mes ? iso(mes.ano, mes.mes, 1)! : somarDias(hoje, -60)));
+        : dataMaisProxima(dia, semana, ultima ?? (mes ? iso(mes.ano, mes.mes, 15)! : hoje));
     if (!data) {
       avisos.push(`Não achei a data de "${celulas[i - 3]}".`);
       continue;

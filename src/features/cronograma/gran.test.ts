@@ -21,6 +21,16 @@ describe("lerCronogramaGran", () => {
     expect(aulas[2]).toMatchObject({ disciplina: "Revisão", aula: "Revisão", tipo: "revisao" });
   });
 
+  it("respeita o cabeçalho mesmo com os meses fora de ordem", () => {
+    const texto = "Novembro/2026\n12 - Quinta-feira\tX | 13 - A\tVideoaula\tNão\nOutubro/2026\n13 - Terça-feira\tX | 1 - B\tVideoaula\tSim\n25 - Domingo\tX | 5 - C\tVideoaula\tNão";
+    expect(lerCronogramaGran(texto, "2026-10-26").aulas.map((a) => a.data)).toEqual(["2026-11-12", "2026-10-13", "2026-10-25"]);
+  });
+
+  it("sem cabeçalho e fora de ordem, fica com a data mais próxima", () => {
+    const texto = "12 - Quinta-feira\tX | 13 - A\tVideoaula\tNão\n13 - Terça-feira\tX | 1 - B\tVideoaula\tSim";
+    expect(lerCronogramaGran(texto, "2026-10-26").aulas.map((a) => a.data)).toEqual(["2026-11-12", "2026-10-13"]);
+  });
+
   it("lê uma célula por linha (cópia no celular)", () => {
     const texto = "Novembro/2026\n15 - Domingo\nNoções de Direito Civil | 3 - LINDB III\nVideoaula\nNão\n15 - Domingo\nRevisão\nRevisao\nNão";
     const { aulas } = lerCronogramaGran(texto, "2026-10-26");
