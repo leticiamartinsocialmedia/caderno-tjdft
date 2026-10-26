@@ -211,3 +211,58 @@ export type ItemCronograma = {
   created_at: string;
   updated_at: string;
 };
+
+export type EstiloProva = "multipla" | "certo_errado";
+export type RespostaQuestao = "A" | "B" | "C" | "D" | "E" | "CERTO" | "ERRADO";
+
+export type SimuladoProva = {
+  id: string;
+  orgao: string;
+  ano: number;
+  banca: string;
+  cargo: string;
+  estilo: EstiloProva;
+  duracao_min: number;
+  errada_desconta: boolean;
+  estrutura: { nome: string; de: number; ate: number }[];
+  discursiva: string | null;
+  fonte: string;
+  ordem: number;
+};
+
+export type SimuladoTexto = { id: string; prova_id: string; titulo: string | null; conteudo: string };
+
+export type SimuladoQuestao = {
+  id: string;
+  prova_id: string;
+  numero: number;
+  bloco: string;
+  materia: string;
+  assunto: string;
+  texto_id: string | null;
+  enunciado: string;
+  alternativas: { letra: string; texto: string }[] | null;
+  gabarito: RespostaQuestao;
+  anulada: boolean;
+};
+
+export type SimuladoTentativa = {
+  id: string;
+  modo: "prova" | "treino";
+  prova_id: string | null;
+  titulo: string;
+  questao_ids: string[];
+  iniciada_em: string;
+  finalizada_em: string | null;
+  segundos: number;
+  created_at: string;
+  updated_at: string;
+};
+
+export type SimuladoResposta = {
+  id: string;
+  tentativa_id: string;
+  questao_id: string;
+  resposta: RespostaQuestao | null;
+  marcada_para_revisar: boolean;
+};

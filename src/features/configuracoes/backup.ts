@@ -11,6 +11,8 @@ export const TABELAS = [
   "resumos",
   "materiais",
   "cronograma",
+  "simulado_tentativas",
+  "simulado_respostas",
   "bisus",
   "escritas",
   "escrita_versoes",
@@ -32,8 +34,8 @@ const CONFLITO: Partial<Record<Tabela, string>> = {
   revisoes: "user_id,item_tipo,item_id",
 };
 
-/** Tabelas criadas pelos SQL 0003 e 0004: se ainda não existem, o backup sai sem elas em vez de falhar. */
-const OPCIONAIS: Tabela[] = ["resumos", "materiais", "cronograma"];
+/** Tabelas criadas pelos SQL 0003 a 0005: se ainda não existem, o backup sai sem elas em vez de falhar. */
+const OPCIONAIS: Tabela[] = ["resumos", "materiais", "cronograma", "simulado_tentativas", "simulado_respostas"];
 
 export async function exportarTudo(): Promise<Backup> {
   const sb = supabase();

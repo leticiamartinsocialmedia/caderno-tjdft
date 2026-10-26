@@ -22,6 +22,7 @@ export function ModalErro({
   topicos,
   materiaInicial,
   topicoInicial,
+  preenchido,
   fechar,
   aoSalvar,
 }: {
@@ -30,15 +31,17 @@ export function ModalErro({
   topicos: TopicoBasico[];
   materiaInicial?: string;
   topicoInicial?: string;
+  /** Para um erro novo vindo de outra tela (ex.: simulado): já chega com a questão e o gabarito. */
+  preenchido?: { assertiva: string; gabarito: Erro["gabarito"]; regra?: string };
   fechar: () => void;
   aoSalvar: (e: Erro, novo: boolean) => void;
 }) {
   const [materiaId, setMateriaId] = useState(erro?.materia_id ?? materiaInicial ?? "");
   const [topicoId, setTopicoId] = useState(erro?.topico_id ?? topicoInicial ?? "");
-  const [assertiva, setAssertiva] = useState(erro?.assertiva ?? "");
-  const [gabarito, setGabarito] = useState<Erro["gabarito"] | "">(erro?.gabarito ?? "");
+  const [assertiva, setAssertiva] = useState(erro?.assertiva ?? preenchido?.assertiva ?? "");
+  const [gabarito, setGabarito] = useState<Erro["gabarito"] | "">(erro?.gabarito ?? preenchido?.gabarito ?? "");
   const [motivo, setMotivo] = useState<MotivoErro | "">(erro?.motivo ?? "");
-  const [regra, setRegra] = useState(erro?.regra ?? "");
+  const [regra, setRegra] = useState(erro?.regra ?? preenchido?.regra ?? "");
   const [link, setLink] = useState(erro?.link_tec ?? "");
   const [erros, setErros] = useState<Record<string, string>>({});
   const [enviando, setEnviando] = useState(false);
