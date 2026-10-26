@@ -18,6 +18,7 @@ import { useToast } from "@/components/ui/Toast";
 import { ModalErro } from "@/features/erros/ModalErro";
 import { materiaDaDisciplina } from "@/features/cronograma/gran";
 import { carregarTentativa, salvarResposta } from "./dados";
+import { TextoProva, textoSimples } from "./TextoProva";
 import { ROTULO_RESPOSTA, formatarRelogio, placar, placarPor, situacaoDa, type Situacao } from "./correcao";
 
 type Dados = NonNullable<Awaited<ReturnType<typeof carregarTentativa>>>;
@@ -50,11 +51,7 @@ export function TentativaPagina({ id }: { id: string }) {
   return dados.tentativa.finalizada_em ? (
     <Resultado dados={dados} />
   ) : (
-    <Resolver
-      dados={dados}
-      aoFinalizar={(d) => setDados(d)}
-      mudarRespostas={(f) => setDados((d) => (d ? { ...d, respostas: f(d.respostas) } : d))}
-    />
+    <Resolver dados={dados} aoFinalizar={(d) => setDados(d)} mudarRespostas={(f) => setDados((d) => (d ? { ...d, respostas: f(d.respostas) } : d))} />
   );
 }
 
@@ -136,7 +133,14 @@ function Resolver({
 
   async function responder(questao: SimuladoQuestao, campos: Partial<Pick<SimuladoResposta, "resposta" | "marcada_para_revisar">>) {
     const antes = respostas.get(questao.id);
-    const otimista = { id: antes?.id ?? "", tentativa_id: tentativa.id, questao_id: questao.id, resposta: antes?.resposta ?? null, marcada_para_revisar: antes?.marcada_para_revisar ?? false, ...campos };
+    const otimista = {
+      id: antes?.id ?? "",
+      tentativa_id: tentativa.id,
+      questao_id: questao.id,
+      resposta: antes?.resposta ?? null,
+      marcada_para_revisar: antes?.marcada_para_revisar ?? false,
+      ...campos,
+    };
     mudarRespostas((m) => new Map(m).set(questao.id, otimista));
     try {
       const salvo = await salvarResposta(tentativa.id, questao.id, campos);
@@ -209,13 +213,19 @@ function Resolver({
           {texto && (
             <details className="mt-3 rounded-lg border border-borda-card bg-superficie" open>
               <summary className="cursor-pointer px-4 py-2.5 text-[13px] font-bold">{texto.titulo ?? "Texto de apoio"}</summary>
-              <div className="max-h-[50vh] overflow-y-auto border-t border-borda px-4 py-3 font-serif text-[15.5px] leading-relaxed whitespace-pre-line">{texto.conteudo}</div>
+              <div className="max-h-[50vh] overflow-y-auto border-t border-borda px-4 py-3 font-serif text-[15.5px] leading-relaxed whitespace-pre-line">
+                <TextoProva texto={texto.conteudo} />
+              </div>
             </details>
           )}
 
-          <p className="mt-4 text-[15.5px] leading-relaxed whitespace-pre-line">{q.enunciado}</p>
+          <p className="mt-4 text-[15.5px] leading-relaxed whitespace-pre-line">
+            <TextoProva texto={q.enunciado} />
+          </p>
 
-          {q.anulada && treino && <p className="mt-3 rounded-md bg-alerta-suave px-3 py-2 text-[13px] font-semibold text-alerta">Questão anulada pela banca.</p>}
+          {q.anulada && treino && (
+            <p className="mt-3 rounded-md bg-alerta-suave px-3 py-2 text-[13px] font-semibold text-alerta">Questão anulada pela banca.</p>
+          )}
 
           {estiloDaQuestao === "multipla" ? (
             <ul className="mt-4 flex flex-col gap-2" role="radiogroup" aria-label={`Alternativas da questão ${q.numero}`}>
@@ -232,7 +242,13 @@ function Resolver({
                       onClick={() => escolher(a.letra as RespostaQuestao)}
                       disabled={travada}
                       className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left text-[15px] leading-relaxed transition-colors ${
-                        correta ? "border-sucesso bg-sucesso-suave" : errada ? "border-erro bg-erro-suave" : marcada ? "border-texto bg-hover" : "border-borda hover:bg-hover"
+                        correta
+                          ? "border-sucesso bg-sucesso-suave"
+                          : errada
+                            ? "border-erro bg-erro-suave"
+                            : marcada
+                              ? "border-texto bg-hover"
+                              : "border-borda hover:bg-hover"
                       }`}
                     >
                       <span
@@ -242,7 +258,9 @@ function Resolver({
                       >
                         {a.letra}
                       </span>
-                      <span className="min-w-0 pt-0.5">{a.texto}</span>
+                      <span className="min-w-0 pt-0.5">
+                        <TextoProva texto={a.texto} />
+                      </span>
                     </button>
                   </li>
                 );
@@ -263,16 +281,20 @@ function Resolver({
                     onClick={() => escolher(v)}
                     disabled={travada}
                     className={`h-12 min-w-32 rounded-lg border px-5 text-[15px] font-extrabold ${
-                      correta ? "border-sucesso bg-sucesso-suave text-sucesso" : errada ? "border-erro bg-erro-suave text-erro" : marcada ? "border-texto bg-texto text-fundo" : "border-borda hover:bg-hover"
+                      correta
+                        ? "border-sucesso bg-sucesso-suave text-sucesso"
+                        : errada
+                          ? "border-erro bg-erro-suave text-erro"
+                          : marcada
+                            ? "border-texto bg-texto text-fundo"
+                            : "border-borda hover:bg-hover"
                     }`}
                   >
                     {ROTULO_RESPOSTA[v]}
                   </button>
                 );
               })}
-              {!treino && (
-                <span className="self-center text-[12.5px] text-texto-2">Toque de novo para deixar em branco. Aqui, errar desconta um acerto.</span>
-              )}
+              {!treino && <span className="self-center text-[12.5px] text-texto-2">Toque de novo para deixar em branco. Aqui, errar desconta um acerto.</span>}
             </div>
           )}
 
@@ -284,7 +306,11 @@ function Resolver({
               role="status"
             >
               {situacao === "errada" ? <XCircle size={18} /> : <CheckCircle2 size={18} />}
-              {situacao === "certa" ? "Você acertou." : situacao === "anulada" ? "Questão anulada: conta como acerto." : `Gabarito: ${ROTULO_RESPOSTA[q.gabarito]}.`}
+              {situacao === "certa"
+                ? "Você acertou."
+                : situacao === "anulada"
+                  ? "Questão anulada: conta como acerto."
+                  : `Gabarito: ${ROTULO_RESPOSTA[q.gabarito]}.`}
             </p>
           )}
 
@@ -341,7 +367,9 @@ function Resolver({
                       } ${i === indice ? "outline-2 outline-offset-1 outline-rosa" : ""}`}
                     >
                       {x.numero}
-                      {r?.resposta && !treino && <span className="mt-0.5 text-[10px] font-semibold">{r.resposta === "CERTO" ? "C" : r.resposta === "ERRADO" ? "E" : r.resposta}</span>}
+                      {r?.resposta && !treino && (
+                        <span className="mt-0.5 text-[10px] font-semibold">{r.resposta === "CERTO" ? "C" : r.resposta === "ERRADO" ? "E" : r.resposta}</span>
+                      )}
                       {r?.marcada_para_revisar && <span className="absolute -top-1 -right-1 size-2.5 rounded-full bg-rosa" aria-hidden />}
                     </button>
                   </li>
@@ -400,7 +428,13 @@ function Resultado({ dados }: { dados: Dados }) {
   const [abertas, setAbertas] = useState<Set<string>>(new Set());
 
   const itens = useMemo(
-    () => questoes.map((q) => ({ q, resposta: respostas.get(q.id)?.resposta ?? null, situacao: situacaoDa(q, respostas.get(q.id)?.resposta), desconta: provas.get(q.prova_id)?.errada_desconta ?? false })),
+    () =>
+      questoes.map((q) => ({
+        q,
+        resposta: respostas.get(q.id)?.resposta ?? null,
+        situacao: situacaoDa(q, respostas.get(q.id)?.resposta),
+        desconta: provas.get(q.prova_id)?.errada_desconta ?? false,
+      })),
     [questoes, respostas, provas],
   );
   // Treino pode misturar bancas: a nota soma cada questão pela regra da banca dela.
@@ -413,21 +447,30 @@ function Resultado({ dados }: { dados: Dados }) {
   const descontaAlguma = itens.some((i) => i.desconta);
   const porBloco = useMemo(() => placarPor(itens, (i) => i.q.bloco, descontaAlguma), [itens, descontaAlguma]);
   const porMateria = useMemo(() => placarPor(itens, (i) => i.q.materia, descontaAlguma), [itens, descontaAlguma]);
-  const porAssunto = useMemo(() => placarPor(itens, (i) => `${i.q.materia} · ${i.q.assunto}`, descontaAlguma).sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0)), [itens, descontaAlguma]);
+  const porAssunto = useMemo(
+    () => placarPor(itens, (i) => `${i.q.materia} · ${i.q.assunto}`, descontaAlguma).sort((a, b) => (a.pct ?? 0) - (b.pct ?? 0)),
+    [itens, descontaAlguma],
+  );
 
   const lista = itens.filter((i) => (filtro === "erradas" ? i.situacao === "errada" : filtro === "branco" ? i.situacao === "branco" : true));
   const materiaRedacao = materiaDaDisciplina("Redação", edital.materias);
 
   function textoDoErro(q: SimuladoQuestao) {
     const origem = `${provas.get(q.prova_id)?.orgao ?? "TJDFT"} ${provas.get(q.prova_id)?.ano ?? ""} · ${provas.get(q.prova_id)?.banca ?? ""} · questão ${q.numero}`;
-    if (!q.alternativas) return `${q.enunciado}\n\n(${origem})`;
+    if (!q.alternativas) return `${textoSimples(q.enunciado)}\n\n(${origem})`;
     const certa = q.alternativas.find((a) => a.letra === q.gabarito);
-    return `${q.enunciado}\n\n${q.alternativas.map((a) => `${a.letra}) ${a.texto}`).join("\n")}\n\nGabarito: ${q.gabarito}${certa ? `) ${certa.texto}` : ""}\n(${origem})`;
+    return textoSimples(
+      `${q.enunciado}\n\n${q.alternativas.map((a) => `${a.letra}) ${a.texto}`).join("\n")}\n\nGabarito: ${q.gabarito}${certa ? `) ${certa.texto}` : ""}\n(${origem})`,
+    );
   }
 
   return (
     <div className="flex flex-col">
-      <CabecalhoPagina titulo={tentativa.titulo} voltarPara="/simulados" subtitulo={<span className="tabular">Tempo: {formatarRelogio(tentativa.segundos ?? 0)}</span>} />
+      <CabecalhoPagina
+        titulo={tentativa.titulo}
+        voltarPara="/simulados"
+        subtitulo={<span className="tabular">Tempo: {formatarRelogio(tentativa.segundos ?? 0)}</span>}
+      />
 
       {/* Nota */}
       <section className="mt-5 grid gap-3 sm:grid-cols-[auto_1fr]" aria-label="Nota">
@@ -566,7 +609,9 @@ function Resultado({ dados }: { dados: Dados }) {
                       )}
                     </span>
                   </div>
-                  <p className={`mt-2 text-[14px] leading-relaxed whitespace-pre-line ${aberta ? "" : "line-clamp-4"}`}>{q.enunciado}</p>
+                  <p className={`mt-2 text-[14px] leading-relaxed whitespace-pre-line ${aberta ? "" : "line-clamp-4"}`}>
+                    <TextoProva texto={q.enunciado} />
+                  </p>
                   {aberta && q.alternativas && (
                     <ul className="mt-2 flex flex-col gap-1 text-[13.5px]">
                       {q.alternativas.map((a) => (
@@ -574,7 +619,7 @@ function Resultado({ dados }: { dados: Dados }) {
                           key={a.letra}
                           className={`rounded px-2 py-1 ${a.letra === q.gabarito ? "bg-sucesso-suave font-semibold text-sucesso" : a.letra === resposta ? "bg-erro-suave text-erro" : ""}`}
                         >
-                          {a.letra}) {a.texto}
+                          {a.letra}) <TextoProva texto={a.texto} />
                         </li>
                       ))}
                     </ul>
@@ -591,7 +636,11 @@ function Resultado({ dados }: { dados: Dados }) {
                       {aberta ? "Mostrar menos" : "Ver a questão inteira"}
                     </button>
                     {(situacao === "errada" || situacao === "branco") && (
-                      <button type="button" onClick={() => setAnotar(q)} className="inline-flex items-center gap-1.5 text-[13px] font-bold text-rosa-texto underline underline-offset-4">
+                      <button
+                        type="button"
+                        onClick={() => setAnotar(q)}
+                        className="inline-flex items-center gap-1.5 text-[13px] font-bold text-rosa-texto underline underline-offset-4"
+                      >
                         <BookX size={14} /> Anotar no Caderno de erros
                       </button>
                     )}

@@ -14,6 +14,15 @@ const ETAPAS = [
   { arquivo: "0003_edital_2022_e_estudo_por_topico.sql", oQue: "Edital 2022, resumos, materiais e anexos", marca: () => supabase().from("resumos").select("id").limit(1) },
   { arquivo: "0004_cronograma.sql", oQue: "Cronograma", marca: () => supabase().from("cronograma").select("id").limit(1) },
   { arquivo: "0005_simulados.sql", oQue: "Simulados", marca: () => supabase().from("simulado_provas").select("id").limit(1) },
+  {
+    arquivo: "0006_simulado_tjdft_2022_fgv.sql",
+    oQue: "Prova TJDFT 2022 (FGV) nos simulados",
+    // Aqui a marca é a prova estar no banco, não só a tabela existir.
+    marca: async () => {
+      const r = await supabase().from("simulado_provas").select("id").eq("id", "tjdft-2022-fgv-tecnico-adm");
+      return { error: r.error ?? (r.data?.length ? null : { message: "sem a prova" }) };
+    },
+  },
 ];
 
 async function verificar() {

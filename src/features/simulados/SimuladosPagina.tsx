@@ -185,12 +185,17 @@ export function SimuladosPagina() {
                         <Timer size={15} className="text-texto-2" /> {horas(p.duracao_min)}
                       </span>
                       {p.errada_desconta && <span className="font-semibold text-erro">Errada desconta uma certa</span>}
+                      {/gabarito preliminar/i.test(p.fonte) && (
+                        <span className="font-semibold text-alerta" title={p.fonte}>
+                          Gabarito preliminar da banca
+                        </span>
+                      )}
                     </p>
                     {p.estrutura.length > 0 && (
                       <ol className="flex flex-col gap-0.5 text-[12.5px] text-texto-2">
                         {p.estrutura.map((b) => (
                           <li key={b.nome} className="tabular">
-                            <span className="font-semibold text-texto">{b.nome}</span> · {b.de} a {b.ate}
+                            <span className="font-semibold text-texto">{b.nome}</span> · {b.de === b.ate ? `questão ${b.de}` : `${b.de} a ${b.ate}`}
                           </li>
                         ))}
                         {p.discursiva && <li className="font-semibold text-texto">Prova discursiva (redação)</li>}

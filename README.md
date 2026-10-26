@@ -44,6 +44,7 @@ Código organizado por funcionalidade em `src/features/<seção>`. Componentes c
    3. `0003_edital_2022_e_estudo_por_topico.sql`: edital 2022 completo (Técnico Judiciário – Administrativa), resumos, materiais, anexos em PDF (Storage) e mais 300 termos ligados aos tópicos. Contas que já existem são atualizadas sem perder o que você já marcou.
    4. `0004_cronograma.sql`: cronograma de estudos (importado do Gran ou montado à mão)
    5. `0005_simulados.sql`: simulados (banco de questões das provas anteriores, tentativas e respostas)
+   6. `0006_simulado_tjdft_2022_fgv.sql`: prova de Técnico Judiciário – Área Administrativa do TJDFT 2022 (FGV), 60 questões e o tema da redação. Gerado por `node scripts/gerar-sql-simulados.mjs supabase/dados/simulado_tjdft_2022_fgv.json supabase/migrations/0006_simulado_tjdft_2022_fgv.sql`
 
    Cole o conteúdo inteiro, clique em **Run** e espere "Success". Rodar de novo não estraga nada.
 3. Copie a **Project URL** (Project Settings → Data API) e a **Publishable key** (Project Settings → API Keys).
