@@ -1,0 +1,1052 @@
+[
+ {
+  "t": "Frase, oração e período",
+  "e": "Unidades da sintaxe",
+  "p": "Frase é qualquer enunciado com sentido; oração é o trecho organizado em torno de um verbo; período é a frase formada por uma ou mais orações.",
+  "c": "Período simples tem uma oração (absoluta); período composto tem duas ou mais. Conte os verbos (locução verbal conta como um) para saber quantas orações há.",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Frase"
+  ]
+ },
+ {
+  "t": "Frase nominal",
+  "e": "Frase sem verbo",
+  "p": "Frase que comunica sem ter verbo: “Silêncio!”, “Fogo!”.",
+  "c": "Não é oração, porque não tem verbo. A banca usa para separar o conceito de frase do de oração.",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Frase"
+  ]
+ },
+ {
+  "t": "Sujeito oculto",
+  "e": "Sujeito desinencial",
+  "p": "O sujeito não aparece escrito, mas a terminação do verbo mostra quem é: “Saímos cedo” (nós).",
+  "c": "Identificado pela desinência verbal ou pelo contexto. Não confundir com sujeito indeterminado, em que não se sabe quem pratica a ação.",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Termos"
+  ]
+ },
+ {
+  "t": "Sujeito indeterminado",
+  "e": "Sujeito que não se identifica",
+  "p": "Alguém pratica a ação, mas o texto não diz quem: “Roubaram meu carro”.",
+  "c": "Ocorre com verbo na 3ª pessoa do plural sem referente ou com verbo intransitivo, transitivo indireto ou de ligação + “se” (índice de indeterminação do sujeito), com o verbo no singular.",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Termos"
+  ]
+ },
+ {
+  "t": "Predicativo do sujeito",
+  "e": "Qualidade atribuída ao sujeito",
+  "p": "Característica ou estado do sujeito ligado a ele pelo verbo: “O servidor está cansado”.",
+  "c": "Aparece com verbo de ligação (predicado nominal) ou junto a verbo significativo (predicado verbo-nominal: “O réu saiu calado”).",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Termos"
+  ]
+ },
+ {
+  "t": "Verbo de ligação",
+  "e": "Verbo que liga sujeito e predicativo",
+  "p": "Verbo que não indica ação, só liga o sujeito a uma qualidade: ser, estar, parecer, permanecer, ficar, continuar.",
+  "c": "A classificação depende do contexto: em “Ele ficou em casa” o verbo é intransitivo (com adjunto de lugar); em “Ele ficou triste”, é de ligação.",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Termos",
+   "LP|Classes"
+  ]
+ },
+ {
+  "t": "Complemento nominal",
+  "e": "Complemento de um nome",
+  "p": "Termo com preposição que completa o sentido de um substantivo, adjetivo ou advérbio: “necessidade de descanso”.",
+  "c": "Paciente da ideia do nome (“a defesa do réu” = alguém defende o réu). Se for agente ou possuidor, é adjunto adnominal (“a defesa do advogado”).",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Termos"
+  ]
+ },
+ {
+  "t": "Adjunto adnominal",
+  "e": "Termo que acompanha o substantivo",
+  "p": "Palavra que acompanha o substantivo para determinar ou caracterizar: artigos, adjetivos, pronomes, numerais, locuções.",
+  "c": "Com preposição, é agente ou posse (“o voto do relator”); contrasta com o complemento nominal, que é paciente.",
+  "g": [
+   "sintaxe"
+  ],
+  "tp": [
+   "LP|Termos"
+  ]
+ },
+ {
+  "t": "Aposto",
+  "e": "Termo que explica outro",
+  "p": "Trecho que explica ou resume um termo anterior, quase sempre entre vírgulas: “Brasília, capital do país, ...”.",
+  "c": "Aposto explicativo vem entre vírgulas, travessões ou parênteses; o especificativo não leva vírgula (“o rio Paranoá”). Retirar o aposto não prejudica a correção.",
+  "g": [
+   "sintaxe",
+   "vírgula"
+  ],
+  "tp": [
+   "LP|Termos",
+   "LP|Pontuação"
+  ]
+ },
+ {
+  "t": "Vocativo",
+  "e": "Chamamento",
+  "p": "Termo usado para chamar ou interpelar alguém: “Senhor Presidente, ...”.",
+  "c": "É isolado por vírgula e não pertence à estrutura da oração. Na redação oficial, o vocativo do ofício é “Senhor + cargo”, seguido de vírgula.",
+  "g": [
+   "sintaxe",
+   "vírgula"
+  ],
+  "tp": [
+   "LP|Termos",
+   "LP|Pontuação"
+  ]
+ },
+ {
+  "t": "Agente da passiva",
+  "e": "Quem pratica a ação na voz passiva",
+  "p": "Na voz passiva, é quem faz a ação, introduzido por “por” ou “pelo”: “A sentença foi proferida pelo juiz”.",
+  "c": "Só existe na voz passiva analítica. Na transposição para a ativa, o agente vira sujeito.",
+  "g": [
+   "sintaxe",
+   "vozes verbais"
+  ],
+  "tp": [
+   "LP|Termos"
+  ]
+ },
+ {
+  "t": "Oração subordinada substantiva",
+  "e": "Oração com valor de substantivo",
+  "p": "Oração que faz o papel de sujeito, objeto ou complemento de outra: “É necessário que todos compareçam”.",
+  "c": "Geralmente iniciada pela conjunção integrante “que” ou “se”. Pode ser trocada por “isso”: “É necessário isso”.",
+  "g": [
+   "sintaxe",
+   "períodos"
+  ],
+  "tp": [
+   "LP|Coordenação"
+  ]
+ },
+ {
+  "t": "Oração subordinada adverbial",
+  "e": "Oração com valor de advérbio",
+  "p": "Oração que indica circunstância (causa, condição, concessão, tempo, finalidade, consequência...) em relação à principal.",
+  "c": "A banca troca a conjunção e pergunta se o sentido se mantém: “embora” (concessão) ≠ “porque” (causa); “caso/se” (condição); “para que” (finalidade).",
+  "g": [
+   "sintaxe",
+   "conectivos"
+  ],
+  "tp": [
+   "LP|Coordenação"
+  ]
+ },
+ {
+  "t": "Oração reduzida",
+  "e": "Oração sem conectivo e com verbo no infinitivo, gerúndio ou particípio",
+  "p": "Oração “encurtada”: “Terminado o prazo, o processo foi arquivado” (= quando o prazo terminou).",
+  "c": "Reescrever a reduzida em desenvolvida (com conectivo e verbo flexionado) é questão clássica de reescrita: mantenha o mesmo valor circunstancial.",
+  "g": [
+   "sintaxe",
+   "reescrita"
+  ],
+  "tp": [
+   "LP|Coordenação",
+   "LP|Reescrita"
+  ]
+ },
+ {
+  "t": "Conjunção conclusiva",
+  "e": "Conectivo de conclusão",
+  "p": "Liga a ideia final a partir do que veio antes: logo, portanto, por isso, pois (depois do verbo).",
+  "c": "“Pois” é conclusivo quando vem posposto ao verbo e entre vírgulas (“Estudou; passará, pois, na prova”) e explicativo quando anteposto.",
+  "g": [
+   "conectivos"
+  ],
+  "tp": [
+   "LP|Coordenação"
+  ]
+ },
+ {
+  "t": "Conjunção explicativa",
+  "e": "Conectivo de explicação",
+  "p": "Justifica o que se disse antes: pois (anteposto), porque, que.",
+  "c": "Explicação ≠ causa: a explicativa justifica uma afirmação ou ordem (“Volte, que vai chover”); a causal liga causa e efeito dentro da subordinação.",
+  "g": [
+   "conectivos"
+  ],
+  "tp": [
+   "LP|Coordenação"
+  ]
+ },
+ {
+  "t": "Pronome relativo",
+  "e": "Pronome que retoma um termo e inicia oração",
+  "p": "Palavra que retoma um termo anterior e abre uma oração: que, o qual, cujo, onde, quem, quanto.",
+  "c": "“Cujo” indica posse e não leva artigo depois (“cujo processo”, nunca “cujo o”). “Onde” só para lugar físico. A preposição exigida pelo verbo vem antes do relativo (“em que”, “de que”).",
+  "g": [
+   "coesão",
+   "pronomes"
+  ],
+  "tp": [
+   "LP|Classes",
+   "LP|Mecanismos de coesão"
+  ]
+ },
+ {
+  "t": "Preposição",
+  "e": "Palavra que liga termos",
+  "p": "Palavra invariável que liga dois termos estabelecendo relação: a, ante, até, com, contra, de, desde, em, entre, para, por, sem, sob, sobre, trás.",
+  "c": "Na crase, a preposição “a” se funde com o artigo “a”. Em regência, a preposição exigida pelo verbo ou nome não pode ser omitida.",
+  "g": [
+   "classes"
+  ],
+  "tp": [
+   "LP|Classes",
+   "LP|Transitividade"
+  ]
+ },
+ {
+  "t": "Advérbio",
+  "e": "Palavra que indica circunstância",
+  "p": "Modifica verbo, adjetivo ou outro advérbio indicando tempo, lugar, modo, intensidade, negação etc.",
+  "c": "Advérbio deslocado para o início da oração pode ser isolado por vírgula (facultativa se curto). “Não” atrai o pronome oblíquo (próclise).",
+  "g": [
+   "classes"
+  ],
+  "tp": [
+   "LP|Classes"
+  ]
+ },
+ {
+  "t": "Infinitivo pessoal",
+  "e": "Infinitivo flexionado",
+  "p": "Infinitivo que concorda com o sujeito: “É hora de vocês saírem”.",
+  "c": "Flexiona-se quando tem sujeito próprio diferente do da oração principal ou para dar clareza; em locuções verbais não se flexiona (“Devem sair”).",
+  "g": [
+   "verbos"
+  ],
+  "tp": [
+   "LP|Flexão",
+   "LP|Emprego de tempos"
+  ]
+ },
+ {
+  "t": "Futuro do pretérito",
+  "e": "Tempo verbal do condicional",
+  "p": "Indica fato que ocorreria sob condição ou expressa hipótese e polidez: “Seria possível ajudar?”.",
+  "c": "Em textos jornalísticos e jurídicos indica informação não confirmada (“o réu teria fugido”). Substituí-lo por presente muda o grau de certeza.",
+  "g": [
+   "verbos"
+  ],
+  "tp": [
+   "LP|Emprego de tempos"
+  ]
+ },
+ {
+  "t": "Hiperônimo",
+  "e": "Palavra de sentido mais amplo",
+  "p": "Termo geral que abrange outros: “veículo” é hiperônimo de “carro”; “carro” é hipônimo de “veículo”.",
+  "c": "Usado como mecanismo de coesão por substituição: retomar “juiz” por “magistrado” ou “autoridade”. A banca pergunta se a retomada mantém a referência.",
+  "g": [
+   "coesão",
+   "semântica"
+  ],
+  "tp": [
+   "LP|Semântica",
+   "LP|Mecanismos de coesão"
+  ]
+ },
+ {
+  "t": "Sinonímia",
+  "e": "Relação entre palavras de sentido próximo",
+  "p": "Palavras com sentido parecido no contexto: “findar” e “terminar”.",
+  "c": "Sinônimo perfeito é raro: a banca avalia se a troca mantém o sentido no contexto específico, inclusive a regência.",
+  "g": [
+   "semântica"
+  ],
+  "tp": [
+   "LP|Semântica",
+   "LP|Reescrita"
+  ]
+ },
+ {
+  "t": "Ambiguidade",
+  "e": "Duplo sentido",
+  "p": "Frase que pode ser entendida de duas formas: “Vi o incêndio do prédio” (eu estava no prédio ou vi o prédio pegar fogo?).",
+  "c": "Causas comuns: posição de termos, pronome possessivo “seu”, relativo com dois antecedentes. FGV 2022 (q. 6) pediu a frase com ambiguidade possível.",
+  "g": [
+   "semântica",
+   "FGV"
+  ],
+  "tp": [
+   "LP|Semântica",
+   "LP|Interpretação"
+  ]
+ },
+ {
+  "t": "Metáfora",
+  "e": "Comparação implícita",
+  "p": "Uso de uma palavra com sentido figurado por semelhança, sem conectivo: “Aquele juiz é uma rocha”.",
+  "c": "Comparação usa conectivo (“como”); metáfora não. Em interpretação, a banca pede o sentido figurado no contexto.",
+  "g": [
+   "figuras de linguagem"
+  ],
+  "tp": [
+   "LP|Semântica"
+  ]
+ },
+ {
+  "t": "Metonímia",
+  "e": "Troca por relação de proximidade",
+  "p": "Troca de um termo por outro com que mantém relação lógica: “Li Machado” (a obra pelo autor), “O Planalto decidiu” (o governo pelo prédio).",
+  "c": "Diferente da metáfora: não há semelhança, há contiguidade (autor/obra, lugar/instituição, parte/todo).",
+  "g": [
+   "figuras de linguagem"
+  ],
+  "tp": [
+   "LP|Semântica"
+  ]
+ },
+ {
+  "t": "Inferência",
+  "e": "Conclusão a partir do texto",
+  "p": "Ideia que não está escrita, mas pode ser deduzida com segurança do que o texto diz.",
+  "c": "Itens de “infere-se” exigem apoio no texto; extrapolação (ir além do texto) e redução (ficar aquém) tornam o item errado.",
+  "g": [
+   "interpretação",
+   "Cebraspe"
+  ],
+  "tp": [
+   "LP|Interpretação"
+  ]
+ },
+ {
+  "t": "Pressuposto",
+  "e": "Informação implícita garantida por marca linguística",
+  "p": "Ideia que a própria frase carrega: “Ele parou de fumar” pressupõe que fumava.",
+  "c": "Pressuposto vem de palavras (verbos como parar/continuar, advérbios como ainda/já); subentendido depende do contexto e de quem lê.",
+  "g": [
+   "interpretação"
+  ],
+  "tp": [
+   "LP|Interpretação"
+  ]
+ },
+ {
+  "t": "Parassíntese",
+  "e": "Formação com prefixo e sufixo ao mesmo tempo",
+  "p": "Palavra criada com prefixo e sufixo juntos, sem existir só com um deles: “entardecer”, “emagrecer”.",
+  "c": "Diferente da derivação prefixal e sufixal, em que a palavra existe com cada afixo separadamente (“infelizmente”).",
+  "g": [
+   "formação de palavras"
+  ],
+  "tp": [
+   "LP|Processos"
+  ]
+ },
+ {
+  "t": "Neologismo",
+  "e": "Palavra nova",
+  "p": "Palavra criada ou adaptada recentemente: “deletar”, “cibercrime”.",
+  "c": "Pode surgir por derivação, composição ou empréstimo. Estrangeirismos aparecem em itálico nos textos da banca.",
+  "g": [
+   "formação de palavras"
+  ],
+  "tp": [
+   "LP|Processos",
+   "LP|Variação"
+  ]
+ },
+ {
+  "t": "Hífen",
+  "e": "Regras do hífen (Acordo de 1990)",
+  "p": "Traço que liga elementos de palavras compostas ou prefixos: “anti-inflamatório”, “micro-ondas”.",
+  "c": "Com prefixo: há hífen quando o segundo elemento começa com h ou com a mesma vogal do prefixo (“anti-higiênico”, “micro-ondas”); sem hífen quando as vogais são diferentes (“autoestima”); r e s dobram (“antirrábico”).",
+  "g": [
+   "ortografia"
+  ],
+  "tp": [
+   "LP|Ortografia"
+  ]
+ },
+ {
+  "t": "Porquês",
+  "e": "Por que, porque, por quê, porquê",
+  "p": "Por que: pergunta ou “pelo qual”; porque: explicação/causa; por quê: no fim da frase; porquê: substantivo (“o porquê”).",
+  "c": "“Por que” também equivale a “pelo(a) qual” (“o caminho por que passei”). “Porquê” vem com artigo ou determinante.",
+  "g": [
+   "ortografia"
+  ],
+  "tp": [
+   "LP|Ortografia"
+  ]
+ },
+ {
+  "t": "Proparoxítona",
+  "e": "Palavra com acento na antepenúltima sílaba",
+  "p": "Todas as proparoxítonas são acentuadas: “lâmpada”, “jurídico”, “período”.",
+  "c": "Inclui as aparentes (terminadas em ditongo crescente: “história”, “série”), que também levam acento.",
+  "g": [
+   "acentuação"
+  ],
+  "tp": [
+   "LP|Acentuação"
+  ]
+ },
+ {
+  "t": "Acento diferencial",
+  "e": "Acento que distingue palavras",
+  "p": "Acento que diferencia palavras de mesma grafia: “pôr” (verbo) × “por” (preposição); “pôde” (passado) × “pode” (presente).",
+  "c": "Após o Acordo de 1990, caiu em “para”, “pelo”, “polo”, “pera”. Mantém-se em têm/vêm (plural) e é facultativo em “fôrma”.",
+  "g": [
+   "acentuação"
+  ],
+  "tp": [
+   "LP|Acentuação"
+  ]
+ },
+ {
+  "t": "Crase facultativa",
+  "e": "Casos em que a crase é opcional",
+  "p": "Antes de pronome possessivo feminino (“à/a minha casa”), nomes próprios femininos (“à/a Maria”) e depois de “até” (“até à/a porta”).",
+  "c": "Nesses casos a presença do artigo é opcional, por isso o acento também. Questões perguntam se a retirada do acento prejudica a correção: aqui não prejudica.",
+  "g": [
+   "crase"
+  ],
+  "tp": [
+   "LP|Emprego do sinal"
+  ]
+ },
+ {
+  "t": "Vírgula proibida",
+  "e": "Vírgula entre termos essenciais",
+  "p": "Não se separa com vírgula sujeito de verbo, verbo de complemento nem nome de complemento nominal.",
+  "c": "Exceção aparente: se houver termo intercalado, ele vem entre duas vírgulas (“O juiz, de ofício, decidiu”). Uma vírgula sozinha entre sujeito e verbo é erro.",
+  "g": [
+   "vírgula"
+  ],
+  "tp": [
+   "LP|Pontuação"
+  ]
+ },
+ {
+  "t": "Ponto e vírgula",
+  "e": "Pausa maior que a vírgula",
+  "p": "Separa orações coordenadas longas, itens de enumeração e orações com conjunção deslocada (“O prazo venceu; o recurso, portanto, é intempestivo”).",
+  "c": "Pode substituir o ponto entre orações relacionadas. Em itens de lei e enumerações, separa incisos.",
+  "g": [
+   "pontuação"
+  ],
+  "tp": [
+   "LP|Pontuação"
+  ]
+ },
+ {
+  "t": "Travessão",
+  "e": "Sinal de pontuação de destaque",
+  "p": "Destaca explicações ou mudanças de interlocutor; o duplo pode substituir vírgulas ou parênteses.",
+  "c": "O travessão duplo isola intercalações (como no aposto). Na reescrita, trocar travessões por vírgulas costuma manter a correção.",
+  "g": [
+   "pontuação"
+  ],
+  "tp": [
+   "LP|Pontuação"
+  ]
+ },
+ {
+  "t": "Dois-pontos",
+  "e": "Sinal que anuncia",
+  "p": "Introduz enumeração, explicação, citação ou consequência: “Ela tem todos os poderes: a beleza, a justiça...”.",
+  "c": "FGV 2022 (q. 2): a segunda parte depois dos dois-pontos fazia enumeração. A banca pergunta o valor do que vem depois.",
+  "g": [
+   "pontuação",
+   "FGV"
+  ],
+  "tp": [
+   "LP|Pontuação"
+  ]
+ },
+ {
+  "t": "Discurso direto e indireto",
+  "e": "Formas de reproduzir falas",
+  "p": "Direto: a fala aparece como foi dita, com aspas ou travessão. Indireto: o narrador conta o que foi dito, com “que” ou “se”.",
+  "c": "Na passagem do direto para o indireto mudam pessoa, tempo verbal (presente → pretérito imperfeito) e advérbios (hoje → naquele dia).",
+  "g": [
+   "reescrita"
+  ],
+  "tp": [
+   "LP|Reescrita"
+  ]
+ },
+ {
+  "t": "Elipse",
+  "e": "Omissão de termo identificável",
+  "p": "Omissão de um termo fácil de recuperar: “No tribunal, silêncio” (há silêncio).",
+  "c": "Zeugma é a elipse de termo já mencionado (“Eu prefiro o recurso; ela, a ação”). Ambas são mecanismos de coesão.",
+  "g": [
+   "coesão"
+  ],
+  "tp": [
+   "LP|Mecanismos de coesão"
+  ]
+ },
+ {
+  "t": "Haver impessoal",
+  "e": "Verbo haver no sentido de existir",
+  "p": "Com sentido de existir ou de tempo decorrido, “haver” fica no singular: “Havia muitos processos”, “Há anos não o vejo”.",
+  "c": "Em locução, o auxiliar também fica no singular: “Deve haver erros”. Trocar por “existir” obriga a concordar (“Existiam muitos processos”).",
+  "g": [
+   "concordância"
+  ],
+  "tp": [
+   "LP|Concordância"
+  ]
+ },
+ {
+  "t": "Silepse",
+  "e": "Concordância com a ideia",
+  "p": "Concordância feita com o sentido, não com a forma: “A gente fomos” (popular), “Os brasileiros somos otimistas” (de pessoa).",
+  "c": "Silepse de pessoa e de número aparecem em textos literários; em norma-padrão, a banca avalia se o desvio é aceitável no contexto.",
+  "g": [
+   "concordância"
+  ],
+  "tp": [
+   "LP|Concordância",
+   "LP|Variação"
+  ]
+ },
+ {
+  "t": "Assistir (regência)",
+  "e": "Regência do verbo assistir",
+  "p": "No sentido de ver, pede “a”: “assistir ao jogo”. No sentido de ajudar, é direto: “o advogado assiste o réu”.",
+  "c": "No sentido de “caber, pertencer”, também pede “a”: “Assiste ao réu o direito de calar”. Com “a” + palavra feminina, há crase.",
+  "g": [
+   "regência"
+  ],
+  "tp": [
+   "LP|Transitividade",
+   "LP|Emprego do sinal"
+  ]
+ },
+ {
+  "t": "Implicar (regência)",
+  "e": "Regência do verbo implicar",
+  "p": "No sentido de acarretar, é transitivo direto: “A decisão implica mudanças” (nunca “implica em”).",
+  "c": "No sentido de “antipatizar”, pede “com”: “implicar com alguém”. A banca cobra a forma culta sem preposição.",
+  "g": [
+   "regência"
+  ],
+  "tp": [
+   "LP|Transitividade"
+  ]
+ },
+ {
+  "t": "Registro formal e informal",
+  "e": "Níveis de linguagem",
+  "p": "Formal é a linguagem cuidada (documentos, provas); informal é a do dia a dia, com gírias e contrações.",
+  "c": "Adequação linguística: a banca avalia se a variante é adequada à situação, não se é “certa” em absoluto. Em redação de prova exige-se a norma-padrão.",
+  "g": [
+   "variação"
+  ],
+  "tp": [
+   "LP|Variação",
+   "RED|Seleção"
+  ]
+ },
+ {
+  "t": "Texto narrativo",
+  "e": "Tipo textual que conta fatos",
+  "p": "Relata acontecimentos em sequência, com personagens, tempo e espaço.",
+  "c": "Marcas: verbos de ação no pretérito, marcadores temporais, narrador. Pode aparecer como base de argumentação em textos dissertativos.",
+  "g": [
+   "tipos textuais"
+  ],
+  "tp": [
+   "LP|Gênero"
+  ]
+ },
+ {
+  "t": "Texto descritivo",
+  "e": "Tipo textual que caracteriza",
+  "p": "Mostra como algo é: características de pessoas, objetos, lugares.",
+  "c": "Predominam adjetivos, verbos de estado e enumeração. Raramente aparece puro; costuma estar dentro de narrações.",
+  "g": [
+   "tipos textuais"
+  ],
+  "tp": [
+   "LP|Gênero"
+  ]
+ },
+ {
+  "t": "Introdução",
+  "e": "Primeiro parágrafo da dissertação",
+  "p": "Apresenta o tema e a tese, ou seja, o ponto de vista que o texto vai defender.",
+  "c": "Deve situar o leitor sem detalhar argumentos. Em 15 a 20 linhas, de 3 a 4 linhas bastam.",
+  "g": [
+   "estrutura"
+  ],
+  "tp": [
+   "RED|Gênero",
+   "RED|Tema"
+  ]
+ },
+ {
+  "t": "Parágrafo de desenvolvimento",
+  "e": "Corpo da dissertação",
+  "p": "Cada parágrafo de desenvolvimento defende um argumento que sustenta a tese.",
+  "c": "Estrutura útil: tópico frasal + fundamentação (dado, exemplo, lei) + fechamento ligado à tese.",
+  "g": [
+   "estrutura"
+  ],
+  "tp": [
+   "RED|Gênero",
+   "RED|Argumentação"
+  ]
+ },
+ {
+  "t": "Conclusão",
+  "e": "Último parágrafo da dissertação",
+  "p": "Retoma a tese e fecha o raciocínio; não traz argumento novo.",
+  "c": "Pode sintetizar ou propor encaminhamento. Na FGV não se exige proposta de intervenção, mas o fechamento precisa responder às perguntas do tema.",
+  "g": [
+   "estrutura"
+  ],
+  "tp": [
+   "RED|Gênero"
+  ]
+ },
+ {
+  "t": "Tópico frasal",
+  "e": "Frase-núcleo do parágrafo",
+  "p": "Primeira frase do parágrafo, que anuncia a ideia que ele vai desenvolver.",
+  "c": "Ajuda a progressão: cada parágrafo traz uma ideia nova ligada à tese, sem repetir a anterior.",
+  "g": [
+   "estrutura"
+  ],
+  "tp": [
+   "RED|Progressão"
+  ]
+ },
+ {
+  "t": "Repertório",
+  "e": "Conhecimento de mundo usado como prova",
+  "p": "Dados, leis, fatos históricos ou exemplos usados para sustentar os argumentos.",
+  "c": "Precisa ser pertinente e explicado. Citar algo sem ligar ao argumento não conta como argumentação.",
+  "g": [
+   "argumentação"
+  ],
+  "tp": [
+   "RED|Argumentação"
+  ]
+ },
+ {
+  "t": "Argumento de autoridade",
+  "e": "Apoio em fonte reconhecida",
+  "p": "Uso da opinião de especialista, lei ou instituição para dar força ao que se defende.",
+  "c": "Não substitui o raciocínio próprio: depois da citação, explique como ela confirma a tese.",
+  "g": [
+   "argumentação"
+  ],
+  "tp": [
+   "RED|Argumentação"
+  ]
+ },
+ {
+  "t": "Argumento por exemplificação",
+  "e": "Apoio em exemplos",
+  "p": "Uso de casos concretos para ilustrar a ideia defendida.",
+  "c": "Um bom exemplo é específico e representativo; exemplos genéricos (“muitas pessoas acham”) enfraquecem o texto.",
+  "g": [
+   "argumentação"
+  ],
+  "tp": [
+   "RED|Argumentação"
+  ]
+ },
+ {
+  "t": "Causa e consequência",
+  "e": "Argumento de relação causal",
+  "p": "Mostra por que um fato acontece e quais efeitos produz.",
+  "c": "Conectivos úteis: porque, visto que, uma vez que (causa); por isso, consequentemente, de modo que (consequência).",
+  "g": [
+   "argumentação",
+   "conectivos"
+  ],
+  "tp": [
+   "RED|Argumentação",
+   "RED|Progressão"
+  ]
+ },
+ {
+  "t": "Tangenciamento do tema",
+  "e": "Abordagem parcial do tema",
+  "p": "Escrever sobre o assunto geral sem responder exatamente ao que o tema pede.",
+  "c": "Penaliza bastante a nota de conteúdo. Ex.: tema sobre o futuro dos jornais impressos e texto só sobre a Internet.",
+  "g": [
+   "tema"
+  ],
+  "tp": [
+   "RED|Tema",
+   "RED|Critérios"
+  ]
+ },
+ {
+  "t": "Impessoalidade na redação",
+  "e": "Texto em 3ª pessoa",
+  "p": "Preferência por construções impessoais, sem “eu acho” ou apelos ao leitor.",
+  "c": "Em dissertação de concurso, a primeira pessoa costuma ser desaconselhada; marcas de opinião vêm de verbos e adjetivos avaliativos, não de “eu”.",
+  "g": [
+   "estilo"
+  ],
+  "tp": [
+   "RED|Seleção"
+  ]
+ },
+ {
+  "t": "Limite de linhas",
+  "e": "Extensão mínima e máxima",
+  "p": "A redação de Técnico do TJDFT 2022 pedia de 15 a 20 linhas.",
+  "c": "Texto abaixo do mínimo pode ser zerado ou penalizado; linhas além do máximo são desconsideradas. Confira as regras no edital.",
+  "g": [
+   "regras"
+  ],
+  "tp": [
+   "RED|Critérios"
+  ]
+ },
+ {
+  "t": "Deontologia",
+  "e": "Estudo dos deveres",
+  "p": "Parte da ética que trata dos deveres de uma profissão ou função.",
+  "c": "Códigos de ética profissionais são deontológicos: listam deveres, vedações e regras de conduta.",
+  "g": [
+   "ética"
+  ],
+  "tp": [
+   "ET|Ética e moral",
+   "ET|Código"
+  ]
+ },
+ {
+  "t": "Probidade",
+  "e": "Honestidade no exercício da função",
+  "p": "Agir com honestidade e lealdade à administração.",
+  "c": "A falta de probidade dá base à improbidade administrativa (Lei 8.429/1992). Cebraspe 2013 cobrou probidade como fator de legitimidade dos atos do servidor.",
+  "g": [
+   "ética",
+   "Cebraspe"
+  ],
+  "tp": [
+   "ET|Ética no setor",
+   "ET|Ética e função"
+  ]
+ },
+ {
+  "t": "Moralidade administrativa",
+  "e": "Princípio da moralidade",
+  "p": "Além de legal, o ato precisa ser honesto e de boa-fé.",
+  "c": "Princípio expresso do art. 37 da CF. Atos imorais podem ser anulados, por exemplo, por ação popular.",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "ET|Ética e função",
+   "ADV|Princípios"
+  ],
+  "d": "CF, art. 37, caput"
+ },
+ {
+  "t": "Controle social",
+  "e": "Fiscalização do Estado pela sociedade",
+  "p": "Participação do cidadão no acompanhamento e na cobrança da administração pública.",
+  "c": "Instrumentos: acesso à informação, audiências públicas, conselhos, ouvidorias, ação popular.",
+  "g": [
+   "cidadania"
+  ],
+  "tp": [
+   "ET|Ética e democracia"
+  ]
+ },
+ {
+  "t": "LAI",
+  "e": "Lei de Acesso à Informação",
+  "p": "Lei que garante a qualquer pessoa o direito de pedir informações públicas, sem precisar dizer por quê.",
+  "c": "Publicidade é a regra e o sigilo, a exceção. Transparência ativa (divulgar sem pedido) e passiva (responder pedidos).",
+  "g": [
+   "transparência"
+  ],
+  "tp": [
+   "ET|Ética e democracia",
+   "ET|Ética no setor"
+  ],
+  "d": "Lei 12.527/2011"
+ },
+ {
+  "t": "Conflito de interesses",
+  "e": "Choque entre interesse público e privado",
+  "p": "Situação em que o interesse pessoal do servidor pode influenciar sua atuação pública.",
+  "c": "No Executivo federal é regulado pela Lei 12.813/2013. Códigos de ética exigem que o servidor se declare impedido ou suspeito.",
+  "g": [
+   "ética"
+  ],
+  "tp": [
+   "ET|Ética e função"
+  ]
+ },
+ {
+  "t": "Nepotismo",
+  "e": "Favorecimento de parentes",
+  "p": "Nomear parente para cargo em comissão ou função de confiança por causa do parentesco.",
+  "c": "Súmula Vinculante 13 proíbe nomeação de cônjuge, companheiro ou parente até o 3º grau da autoridade nomeante ou de servidor em cargo de direção, inclusive por designações recíprocas.",
+  "g": [
+   "moralidade"
+  ],
+  "tp": [
+   "ET|Ética e função",
+   "CON|Administração pública"
+  ],
+  "d": "Súmula Vinculante 13"
+ },
+ {
+  "t": "Assédio moral",
+  "e": "Conduta abusiva repetida no trabalho",
+  "p": "Humilhações, isolamento ou exposição repetidos que degradam o ambiente de trabalho.",
+  "c": "Pode configurar infração ética e disciplinar. Códigos de ética de tribunais vedam esse tipo de conduta.",
+  "g": [
+   "conduta"
+  ],
+  "tp": [
+   "ET|Ética no setor",
+   "ET|Código"
+  ]
+ },
+ {
+  "t": "Conversão da suspensão em multa",
+  "e": "Suspensão substituída por multa",
+  "p": "Por conveniência do serviço, a suspensão pode virar multa: o servidor continua trabalhando e perde parte da remuneração.",
+  "c": "Multa de 50% por dia de vencimento ou remuneração, ficando o servidor obrigado a permanecer em serviço.",
+  "g": [
+   "Lei 8.112",
+   "penalidades"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: resp",
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 130, § 2º"
+ },
+ {
+  "t": "Afastamento preventivo",
+  "e": "Afastamento do servidor durante o PAD",
+  "p": "Para não atrapalhar a apuração, o servidor pode ser afastado do cargo.",
+  "c": "Até 60 dias, prorrogável por igual prazo, sem prejuízo da remuneração.",
+  "g": [
+   "PAD"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: regime"
+  ],
+  "d": "Lei 8.112/1990, art. 147"
+ },
+ {
+  "t": "Comissão do PAD",
+  "e": "Comissão que conduz o processo disciplinar",
+  "p": "Grupo de servidores que investiga e relata o processo disciplinar.",
+  "c": "Três servidores estáveis designados pela autoridade; o presidente deve ocupar cargo efetivo superior ou de mesmo nível, ou ter escolaridade igual ou superior à do indiciado.",
+  "g": [
+   "PAD"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: regime"
+  ],
+  "d": "Lei 8.112/1990, art. 149"
+ },
+ {
+  "t": "Prazo do PAD",
+  "e": "Prazo para concluir o processo disciplinar",
+  "p": "O PAD tem prazo definido para terminar.",
+  "c": "Até 60 dias da publicação do ato que constituir a comissão, prorrogáveis por igual prazo. A autoridade julga em 20 dias após receber o processo.",
+  "g": [
+   "PAD",
+   "prazos"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: regime"
+  ],
+  "d": "Lei 8.112/1990, arts. 152 e 167"
+ },
+ {
+  "t": "Indiciação",
+  "e": "Acusação formal no PAD",
+  "p": "Quando a comissão conclui que há infração, formaliza a acusação e aponta os fatos e as provas.",
+  "c": "Após a indiciação, o servidor é citado para apresentar defesa escrita em 10 dias (20 dias se houver dois ou mais indiciados).",
+  "g": [
+   "PAD"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: regime"
+  ],
+  "d": "Lei 8.112/1990, art. 161"
+ },
+ {
+  "t": "Rito sumário",
+  "e": "Procedimento disciplinar rápido",
+  "p": "Processo mais curto para acumulação ilegal de cargos, abandono de cargo e inassiduidade habitual.",
+  "c": "Comissão de dois servidores estáveis; conclusão em até 30 dias, prorrogáveis por até 15. Na acumulação, o servidor pode optar por um cargo até o último dia de defesa (boa-fé).",
+  "g": [
+   "PAD"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: regime",
+   "ET|Lei 8.112/1990: acum"
+  ],
+  "d": "Lei 8.112/1990, arts. 133 e 140"
+ },
+ {
+  "t": "Revisão do PAD",
+  "e": "Reabertura do processo disciplinar",
+  "p": "O processo pode ser revisto a qualquer tempo se surgirem fatos novos que mostrem inocência ou pena inadequada.",
+  "c": "Pedido de ofício ou a requerimento; a revisão não pode agravar a pena.",
+  "g": [
+   "PAD"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: regime"
+  ],
+  "d": "Lei 8.112/1990, arts. 174 e 182"
+ },
+ {
+  "t": "Independência das instâncias",
+  "e": "Esferas civil, penal e administrativa",
+  "p": "O mesmo fato pode gerar punição civil, penal e administrativa, de forma independente.",
+  "c": "Exceção: a absolvição criminal que nega o fato ou a autoria afasta a responsabilidade administrativa.",
+  "g": [
+   "responsabilidade"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: resp"
+  ],
+  "d": "Lei 8.112/1990, arts. 125 e 126"
+ },
+ {
+  "t": "Valer-se do cargo",
+  "e": "Proibição de usar o cargo em proveito próprio",
+  "p": "É proibido usar o cargo para obter vantagem pessoal ou para outra pessoa, em detrimento da dignidade da função.",
+  "c": "Infração punida com demissão. FGV 2022 (q. 12) tratou de servidor que usava terceirizados em negócio particular.",
+  "g": [
+   "proibições"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: deveres",
+   "ET|Lei 8.112/1990: resp"
+  ],
+  "d": "Lei 8.112/1990, art. 117, IX"
+ },
+ {
+  "t": "Gerência de sociedade privada",
+  "e": "Proibição de administrar empresa",
+  "p": "O servidor não pode ser gerente ou administrador de sociedade privada nem exercer comércio.",
+  "c": "Pode ser acionista, cotista ou comanditário. Há exceções, como participação em conselhos de empresas em que a União tenha participação.",
+  "g": [
+   "proibições"
+  ],
+  "tp": [
+   "ET|Lei 8.112/1990: deveres"
+  ],
+  "d": "Lei 8.112/1990, art. 117, X"
+ },
+ {
+  "t": "Dolo na improbidade",
+  "e": "Exigência de dolo na Lei 8.429",
+  "p": "Desde 2021, só há improbidade com dolo: vontade livre e consciente de alcançar o resultado ilícito.",
+  "c": "A Lei 14.230/2021 acabou com a improbidade culposa. Mero exercício da função ou divergência de interpretação da lei não configura improbidade.",
+  "g": [
+   "improbidade"
+  ],
+  "tp": [
+   "ET|Lei 8.429/1992 (improbidade): disp",
+   "ADV|Improbidade"
+  ],
+  "d": "Lei 8.429/1992, art. 1º, §§ 1º a 3º"
+ },
+ {
+  "t": "ANPC",
+  "e": "Acordo de não persecução civil",
+  "p": "Acordo entre o MP e o acusado de improbidade para encerrar a ação mediante ressarcimento e outras condições.",
+  "c": "Exige ressarcimento integral do dano e reversão da vantagem indevida.",
+  "g": [
+   "improbidade"
+  ],
+  "tp": [
+   "ET|Lei 8.429/1992 (improbidade): disp",
+   "ADV|Improbidade"
+  ],
+  "d": "Lei 8.429/1992, art. 17-B"
+ },
+ {
+  "t": "Prescrição na improbidade",
+  "e": "Prazo para punir improbidade",
+  "p": "A ação de improbidade prescreve em 8 anos.",
+  "c": "Contados da ocorrência do fato ou, nas infrações permanentes, do dia em que cessou a permanência. O ressarcimento ao erário por ato doloso é imprescritível (STF).",
+  "g": [
+   "improbidade",
+   "prazos"
+  ],
+  "tp": [
+   "ET|Lei 8.429/1992 (improbidade): disp",
+   "ADV|Improbidade"
+  ],
+  "d": "Lei 8.429/1992, art. 23"
+ },
+ {
+  "t": "Indisponibilidade de bens",
+  "e": "Bloqueio de bens na improbidade",
+  "p": "O juiz pode bloquear bens do acusado para garantir o ressarcimento.",
+  "c": "Exige demonstração de perigo de dano irreparável ou de risco ao resultado útil do processo (não é mais presumido).",
+  "g": [
+   "improbidade"
+  ],
+  "tp": [
+   "ET|Lei 8.429/1992 (improbidade): disp",
+   "ADV|Improbidade"
+  ],
+  "d": "Lei 8.429/1992, art. 16"
+ },
+ {
+  "t": "Rol do art. 11 da LIA",
+  "e": "Atos contra os princípios",
+  "p": "Os atos que violam princípios da administração estão listados de forma fechada no art. 11.",
+  "c": "Desde 2021, o rol é taxativo: só há improbidade por violação a princípios nas hipóteses descritas. Cebraspe 2013 cobrou que a improbidade não se restringe a sigilo.",
+  "g": [
+   "improbidade"
+  ],
+  "tp": [
+   "ET|Lei 8.429/1992: atos",
+   "ADV|Improbidade"
+  ],
+  "d": "Lei 8.429/1992, art. 11"
+ }
+]

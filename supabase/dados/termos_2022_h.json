@@ -1,0 +1,1528 @@
+[
+ {
+  "t": "Analogia",
+  "e": "Integração por semelhança",
+  "p": "Na falta de lei, aplica-se a regra prevista para um caso parecido.",
+  "c": "LINDB, art. 4º: na omissão da lei, o juiz decide pela analogia, pelos costumes e pelos princípios gerais de direito, nessa ordem tradicional. No direito penal, só a analogia em favor do réu.",
+  "g": [
+   "integração"
+  ],
+  "tp": [
+   "CIV|LINDB",
+   "PEN|Interpretação"
+  ],
+  "d": "LINDB, art. 4º"
+ },
+ {
+  "t": "Ato jurídico perfeito",
+  "e": "Ato consumado segundo a lei da época",
+  "p": "Ato já concluído segundo a lei vigente quando foi praticado; a lei nova não pode atingi-lo.",
+  "c": "Junto do direito adquirido e da coisa julgada, é protegido contra a retroatividade (CF, art. 5º, XXXVI; LINDB, art. 6º).",
+  "g": [
+   "direito intertemporal"
+  ],
+  "tp": [
+   "CIV|Conflito",
+   "CIV|LINDB"
+  ],
+  "d": "LINDB, art. 6º"
+ },
+ {
+  "t": "Lex loci",
+  "e": "Lei do lugar",
+  "p": "Regras da LINDB sobre qual lei aplicar em situações com elemento estrangeiro.",
+  "c": "Capacidade, nome e direitos de família: lei do domicílio da pessoa (art. 7º). Bens: lei do lugar em que estão (art. 8º). Obrigações: lei do lugar onde se constituíram (art. 9º).",
+  "g": [
+   "direito internacional privado"
+  ],
+  "tp": [
+   "CIV|Conflito"
+  ],
+  "d": "LINDB, arts. 7º a 9º"
+ },
+ {
+  "t": "Início da personalidade",
+  "e": "Nascimento com vida",
+  "p": "A pessoa adquire personalidade ao nascer com vida; o nascituro tem direitos resguardados desde a concepção.",
+  "c": "CC, art. 2º. Basta respirar: não se exige viabilidade nem forma humana.",
+  "g": [
+   "personalidade"
+  ],
+  "tp": [
+   "CIV|Pessoas naturais"
+  ],
+  "d": "CC, art. 2º"
+ },
+ {
+  "t": "Morte presumida",
+  "e": "Morte declarada sem cadáver",
+  "p": "A morte é presumida nos casos de ausência com sucessão definitiva ou, sem ausência, quando for extremamente provável (perigo de vida, guerra).",
+  "c": "CC, arts. 6º e 7º. No art. 7º, a sentença fixa a data provável do falecimento, depois de esgotadas as buscas.",
+  "g": [
+   "personalidade"
+  ],
+  "tp": [
+   "CIV|Pessoas naturais"
+  ],
+  "d": "CC, arts. 6º e 7º"
+ },
+ {
+  "t": "Ausência",
+  "e": "Desaparecimento sem notícia",
+  "p": "Pessoa que desaparece do domicílio sem deixar notícia nem representante.",
+  "c": "Três fases: curadoria dos bens, sucessão provisória e sucessão definitiva (10 anos após a provisória, ou 5 anos de notícias se o ausente tiver 80 anos).",
+  "g": [
+   "ausência"
+  ],
+  "tp": [
+   "CIV|Pessoas naturais"
+  ],
+  "d": "CC, arts. 22 a 39"
+ },
+ {
+  "t": "Estado da pessoa",
+  "e": "Situação jurídica da pessoa",
+  "p": "Posição da pessoa na sociedade: estado político (nacional/estrangeiro), familiar (casado, solteiro, parente) e individual (idade, sexo, capacidade).",
+  "c": "É indisponível, imprescritível e indivisível. Ações de estado são imprescritíveis.",
+  "g": [
+   "estado"
+  ],
+  "tp": [
+   "CIV|Nome"
+  ]
+ },
+ {
+  "t": "Domicílio necessário",
+  "e": "Domicílio fixado pela lei",
+  "p": "Algumas pessoas têm domicílio definido por lei: incapaz, servidor público, militar, marítimo e preso.",
+  "c": "CC, art. 76. Servidor público: lugar onde exerce permanentemente as funções. Preso: lugar onde cumpre a sentença.",
+  "g": [
+   "domicílio"
+  ],
+  "tp": [
+   "CIV|Nome"
+  ],
+  "d": "CC, art. 76"
+ },
+ {
+  "t": "Pluralidade de domicílios",
+  "e": "Mais de um domicílio",
+  "p": "Se a pessoa tem várias residências onde vive alternadamente, qualquer delas é domicílio.",
+  "c": "CC, art. 71. Quanto às relações profissionais, também é domicílio o lugar onde a profissão é exercida (art. 72).",
+  "g": [
+   "domicílio"
+  ],
+  "tp": [
+   "CIV|Nome"
+  ],
+  "d": "CC, arts. 71 e 72"
+ },
+ {
+  "t": "Direito ao nome",
+  "e": "Direito da personalidade",
+  "p": "Toda pessoa tem direito ao nome, compreendidos o prenome e o sobrenome.",
+  "c": "CC, art. 16. Sem autorização, não se pode usar o nome alheio em propaganda comercial (art. 18). O pseudônimo usado em atividade lícita tem a mesma proteção (art. 19).",
+  "g": [
+   "personalidade"
+  ],
+  "tp": [
+   "CIV|Direitos da",
+   "CIV|Nome"
+  ],
+  "d": "CC, arts. 16 a 19"
+ },
+ {
+  "t": "Disposição do próprio corpo",
+  "e": "Limite dos direitos da personalidade",
+  "p": "É proibido dispor do próprio corpo quando houver diminuição permanente da integridade física ou contrariar os bons costumes, salvo por exigência médica.",
+  "c": "CC, art. 13. É permitida a disposição gratuita do corpo, no todo ou em parte, para depois da morte, com fins científicos ou altruísticos (art. 14), revogável a qualquer tempo.",
+  "g": [
+   "personalidade"
+  ],
+  "tp": [
+   "CIV|Direitos da"
+  ],
+  "d": "CC, arts. 13 e 14"
+ },
+ {
+  "t": "Pessoa jurídica de direito público",
+  "e": "PJ de direito público interno",
+  "p": "União, estados, DF, municípios, autarquias (incluídas as associações públicas) e demais entidades criadas por lei.",
+  "c": "CC, art. 41. Respondem objetivamente pelos danos de seus agentes (art. 43).",
+  "g": [
+   "pessoa jurídica"
+  ],
+  "tp": [
+   "CIV|Pessoas jurídicas"
+  ],
+  "d": "CC, art. 41"
+ },
+ {
+  "t": "Início da pessoa jurídica de direito privado",
+  "e": "Registro do ato constitutivo",
+  "p": "A existência legal da PJ de direito privado começa com a inscrição do ato constitutivo no registro próprio.",
+  "c": "CC, art. 45. Antes disso há sociedade em comum ou não personificada.",
+  "g": [
+   "pessoa jurídica"
+  ],
+  "tp": [
+   "CIV|Pessoas jurídicas"
+  ],
+  "d": "CC, art. 45"
+ },
+ {
+  "t": "Velamento das fundações",
+  "e": "Fiscalização pelo Ministério Público",
+  "p": "O MP do estado onde a fundação está acompanha e fiscaliza sua atuação.",
+  "c": "CC, art. 66. No DF, cabe ao MPDFT. Fundação só pode ter fins religiosos, morais, culturais, de assistência e similares listados no art. 62.",
+  "g": [
+   "fundações"
+  ],
+  "tp": [
+   "CIV|Associações"
+  ],
+  "d": "CC, art. 66"
+ },
+ {
+  "t": "Exclusão de associado",
+  "e": "Saída forçada da associação",
+  "p": "O associado só pode ser excluído por justa causa, com procedimento que assegure defesa e recurso.",
+  "c": "CC, art. 57. Associação não tem fins econômicos e entre os associados não há direitos e obrigações recíprocos (art. 53).",
+  "g": [
+   "associações"
+  ],
+  "tp": [
+   "CIV|Associações"
+  ],
+  "d": "CC, arts. 53 e 57"
+ },
+ {
+  "t": "Bens públicos de uso comum",
+  "e": "Bens do povo",
+  "p": "Bens usados por todos: rios, mares, estradas, ruas e praças.",
+  "c": "Classificação do CC, art. 99: uso comum, uso especial (prédios de serviço) e dominicais (patrimônio disponível). Só os dominicais podem ser alienados, observada a lei.",
+  "g": [
+   "bens"
+  ],
+  "tp": [
+   "CIV|Bens",
+   "ADV|Organização administrativa"
+  ],
+  "d": "CC, art. 99"
+ },
+ {
+  "t": "Benfeitorias",
+  "e": "Melhorias feitas no bem",
+  "p": "Obras ou despesas feitas na coisa: necessárias (conservam), úteis (aumentam o uso) e voluptuárias (mero luxo).",
+  "c": "CC, art. 96. São bens acessórios, ao lado de frutos e produtos. Pertenças não são partes integrantes.",
+  "g": [
+   "bens"
+  ],
+  "tp": [
+   "CIV|Bens"
+  ],
+  "d": "CC, art. 96"
+ },
+ {
+  "t": "Bens imóveis",
+  "e": "Bens que não se transportam sem destruição",
+  "p": "O solo e tudo o que nele se incorpora natural ou artificialmente.",
+  "c": "CC, arts. 79 e 80: por lei também são imóveis os direitos reais sobre imóveis e o direito à sucessão aberta. Materiais provisoriamente separados de um prédio não perdem o caráter de imóveis.",
+  "g": [
+   "bens"
+  ],
+  "tp": [
+   "CIV|Bens"
+  ],
+  "d": "CC, arts. 79 a 81"
+ },
+ {
+  "t": "Negócio jurídico",
+  "e": "Declaração de vontade com efeitos queridos",
+  "p": "Ato em que as partes escolhem os efeitos que querem produzir, como o contrato.",
+  "c": "Validade (CC, art. 104): agente capaz, objeto lícito, possível e determinado ou determinável, e forma prescrita ou não proibida em lei.",
+  "g": [
+   "negócio jurídico"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ],
+  "d": "CC, art. 104"
+ },
+ {
+  "t": "Planos do negócio jurídico",
+  "e": "Escada ponteana",
+  "p": "Existência, validade e eficácia, analisados nessa ordem.",
+  "c": "Existência: agente, vontade, objeto, forma. Validade: requisitos do art. 104. Eficácia: condição, termo e encargo.",
+  "g": [
+   "negócio jurídico"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ]
+ },
+ {
+  "t": "Condição",
+  "e": "Evento futuro e incerto",
+  "p": "Cláusula que faz o efeito do negócio depender de evento futuro e incerto.",
+  "c": "Suspensiva: o direito só é adquirido quando o evento acontece. Resolutiva: o direito acaba quando ele acontece. Termo é evento futuro e certo.",
+  "g": [
+   "negócio jurídico"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ],
+  "d": "CC, arts. 121 a 130"
+ },
+ {
+  "t": "Erro",
+  "e": "Defeito do negócio jurídico",
+  "p": "A pessoa se engana sozinha sobre algo essencial do negócio.",
+  "c": "Anulável se o erro for substancial e perceptível por pessoa de diligência normal. Dolo é o engano provocado pela outra parte.",
+  "g": [
+   "defeitos"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ],
+  "d": "CC, arts. 138 a 144"
+ },
+ {
+  "t": "Coação",
+  "e": "Defeito do negócio jurídico",
+  "p": "Ameaça grave que força a pessoa a fazer o negócio.",
+  "c": "Torna o negócio anulável (CC, art. 151). Temor reverencial (respeito aos pais, por exemplo) não é coação.",
+  "g": [
+   "defeitos"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ],
+  "d": "CC, arts. 151 a 155"
+ },
+ {
+  "t": "Lesão",
+  "e": "Defeito do negócio jurídico",
+  "p": "Por necessidade ou inexperiência, a pessoa assume prestação desproporcional.",
+  "c": "Anulável. Diferente do estado de perigo, em que a pessoa assume obrigação excessiva para salvar a si ou alguém de grave dano conhecido pela outra parte.",
+  "g": [
+   "defeitos"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ],
+  "d": "CC, art. 157"
+ },
+ {
+  "t": "Simulação",
+  "e": "Negócio aparente",
+  "p": "As partes fingem um negócio que não querem de verdade.",
+  "c": "É causa de nulidade (CC, art. 167), não de anulabilidade. Subsiste o negócio dissimulado se válido na substância e na forma.",
+  "g": [
+   "defeitos"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ],
+  "d": "CC, art. 167"
+ },
+ {
+  "t": "Fraude contra credores",
+  "e": "Defeito social do negócio",
+  "p": "O devedor insolvente se desfaz de bens para não pagar os credores.",
+  "c": "Anulável por ação pauliana, em 4 anos. Diferente da fraude à execução, que ocorre com processo em curso e gera ineficácia.",
+  "g": [
+   "defeitos"
+  ],
+  "tp": [
+   "CIV|Fatos jurídicos"
+  ],
+  "d": "CC, arts. 158 a 165"
+ },
+ {
+  "t": "Abuso de direito",
+  "e": "Ato ilícito por excesso",
+  "p": "Exercer um direito excedendo os limites do seu fim econômico ou social, da boa-fé ou dos bons costumes.",
+  "c": "CC, art. 187: é ato ilícito, e a responsabilidade é objetiva (Enunciado 37 CJF).",
+  "g": [
+   "ato ilícito"
+  ],
+  "tp": [
+   "CIV|Atos jurídicos"
+  ],
+  "d": "CC, art. 187"
+ },
+ {
+  "t": "Ato lícito",
+  "e": "Ato conforme o direito",
+  "p": "Ato que a lei permite e que não gera dever de indenizar, em regra.",
+  "c": "CC, art. 188: não são ilícitos a legítima defesa, o exercício regular de direito e o estado de necessidade (com limites).",
+  "g": [
+   "atos"
+  ],
+  "tp": [
+   "CIV|Atos jurídicos"
+  ],
+  "d": "CC, art. 188"
+ },
+ {
+  "t": "Prazo prescricional geral",
+  "e": "Prescrição de 10 anos",
+  "p": "Quando a lei não fixa prazo menor, a prescrição ocorre em 10 anos.",
+  "c": "CC, art. 205. Reparação civil: 3 anos (art. 206, § 3º, V).",
+  "g": [
+   "prescrição"
+  ],
+  "tp": [
+   "CIV|Prescrição"
+  ],
+  "d": "CC, arts. 205 e 206"
+ },
+ {
+  "t": "Interrupção da prescrição",
+  "e": "Prazo zera e recomeça",
+  "p": "Certos atos fazem a contagem da prescrição recomeçar do zero.",
+  "c": "Só pode ocorrer uma vez (CC, art. 202). Ex.: despacho que ordena a citação, protesto, reconhecimento do direito pelo devedor. Suspensão apenas para a contagem, que depois continua de onde parou.",
+  "g": [
+   "prescrição"
+  ],
+  "tp": [
+   "CIV|Prescrição"
+  ],
+  "d": "CC, art. 202"
+ },
+ {
+  "t": "Causas impeditivas da prescrição",
+  "e": "Prazo que nem começa",
+  "p": "Situações em que a prescrição não corre: entre cônjuges na constância da sociedade conjugal, entre ascendentes e descendentes no poder familiar, contra absolutamente incapazes.",
+  "c": "CC, arts. 197 e 198. Decadência legal não se suspende nem se interrompe, salvo contra absolutamente incapaz.",
+  "g": [
+   "prescrição"
+  ],
+  "tp": [
+   "CIV|Prescrição"
+  ],
+  "d": "CC, arts. 197 a 199"
+ },
+ {
+  "t": "Interesse processual",
+  "e": "Interesse de agir",
+  "p": "A parte precisa do processo para obter o que quer, e o meio escolhido é adequado.",
+  "c": "CPC, art. 17: para postular em juízo é necessário ter interesse e legitimidade. A falta gera extinção sem resolução do mérito.",
+  "g": [
+   "ação"
+  ],
+  "tp": [
+   "PC|Ação"
+  ],
+  "d": "CPC, art. 17"
+ },
+ {
+  "t": "Legitimidade",
+  "e": "Legitimidade ad causam",
+  "p": "Pertinência subjetiva da ação: quem pede e contra quem se pede devem ser os titulares da relação discutida.",
+  "c": "Regra: ninguém pode pleitear direito alheio em nome próprio, salvo quando autorizado pelo ordenamento (legitimação extraordinária, art. 18).",
+  "g": [
+   "ação"
+  ],
+  "tp": [
+   "PC|Ação"
+  ],
+  "d": "CPC, arts. 17 e 18"
+ },
+ {
+  "t": "Elementos da ação",
+  "e": "Partes, pedido e causa de pedir",
+  "p": "Os três elementos que identificam uma ação.",
+  "c": "Duas ações com os três elementos iguais são idênticas (litispendência ou coisa julgada). Conexão: mesmo pedido ou causa de pedir.",
+  "g": [
+   "ação"
+  ],
+  "tp": [
+   "PC|Ação"
+  ],
+  "d": "CPC, art. 337, § 2º"
+ },
+ {
+  "t": "Litispendência",
+  "e": "Ação idêntica em curso",
+  "p": "Repetição de ação que ainda está em andamento.",
+  "c": "Gera extinção sem resolução do mérito do segundo processo. Coisa julgada: repetição de ação já decidida por decisão transitada.",
+  "g": [
+   "ação"
+  ],
+  "tp": [
+   "PC|Ação",
+   "PC|Pressupostos"
+  ],
+  "d": "CPC, art. 337, §§ 1º a 3º"
+ },
+ {
+  "t": "Capacidade postulatória",
+  "e": "Capacidade de pedir em juízo",
+  "p": "Aptidão técnica para praticar atos no processo, em regra exclusiva do advogado.",
+  "c": "Exceções: Juizados Especiais até 20 salários mínimos, habeas corpus, Justiça do Trabalho. Defensoria e MP têm capacidade própria.",
+  "g": [
+   "sujeitos"
+  ],
+  "tp": [
+   "PC|Sujeitos"
+  ],
+  "d": "CPC, art. 103"
+ },
+ {
+  "t": "Capacidade processual",
+  "e": "Capacidade de estar em juízo",
+  "p": "Aptidão para praticar atos processuais por si; os incapazes são representados ou assistidos.",
+  "c": "CPC, art. 70. O juiz, verificando incapacidade, suspende o processo e dá prazo para corrigir (art. 76).",
+  "g": [
+   "sujeitos"
+  ],
+  "tp": [
+   "PC|Sujeitos"
+  ],
+  "d": "CPC, arts. 70 e 76"
+ },
+ {
+  "t": "Curador especial",
+  "e": "Defensor nomeado pelo juiz",
+  "p": "Representante nomeado para o incapaz sem representante e para o réu preso revel ou citado por edital ou hora certa que fique revel.",
+  "c": "CPC, art. 72. A função é exercida pela Defensoria Pública.",
+  "g": [
+   "sujeitos"
+  ],
+  "tp": [
+   "PC|Sujeitos"
+  ],
+  "d": "CPC, art. 72"
+ },
+ {
+  "t": "Litigância de má-fé",
+  "e": "Abuso no processo",
+  "p": "Comportamento desleal da parte: alterar a verdade, usar o processo para fim ilegal, recorrer só para atrasar.",
+  "c": "Multa superior a 1% e inferior a 10% do valor corrigido da causa, além de indenização e honorários (CPC, art. 81).",
+  "g": [
+   "deveres"
+  ],
+  "tp": [
+   "PC|Deveres"
+  ],
+  "d": "CPC, arts. 80 e 81"
+ },
+ {
+  "t": "Ato atentatório à dignidade da justiça",
+  "e": "Desobediência às decisões",
+  "p": "Descumprir decisões ou criar embaraços à sua efetivação.",
+  "c": "Multa de até 20% do valor da causa, revertida ao Estado (CPC, art. 77, § 2º). Não se aplica aos advogados, que respondem perante a OAB.",
+  "g": [
+   "deveres"
+  ],
+  "tp": [
+   "PC|Deveres"
+  ],
+  "d": "CPC, art. 77"
+ },
+ {
+  "t": "Sucessão processual",
+  "e": "Troca de parte no processo",
+  "p": "Uma pessoa assume o lugar da parte no processo, como os herdeiros após a morte.",
+  "c": "Alienação da coisa litigiosa não altera a legitimidade; o adquirente só sucede com consentimento da parte contrária (CPC, art. 109).",
+  "g": [
+   "sujeitos"
+  ],
+  "tp": [
+   "PC|Deveres"
+  ],
+  "d": "CPC, arts. 108 a 112"
+ },
+ {
+  "t": "Perito",
+  "e": "Auxiliar técnico do juiz",
+  "p": "Especialista nomeado para esclarecer fatos que dependem de conhecimento técnico.",
+  "c": "Escolhido entre profissionais inscritos em cadastro do tribunal (CPC, art. 156). As partes podem escolher consensualmente o perito (art. 471).",
+  "g": [
+   "auxiliares"
+  ],
+  "tp": [
+   "PC|Auxiliares",
+   "PC|Audiência de instrução"
+  ],
+  "d": "CPC, art. 156"
+ },
+ {
+  "t": "Escrivão ou chefe de secretaria",
+  "e": "Auxiliar da Justiça",
+  "p": "Responsável pela documentação dos atos do processo, guarda dos autos e redação de ofícios e mandados.",
+  "c": "CPC, art. 152. Responde civil e regressivamente quando, sem justo motivo, se recusa a cumprir atos do juiz ou pratica ato nulo com dolo ou culpa.",
+  "g": [
+   "auxiliares"
+  ],
+  "tp": [
+   "PC|Auxiliares",
+   "PGC|Atribuições"
+  ],
+  "d": "CPC, art. 152"
+ },
+ {
+  "t": "Conciliador e mediador",
+  "e": "Auxiliares da autocomposição",
+  "p": "Conciliador sugere soluções em casos sem vínculo anterior; mediador ajuda partes com vínculo a restabelecer o diálogo.",
+  "c": "CPC, art. 165, §§ 2º e 3º. Princípios: independência, imparcialidade, autonomia da vontade, confidencialidade, oralidade, informalidade e decisão informada.",
+  "g": [
+   "autocomposição"
+  ],
+  "tp": [
+   "PC|Auxiliares",
+   "PC|Audiência de conciliação"
+  ],
+  "d": "CPC, art. 165"
+ },
+ {
+  "t": "Nulidade relativa",
+  "e": "Vício sanável",
+  "p": "Defeito que só é declarado se a parte prejudicada alegar na primeira oportunidade.",
+  "c": "Não se declara nulidade sem prejuízo, nem a pedido de quem lhe deu causa (CPC, arts. 276 e 282). Absoluta: pode ser reconhecida de ofício.",
+  "g": [
+   "nulidades"
+  ],
+  "tp": [
+   "PC|Nulidades"
+  ],
+  "d": "CPC, arts. 276 a 283"
+ },
+ {
+  "t": "Instrumentalidade das formas",
+  "e": "Aproveitamento do ato",
+  "p": "Se o ato atingiu sua finalidade, ainda que de outro modo, é válido.",
+  "c": "CPC, art. 277. Base da regra de que não há nulidade sem prejuízo (pas de nullité sans grief).",
+  "g": [
+   "nulidades"
+  ],
+  "tp": [
+   "PC|Nulidades",
+   "PC|Atos processuais"
+  ],
+  "d": "CPC, art. 277"
+ },
+ {
+  "t": "Valor da causa",
+  "e": "Valor atribuído à ação",
+  "p": "Toda causa recebe um valor certo, ainda que sem conteúdo econômico imediato.",
+  "c": "CPC, art. 291. Serve para custas, competência dos Juizados e multas. O juiz pode corrigi-lo de ofício (art. 292, § 3º).",
+  "g": [
+   "valor da causa"
+  ],
+  "tp": [
+   "PC|Distribuição"
+  ],
+  "d": "CPC, arts. 291 e 292"
+ },
+ {
+  "t": "Requisitos da petição inicial",
+  "e": "O que a inicial precisa ter",
+  "p": "Juízo, partes e qualificação, fatos e fundamentos jurídicos, pedido, valor da causa, provas e opção pela audiência de conciliação.",
+  "c": "CPC, art. 319. Se faltar algo sanável, o juiz manda emendar em 15 dias antes de indeferir (art. 321).",
+  "g": [
+   "petição inicial"
+  ],
+  "tp": [
+   "PC|Petição"
+  ],
+  "d": "CPC, arts. 319 e 321"
+ },
+ {
+  "t": "Indeferimento da petição inicial",
+  "e": "Inicial rejeitada",
+  "p": "O juiz rejeita a inicial sem ouvir o réu por inépcia, ilegitimidade, falta de interesse ou não emenda.",
+  "c": "CPC, art. 330. Cabe apelação, e o juiz pode se retratar em 5 dias (art. 331).",
+  "g": [
+   "petição inicial"
+  ],
+  "tp": [
+   "PC|Petição"
+  ],
+  "d": "CPC, arts. 330 e 331"
+ },
+ {
+  "t": "Improcedência liminar do pedido",
+  "e": "Julgamento de mérito antes da citação",
+  "p": "Nas causas sem necessidade de provas, o juiz julga improcedente o pedido que contraria súmula, recurso repetitivo, IRDR ou súmula de TJ sobre direito local.",
+  "c": "CPC, art. 332. Também na prescrição ou decadência. Cabe apelação com retratação em 5 dias.",
+  "g": [
+   "petição inicial"
+  ],
+  "tp": [
+   "PC|Petição"
+  ],
+  "d": "CPC, art. 332"
+ },
+ {
+  "t": "Audiência de conciliação ou mediação",
+  "e": "Audiência inicial do procedimento comum",
+  "p": "Audiência para tentar o acordo antes da contestação.",
+  "c": "CPC, art. 334: designada com antecedência mínima de 30 dias e citação do réu com pelo menos 20 dias. Só não ocorre se ambas as partes manifestarem desinteresse ou se não se admitir autocomposição. Ausência injustificada: multa de até 2%.",
+  "g": [
+   "audiência"
+  ],
+  "tp": [
+   "PC|Audiência de conciliação"
+  ],
+  "d": "CPC, art. 334"
+ },
+ {
+  "t": "Saneamento",
+  "e": "Decisão de organização do processo",
+  "p": "Decisão em que o juiz resolve questões pendentes, fixa os pontos controvertidos, distribui o ônus da prova e define as provas.",
+  "c": "CPC, art. 357. As partes podem pedir esclarecimentos em 5 dias; em causas complexas, o saneamento pode ser feito em audiência.",
+  "g": [
+   "saneamento"
+  ],
+  "tp": [
+   "PC|Providências"
+  ],
+  "d": "CPC, art. 357"
+ },
+ {
+  "t": "Julgamento antecipado do mérito",
+  "e": "Sentença sem instrução",
+  "p": "O juiz julga logo quando não há necessidade de mais provas ou o réu é revel com efeitos da revelia.",
+  "c": "CPC, art. 355. Julgamento antecipado parcial (art. 356) resolve parte do mérito incontroversa ou madura, por decisão agravável.",
+  "g": [
+   "julgamento"
+  ],
+  "tp": [
+   "PC|Providências"
+  ],
+  "d": "CPC, arts. 355 e 356"
+ },
+ {
+  "t": "Ônus da prova",
+  "e": "Quem deve provar",
+  "p": "Ao autor cabe provar o fato constitutivo do direito; ao réu, o fato impeditivo, modificativo ou extintivo.",
+  "c": "CPC, art. 373. O juiz pode distribuir de modo diverso (carga dinâmica), por decisão fundamentada e dando à parte oportunidade de se desincumbir.",
+  "g": [
+   "provas"
+  ],
+  "tp": [
+   "PC|Audiência de instrução"
+  ],
+  "d": "CPC, art. 373"
+ },
+ {
+  "t": "Prova testemunhal",
+  "e": "Depoimento de testemunhas",
+  "p": "Cada parte pode arrolar até 10 testemunhas, no máximo 3 para cada fato.",
+  "c": "CPC, art. 357, § 6º. O advogado intima a própria testemunha (art. 455). Não podem depor incapazes, impedidos e suspeitos.",
+  "g": [
+   "provas"
+  ],
+  "tp": [
+   "PC|Audiência de instrução"
+  ],
+  "d": "CPC, arts. 357 e 455"
+ },
+ {
+  "t": "Audiência de instrução e julgamento",
+  "e": "AIJ",
+  "p": "Audiência em que se colhem provas orais, há debates e o juiz pode sentenciar.",
+  "c": "Ordem preferencial: perito, depoimento pessoal do autor e do réu, testemunhas do autor e do réu (CPC, art. 361). Debates de 20 minutos, prorrogáveis por 10.",
+  "g": [
+   "audiência"
+  ],
+  "tp": [
+   "PC|Audiência de instrução"
+  ],
+  "d": "CPC, arts. 358 a 368"
+ },
+ {
+  "t": "Efeito devolutivo",
+  "e": "Transferência da matéria ao Tribunal",
+  "p": "O recurso devolve ao tribunal o conhecimento da matéria impugnada.",
+  "c": "Todos os recursos têm. O efeito suspensivo impede a eficácia da decisão; a apelação tem, em regra, efeito suspensivo (CPC, art. 1.012).",
+  "g": [
+   "recursos"
+  ],
+  "tp": [
+   "PC|Recursos: disp"
+  ]
+ },
+ {
+  "t": "Prazo recursal",
+  "e": "Prazo de 15 dias úteis",
+  "p": "Em regra, os recursos do CPC têm prazo de 15 dias.",
+  "c": "Exceção: embargos de declaração, 5 dias (CPC, art. 1.003, § 5º). MP, Fazenda e Defensoria têm prazo em dobro.",
+  "g": [
+   "recursos",
+   "prazos"
+  ],
+  "tp": [
+   "PC|Recursos: disp"
+  ],
+  "d": "CPC, art. 1.003, § 5º"
+ },
+ {
+  "t": "Recurso adesivo",
+  "e": "Recurso subordinado",
+  "p": "Quando ambos perdem em parte, quem não recorreu pode aderir ao recurso da outra parte.",
+  "c": "Cabe na apelação, no recurso especial e no extraordinário. Segue a sorte do principal: se este não for conhecido, o adesivo cai.",
+  "g": [
+   "recursos"
+  ],
+  "tp": [
+   "PC|Recursos: disp"
+  ],
+  "d": "CPC, art. 997"
+ },
+ {
+  "t": "Princípio da dialeticidade",
+  "e": "Recurso precisa atacar a decisão",
+  "p": "O recorrente deve apontar os fundamentos de fato e de direito pelos quais a decisão está errada.",
+  "c": "Recurso que não impugna especificamente os fundamentos da decisão não é conhecido (CPC, art. 932, III).",
+  "g": [
+   "recursos"
+  ],
+  "tp": [
+   "PC|Recursos: disp"
+  ]
+ },
+ {
+  "t": "Pena cumprida no estrangeiro",
+  "e": "Detração e atenuação",
+  "p": "A pena cumprida no exterior atenua a imposta no Brasil pelo mesmo crime, quando diversas, ou nela é computada, quando idênticas.",
+  "c": "CP, art. 8º. Evita punir duas vezes pelo mesmo fato.",
+  "g": [
+   "extraterritorialidade"
+  ],
+  "tp": [
+   "PEN|Pena cumprida"
+  ],
+  "d": "CP, art. 8º"
+ },
+ {
+  "t": "Homologação de sentença penal estrangeira",
+  "e": "Eficácia da sentença estrangeira",
+  "p": "A sentença penal estrangeira pode produzir no Brasil certos efeitos, após homologação pelo STJ.",
+  "c": "CP, art. 9º: obrigar à reparação do dano e a outros efeitos civis, ou sujeitar a medida de segurança. Para reincidência, não é preciso homologar.",
+  "g": [
+   "sentença estrangeira"
+  ],
+  "tp": [
+   "PEN|Pena cumprida"
+  ],
+  "d": "CP, art. 9º"
+ },
+ {
+  "t": "Contagem de prazo penal",
+  "e": "Inclui o dia do começo",
+  "p": "No prazo penal, o dia do começo conta.",
+  "c": "CP, art. 10: dias, meses e anos pelo calendário comum. Prazo processual penal (CPP, art. 798) exclui o dia do começo.",
+  "g": [
+   "prazos"
+  ],
+  "tp": [
+   "PEN|Contagem"
+  ],
+  "d": "CP, art. 10"
+ },
+ {
+  "t": "Frações não computáveis",
+  "e": "Desprezo de frações da pena",
+  "p": "Na pena privativa de liberdade e na restritiva de direitos desprezam-se as frações de dia; na multa, as frações de real.",
+  "c": "CP, art. 11.",
+  "g": [
+   "pena"
+  ],
+  "tp": [
+   "PEN|Contagem"
+  ],
+  "d": "CP, art. 11"
+ },
+ {
+  "t": "Princípio da especialidade",
+  "e": "Conflito aparente de normas",
+  "p": "A norma especial prevalece sobre a geral.",
+  "c": "Ex.: infanticídio prevalece sobre homicídio. Os outros princípios são subsidiariedade, consunção e alternatividade.",
+  "g": [
+   "conflito aparente"
+  ],
+  "tp": [
+   "PEN|Conflito"
+  ]
+ },
+ {
+  "t": "Princípio da subsidiariedade",
+  "e": "Conflito aparente de normas",
+  "p": "A norma principal afasta a subsidiária, que só se aplica se a principal não incidir.",
+  "c": "Pode ser expressa (“se o fato não constitui crime mais grave”) ou tácita.",
+  "g": [
+   "conflito aparente"
+  ],
+  "tp": [
+   "PEN|Conflito"
+  ]
+ },
+ {
+  "t": "Princípio da consunção",
+  "e": "Absorção",
+  "p": "O crime-meio ou menos grave é absorvido pelo crime-fim.",
+  "c": "Súmula 17 do STJ: o falso que se esgota no estelionato, sem mais potencialidade lesiva, é por este absorvido.",
+  "g": [
+   "conflito aparente"
+  ],
+  "tp": [
+   "PEN|Conflito"
+  ],
+  "d": "Súmula 17 STJ"
+ },
+ {
+  "t": "Crime doloso",
+  "e": "Dolo",
+  "p": "O agente quer o resultado (dolo direto) ou assume o risco de produzi-lo (dolo eventual).",
+  "c": "CP, art. 18, I. A regra é punir só o crime doloso; o culposo exige previsão expressa.",
+  "g": [
+   "dolo"
+  ],
+  "tp": [
+   "PEN|Teoria do crime"
+  ],
+  "d": "CP, art. 18"
+ },
+ {
+  "t": "Crime culposo",
+  "e": "Culpa",
+  "p": "O agente causa o resultado por imprudência, negligência ou imperícia.",
+  "c": "Exige previsão legal. Culpa consciente: prevê o resultado mas acredita que não vai ocorrer (diferente do dolo eventual).",
+  "g": [
+   "culpa"
+  ],
+  "tp": [
+   "PEN|Teoria do crime"
+  ],
+  "d": "CP, art. 18, II"
+ },
+ {
+  "t": "Tentativa",
+  "e": "Crime não consumado por circunstâncias alheias",
+  "p": "Começa a execução, mas o crime não se consuma por motivos alheios à vontade do agente.",
+  "c": "CP, art. 14, II: pena do consumado reduzida de 1/3 a 2/3. Desistência voluntária e arrependimento eficaz: o agente responde só pelos atos já praticados.",
+  "g": [
+   "iter criminis"
+  ],
+  "tp": [
+   "PEN|Teoria do crime"
+  ],
+  "d": "CP, art. 14"
+ },
+ {
+  "t": "Crime impossível",
+  "e": "Tentativa inidônea",
+  "p": "Não se pune a tentativa quando o meio é absolutamente ineficaz ou o objeto é absolutamente impróprio.",
+  "c": "CP, art. 17. Súmula 145 do STF: não há crime quando a preparação do flagrante pela polícia torna impossível a consumação.",
+  "g": [
+   "iter criminis"
+  ],
+  "tp": [
+   "PEN|Teoria do crime"
+  ],
+  "d": "CP, art. 17"
+ },
+ {
+  "t": "Estrito cumprimento do dever legal",
+  "e": "Excludente de ilicitude",
+  "p": "O agente pratica fato típico cumprindo obrigação imposta por lei.",
+  "c": "CP, art. 23, III. Ex.: policial que cumpre mandado de prisão. Junto do exercício regular de direito, legítima defesa e estado de necessidade.",
+  "g": [
+   "excludentes"
+  ],
+  "tp": [
+   "PEN|Ilicitude"
+  ],
+  "d": "CP, art. 23"
+ },
+ {
+  "t": "Excesso punível",
+  "e": "Excesso nas excludentes",
+  "p": "Quem se excede em qualquer excludente de ilicitude responde pelo excesso doloso ou culposo.",
+  "c": "CP, art. 23, parágrafo único.",
+  "g": [
+   "excludentes"
+  ],
+  "tp": [
+   "PEN|Ilicitude"
+  ],
+  "d": "CP, art. 23, parágrafo único"
+ },
+ {
+  "t": "Coação moral irresistível",
+  "e": "Dirimente",
+  "p": "Quem age sob coação moral irresistível não é culpável; responde só o coator.",
+  "c": "CP, art. 22, junto da obediência hierárquica a ordem não manifestamente ilegal. Coação física irresistível exclui a conduta (o próprio fato típico).",
+  "g": [
+   "dirimentes"
+  ],
+  "tp": [
+   "PEN|Culpabilidade"
+  ],
+  "d": "CP, art. 22"
+ },
+ {
+  "t": "Embriaguez",
+  "e": "Embriaguez e culpabilidade",
+  "p": "A embriaguez voluntária ou culposa não exclui a imputabilidade.",
+  "c": "CP, art. 28. Só a completa, proveniente de caso fortuito ou força maior, isenta de pena. Emoção e paixão também não excluem a imputabilidade.",
+  "g": [
+   "imputabilidade"
+  ],
+  "tp": [
+   "PEN|Culpabilidade"
+  ],
+  "d": "CP, art. 28"
+ },
+ {
+  "t": "Homicídio qualificado",
+  "e": "Homicídio com circunstâncias graves",
+  "p": "Homicídio por motivo torpe ou fútil, com meio cruel, emboscada, para assegurar outro crime, entre outros.",
+  "c": "Pena de 12 a 30 anos. É hediondo. Feminicídio passou a ser crime autônomo (CP, art. 121-A, Lei 14.994/2024).",
+  "g": [
+   "crimes contra a vida"
+  ],
+  "tp": [
+   "PEN|Crimes contra a pessoa",
+   "PEN|Crimes hediondos"
+  ],
+  "d": "CP, art. 121, § 2º"
+ },
+ {
+  "t": "Lesão corporal",
+  "e": "Ofensa à integridade ou à saúde",
+  "p": "Ofender a integridade corporal ou a saúde de outra pessoa.",
+  "c": "Leve, grave (ex.: incapacidade por mais de 30 dias), gravíssima (ex.: perda de membro) ou seguida de morte. A leve e a culposa dependem de representação (Lei 9.099, art. 88), salvo violência doméstica contra a mulher.",
+  "g": [
+   "crimes contra a pessoa"
+  ],
+  "tp": [
+   "PEN|Crimes contra a pessoa"
+  ],
+  "d": "CP, art. 129"
+ },
+ {
+  "t": "Crimes contra a honra",
+  "e": "Calúnia, difamação e injúria",
+  "p": "Calúnia: imputar falsamente fato criminoso. Difamação: imputar fato ofensivo à reputação. Injúria: ofender a dignidade ou o decoro.",
+  "c": "Calúnia e difamação atingem a honra objetiva; injúria, a subjetiva. Exceção da verdade cabe na calúnia e, na difamação, só contra funcionário público no exercício da função.",
+  "g": [
+   "honra"
+  ],
+  "tp": [
+   "PEN|Crimes contra a pessoa"
+  ],
+  "d": "CP, arts. 138 a 140"
+ },
+ {
+  "t": "Ameaça",
+  "e": "Crime contra a liberdade individual",
+  "p": "Ameaçar alguém de causar mal injusto e grave por palavra, escrito, gesto ou outro meio.",
+  "c": "CP, art. 147: detenção de 1 a 6 meses ou multa; ação pública condicionada à representação.",
+  "g": [
+   "liberdade"
+  ],
+  "tp": [
+   "PEN|Crimes contra a pessoa"
+  ],
+  "d": "CP, art. 147"
+ },
+ {
+  "t": "Apropriação indébita",
+  "e": "Crime contra o patrimônio",
+  "p": "Ficar com coisa alheia móvel que já estava na posse ou detenção do agente.",
+  "c": "CP, art. 168. Diferente do furto (subtração) e do estelionato (a vítima entrega por engano provocado).",
+  "g": [
+   "patrimônio"
+  ],
+  "tp": [
+   "PEN|Crimes contra o patrimônio"
+  ],
+  "d": "CP, art. 168"
+ },
+ {
+  "t": "Extorsão",
+  "e": "Crime contra o patrimônio",
+  "p": "Constranger alguém, com violência ou grave ameaça, a fazer, tolerar ou deixar de fazer algo para obter vantagem econômica.",
+  "c": "No roubo, o agente subtrai; na extorsão, a colaboração da vítima é indispensável. Súmula 96 do STJ: crime formal, consuma-se independentemente da vantagem.",
+  "g": [
+   "patrimônio"
+  ],
+  "tp": [
+   "PEN|Crimes contra o patrimônio"
+  ],
+  "d": "CP, art. 158"
+ },
+ {
+  "t": "Receptação",
+  "e": "Crime contra o patrimônio",
+  "p": "Adquirir, receber, transportar ou ocultar coisa que sabe ser produto de crime.",
+  "c": "CP, art. 180. É punível ainda que desconhecido ou isento de pena o autor do crime anterior.",
+  "g": [
+   "patrimônio"
+  ],
+  "tp": [
+   "PEN|Crimes contra o patrimônio"
+  ],
+  "d": "CP, art. 180"
+ },
+ {
+  "t": "Peculato culposo",
+  "e": "Peculato por negligência",
+  "p": "O funcionário, por culpa, concorre para que outro se aproprie ou desvie bem público.",
+  "c": "CP, art. 312, § 3º. A reparação do dano antes da sentença irrecorrível extingue a punibilidade; depois, reduz a pena pela metade.",
+  "g": [
+   "administração pública"
+  ],
+  "tp": [
+   "PEN|Crimes contra a administração"
+  ],
+  "d": "CP, art. 312, §§ 2º e 3º"
+ },
+ {
+  "t": "Excesso de exação",
+  "e": "Crime funcional",
+  "p": "Exigir tributo ou contribuição que sabe indevido, ou cobrar por meio vexatório ou gravoso.",
+  "c": "CP, art. 316, § 1º. Modalidade especial da concussão.",
+  "g": [
+   "administração pública"
+  ],
+  "tp": [
+   "PEN|Crimes contra a administração"
+  ],
+  "d": "CP, art. 316, § 1º"
+ },
+ {
+  "t": "Resistência",
+  "e": "Crime de particular contra a administração",
+  "p": "Opor-se à execução de ato legal, com violência ou ameaça, contra funcionário competente.",
+  "c": "CP, art. 329. Desobediência (art. 330) é desobedecer ordem legal sem violência; desacato (art. 331) é ofender o funcionário no exercício da função.",
+  "g": [
+   "administração pública"
+  ],
+  "tp": [
+   "PEN|Crimes contra a administração"
+  ],
+  "d": "CP, art. 329"
+ },
+ {
+  "t": "Desacato",
+  "e": "Crime contra a administração",
+  "p": "Desrespeitar funcionário público no exercício da função ou em razão dela.",
+  "c": "CP, art. 331. O STF considerou o tipo compatível com a Constituição e com a Convenção Americana (ADPF 496).",
+  "g": [
+   "administração pública"
+  ],
+  "tp": [
+   "PEN|Crimes contra a administração"
+  ],
+  "d": "CP, art. 331"
+ },
+ {
+  "t": "Mandado de criminalização",
+  "e": "Ordem constitucional de punir",
+  "p": "A CF manda o legislador punir certas condutas: racismo, tortura, tráfico, terrorismo, crimes hediondos, ação de grupos armados.",
+  "c": "Racismo e ação de grupos armados contra a ordem democrática: inafiançáveis e imprescritíveis. Tortura, tráfico, terrorismo e hediondos: inafiançáveis e insuscetíveis de graça ou anistia.",
+  "g": [
+   "constituição"
+  ],
+  "tp": [
+   "PEN|Disposições constitucionais"
+  ],
+  "d": "CF, art. 5º, XLII a XLIV"
+ },
+ {
+  "t": "Penas proibidas",
+  "e": "Vedação constitucional",
+  "p": "A CF proíbe penas de morte (salvo guerra declarada), de caráter perpétuo, de trabalhos forçados, de banimento e cruéis.",
+  "c": "CF, art. 5º, XLVII. É cláusula pétrea.",
+  "g": [
+   "constituição"
+  ],
+  "tp": [
+   "PEN|Disposições constitucionais"
+  ],
+  "d": "CF, art. 5º, XLVII"
+ },
+ {
+  "t": "Progressão no crime hediondo",
+  "e": "Regime dos hediondos",
+  "p": "Os condenados por crime hediondo progridem de regime com percentuais maiores de cumprimento da pena.",
+  "c": "Desde o Pacote Anticrime (Lei 13.964/2019), os percentuais estão na LEP, art. 112: 40% (primário), 50% (com morte, primário) e 60% (reincidente específico), entre outros.",
+  "g": [
+   "hediondos"
+  ],
+  "tp": [
+   "PEN|Crimes hediondos"
+  ],
+  "d": "LEP, art. 112"
+ },
+ {
+  "t": "Medidas socioeducativas",
+  "e": "Respostas ao ato infracional",
+  "p": "Medidas aplicadas ao adolescente que pratica ato infracional: advertência, reparação do dano, serviços à comunidade, liberdade assistida, semiliberdade e internação.",
+  "c": "ECA, art. 112. A internação dura no máximo 3 anos e é liberada compulsoriamente aos 21 anos.",
+  "g": [
+   "ECA"
+  ],
+  "tp": [
+   "PEN|Estatuto"
+  ],
+  "d": "ECA, arts. 112 e 121"
+ },
+ {
+  "t": "Elemento subjetivo do abuso de autoridade",
+  "e": "Finalidade específica",
+  "p": "Só há crime de abuso de autoridade se o agente agir para prejudicar alguém, beneficiar a si ou a terceiro, ou por capricho ou satisfação pessoal.",
+  "c": "Lei 13.869/2019, art. 1º, § 1º. A divergência na interpretação da lei ou na avaliação de fatos e provas não configura abuso (§ 2º).",
+  "g": [
+   "abuso de autoridade"
+  ],
+  "tp": [
+   "PEN|Abuso"
+  ],
+  "d": "Lei 13.869/2019, art. 1º"
+ },
+ {
+  "t": "Sistema acusatório",
+  "e": "Separação entre acusar e julgar",
+  "p": "Quem acusa (MP) não julga; o juiz é imparcial e não substitui a atuação probatória do órgão de acusação.",
+  "c": "CPP, art. 3º-A (Pacote Anticrime). Juiz das garantias: controla a legalidade da investigação.",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "PP|Disposições preliminares"
+  ],
+  "d": "CPP, art. 3º-A"
+ },
+ {
+  "t": "Juiz das garantias",
+  "e": "Juiz da fase de investigação",
+  "p": "Juiz responsável pelo controle da legalidade da investigação e pelos direitos do investigado.",
+  "c": "CPP, art. 3º-B. O STF declarou a constitucionalidade (ADIs 6298 e outras) com ajustes: sua competência cessa com o oferecimento da denúncia.",
+  "g": [
+   "juiz das garantias"
+  ],
+  "tp": [
+   "PP|Disposições preliminares",
+   "PP|Inquérito"
+  ],
+  "d": "CPP, art. 3º-B"
+ },
+ {
+  "t": "Indiciamento",
+  "e": "Apontamento formal do suspeito",
+  "p": "Ato do delegado que aponta, de forma fundamentada, o investigado como provável autor do crime.",
+  "c": "Ato privativo do delegado (Lei 12.830/2013, art. 2º, § 6º). Diferente da indiciação no PAD.",
+  "g": [
+   "inquérito"
+  ],
+  "tp": [
+   "PP|Inquérito"
+  ]
+ },
+ {
+  "t": "Arquivamento do inquérito",
+  "e": "Encerramento da investigação",
+  "p": "Quando não há base para denunciar, o MP decide arquivar o inquérito e comunica a decisão à vítima, ao investigado e à autoridade policial.",
+  "c": "CPP, art. 28 (Lei 13.964/2019), conforme o STF (ADI 6298 e outras): o MP também submete o arquivamento ao juiz, que pode provocar a revisão se houver ilegalidade; a vítima pode pedir a revisão em 30 dias. A autoridade policial não pode mandar arquivar autos de inquérito (art. 17).",
+  "g": [
+   "inquérito"
+  ],
+  "tp": [
+   "PP|Inquérito"
+  ],
+  "d": "CPP, arts. 17 e 28"
+ },
+ {
+  "t": "Princípio da obrigatoriedade",
+  "e": "Ação penal pública",
+  "p": "Havendo justa causa, o MP é obrigado a oferecer denúncia.",
+  "c": "Mitigado pela transação penal e pelo acordo de não persecução penal (ANPP). Na ação privada vigora a oportunidade.",
+  "g": [
+   "ação penal"
+  ],
+  "tp": [
+   "PP|Ação penal"
+  ]
+ },
+ {
+  "t": "Indisponibilidade da ação penal",
+  "e": "MP não desiste",
+  "p": "O MP não pode desistir da ação penal pública já proposta, nem do recurso interposto.",
+  "c": "CPP, arts. 42 e 576. Na ação privada, o querelante pode desistir (perdão, perempção).",
+  "g": [
+   "ação penal"
+  ],
+  "tp": [
+   "PP|Ação penal"
+  ],
+  "d": "CPP, arts. 42 e 576"
+ },
+ {
+  "t": "ANPP",
+  "e": "Acordo de não persecução penal",
+  "p": "Acordo entre MP e investigado para evitar o processo em crimes sem violência ou grave ameaça com pena mínima inferior a 4 anos.",
+  "c": "CPP, art. 28-A. Exige confissão formal e circunstanciada. Não cabe em violência doméstica, para reincidentes ou se cabível transação penal.",
+  "g": [
+   "acordos"
+  ],
+  "tp": [
+   "PP|Ação penal"
+  ],
+  "d": "CPP, art. 28-A"
+ },
+ {
+  "t": "Decadência do direito de queixa",
+  "e": "Prazo de 6 meses",
+  "p": "O ofendido tem 6 meses, contados do dia em que soube quem é o autor do crime, para oferecer queixa ou representação.",
+  "c": "CPP, art. 38. Prazo penal (inclui o dia do começo) e fatal: não se suspende nem se interrompe.",
+  "g": [
+   "ação penal",
+   "prazos"
+  ],
+  "tp": [
+   "PP|Ação penal"
+  ],
+  "d": "CPP, art. 38"
+ },
+ {
+  "t": "Defensor dativo",
+  "e": "Defensor nomeado pelo juiz",
+  "p": "Advogado nomeado pelo juiz quando o acusado não tem defensor.",
+  "c": "CPP, art. 263. Nenhum acusado será processado ou julgado sem defensor (art. 261). O acusado pode, a todo tempo, nomear outro de sua confiança.",
+  "g": [
+   "defesa"
+  ],
+  "tp": [
+   "PP|Juiz"
+  ],
+  "d": "CPP, arts. 261 e 263"
+ },
+ {
+  "t": "Impedimento do juiz (CPP)",
+  "e": "Proibição objetiva de atuar",
+  "p": "O juiz não pode atuar quando ele, cônjuge ou parente já atuou no processo ou tem interesse direto.",
+  "c": "CPP, art. 252. Suspeição (art. 254): amizade íntima, inimizade capital, aconselhamento da parte etc.",
+  "g": [
+   "imparcialidade"
+  ],
+  "tp": [
+   "PP|Juiz"
+  ],
+  "d": "CPP, arts. 252 e 254"
+ },
+ {
+  "t": "Assistente de acusação",
+  "e": "Vítima atuando ao lado do MP",
+  "p": "O ofendido ou seu representante pode intervir na ação pública como assistente do MP.",
+  "c": "CPP, art. 268. Admitido depois do recebimento da denúncia e enquanto não passar em julgado a sentença. O corréu no mesmo processo não pode ser assistente (art. 270).",
+  "g": [
+   "sujeitos"
+  ],
+  "tp": [
+   "PP|Assistentes"
+  ],
+  "d": "CPP, arts. 268 a 273"
+ },
+ {
+  "t": "Perito oficial",
+  "e": "Auxiliar da justiça penal",
+  "p": "Exame de corpo de delito e outras perícias são feitos por perito oficial com diploma de nível superior.",
+  "c": "CPP, art. 159. Na falta, por 2 pessoas idôneas com diploma superior. As partes podem indicar assistente técnico.",
+  "g": [
+   "perícia"
+  ],
+  "tp": [
+   "PP|Assistentes"
+  ],
+  "d": "CPP, art. 159"
+ },
+ {
+  "t": "Citação por edital (CPP)",
+  "e": "Citação do réu não encontrado",
+  "p": "Quando o réu não é encontrado, é citado por edital com prazo de 15 dias.",
+  "c": "CPP, art. 366: se não comparecer nem constituir advogado, ficam suspensos o processo e a prescrição. Súmula 415 do STJ limita a suspensão da prescrição ao prazo máximo da pena.",
+  "g": [
+   "citação"
+  ],
+  "tp": [
+   "PP|Citações"
+  ],
+  "d": "CPP, arts. 361 e 366"
+ },
+ {
+  "t": "Citação por hora certa (CPP)",
+  "e": "Citação do réu que se oculta",
+  "p": "Se o réu se esconde para não ser citado, o oficial faz a citação com hora certa.",
+  "c": "CPP, art. 362, seguindo o CPC. Se o réu não comparecer, recebe defensor dativo e o processo segue.",
+  "g": [
+   "citação"
+  ],
+  "tp": [
+   "PP|Citações"
+  ],
+  "d": "CPP, art. 362"
+ },
+ {
+  "t": "Resposta à acusação",
+  "e": "Defesa escrita",
+  "p": "Depois de citado, o acusado apresenta resposta escrita em 10 dias, com documentos, provas e até 8 testemunhas.",
+  "c": "CPP, arts. 396 e 396-A, no rito ordinário. Se não apresentar, o juiz nomeia defensor.",
+  "g": [
+   "procedimento"
+  ],
+  "tp": [
+   "PP|Processo comum"
+  ],
+  "d": "CPP, art. 396-A"
+ },
+ {
+  "t": "Rito ordinário",
+  "e": "Procedimento comum ordinário",
+  "p": "Usado para crimes com pena máxima igual ou superior a 4 anos.",
+  "c": "CPP, art. 394. Sumário: pena máxima inferior a 4 anos. Sumaríssimo: infrações de menor potencial ofensivo (Lei 9.099). Prazo da audiência no ordinário: até 60 dias.",
+  "g": [
+   "procedimento"
+  ],
+  "tp": [
+   "PP|Processo comum"
+  ],
+  "d": "CPP, art. 394"
+ },
+ {
+  "t": "Sorteio dos jurados",
+  "e": "Formação da lista da sessão",
+  "p": "Para cada sessão de julgamento, sorteiam-se 25 jurados entre os alistados.",
+  "c": "CPP, art. 433. A sessão se instala com pelo menos 15 jurados presentes; desses, 7 formam o Conselho de Sentença.",
+  "g": [
+   "júri"
+  ],
+  "tp": [
+   "PP|Júri: sorteio"
+  ],
+  "d": "CPP, arts. 433 e 463"
+ },
+ {
+  "t": "Função do jurado",
+  "e": "Serviço obrigatório",
+  "p": "O serviço do júri é obrigatório para cidadãos maiores de 18 anos de notória idoneidade.",
+  "c": "CPP, arts. 436 e 437. Constitui serviço público relevante, presume idoneidade moral e dá preferência em licitações e concursos (art. 440).",
+  "g": [
+   "júri"
+  ],
+  "tp": [
+   "PP|Júri: sorteio"
+  ],
+  "d": "CPP, arts. 436 a 446"
+ },
+ {
+  "t": "Recusa peremptória",
+  "e": "Recusa imotivada de jurado",
+  "p": "Defesa e acusação podem recusar até 3 jurados cada, sem justificar.",
+  "c": "CPP, art. 468. Recusas motivadas (impedimento, suspeição) não têm limite.",
+  "g": [
+   "júri"
+  ],
+  "tp": [
+   "PP|Júri: composição"
+  ],
+  "d": "CPP, art. 468"
+ },
+ {
+  "t": "Votação dos quesitos",
+  "e": "Votação secreta na sala especial",
+  "p": "Os jurados respondem aos quesitos com cédulas SIM e NÃO, em sala especial.",
+  "c": "Encerra-se a votação ao atingir mais de 3 votos no mesmo sentido (CPP, art. 483, § 1º e § 2º), preservando o sigilo.",
+  "g": [
+   "júri"
+  ],
+  "tp": [
+   "PP|Júri: debates"
+  ],
+  "d": "CPP, arts. 483 e 485"
+ },
+ {
+  "t": "Relaxamento da prisão",
+  "e": "Prisão ilegal",
+  "p": "Prisão ilegal deve ser imediatamente relaxada pelo juiz.",
+  "c": "CF, art. 5º, LXV. Diferente da liberdade provisória, que se aplica à prisão legal quando não cabe preventiva.",
+  "g": [
+   "prisão"
+  ],
+  "tp": [
+   "PP|Prisão"
+  ],
+  "d": "CF, art. 5º, LXV"
+ },
+ {
+  "t": "Medidas cautelares diversas da prisão",
+  "e": "Alternativas à prisão",
+  "p": "Comparecimento periódico, proibição de frequentar lugares, de contato, de ausentar-se, recolhimento noturno, suspensão de função, fiança, monitoração eletrônica.",
+  "c": "CPP, art. 319. A preventiva só cabe quando elas não bastarem (art. 282, § 6º).",
+  "g": [
+   "cautelares"
+  ],
+  "tp": [
+   "PP|Prisão"
+  ],
+  "d": "CPP, art. 319"
+ },
+ {
+  "t": "Revisão da preventiva",
+  "e": "Reavaliação a cada 90 dias",
+  "p": "O juiz que decretou a preventiva deve revisar a necessidade a cada 90 dias, de ofício.",
+  "c": "CPP, art. 316, parágrafo único. O STF entende que a falta de revisão não gera soltura automática.",
+  "g": [
+   "prisão"
+  ],
+  "tp": [
+   "PP|Prisão"
+  ],
+  "d": "CPP, art. 316"
+ },
+ {
+  "t": "Habeas corpus de ofício",
+  "e": "Concessão sem pedido",
+  "p": "Juízes e tribunais podem conceder HC de ofício quando verificarem coação ilegal.",
+  "c": "CPP, art. 654, § 2º. O HC pode ser impetrado por qualquer pessoa, sem advogado, inclusive em favor de terceiro.",
+  "g": [
+   "HC"
+  ],
+  "tp": [
+   "PP|Habeas"
+  ],
+  "d": "CPP, art. 654"
+ },
+ {
+  "t": "Presunção de inocência",
+  "e": "Estado de inocência",
+  "p": "Ninguém é considerado culpado até o trânsito em julgado da sentença condenatória.",
+  "c": "CF, art. 5º, LVII. O STF (ADCs 43, 44 e 54) vedou a execução provisória da pena antes do trânsito.",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "PP|Disposições constitucionais"
+  ],
+  "d": "CF, art. 5º, LVII"
+ },
+ {
+  "t": "Provas ilícitas",
+  "e": "Prova obtida com violação de direitos",
+  "p": "São inadmissíveis no processo as provas obtidas por meios ilícitos.",
+  "c": "CF, art. 5º, LVI; CPP, art. 157: também as derivadas (frutos da árvore envenenada), salvo fonte independente ou descoberta inevitável.",
+  "g": [
+   "provas"
+  ],
+  "tp": [
+   "PP|Disposições constitucionais"
+  ],
+  "d": "CPP, art. 157"
+ }
+]

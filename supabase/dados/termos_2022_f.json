@@ -1,0 +1,667 @@
+[
+ {
+  "t": "Gestão de pessoas",
+  "e": "Área que cuida das pessoas na organização",
+  "p": "Conjunto de práticas para atrair, desenvolver, manter e avaliar as pessoas, tratadas como parceiras e não como recurso.",
+  "c": "Evolução: departamento de pessoal (foco legal e operacional) → recursos humanos (foco em controle) → gestão estratégica de pessoas (alinhada aos objetivos da organização).",
+  "g": [
+   "gestão de pessoas"
+  ],
+  "tp": [
+   "ADM|Modelos de gestão de pessoas",
+   "ADM|Gestão estratégica"
+  ]
+ },
+ {
+  "t": "Departamento de pessoal",
+  "e": "Modelo operacional e legalista",
+  "p": "Fase inicial da área de RH, focada em folha de pagamento, admissões, férias e cumprimento da lei.",
+  "c": "Visão do trabalhador como custo e de tarefas burocráticas; sucedido pelo modelo de RH e depois pela gestão estratégica.",
+  "g": [
+   "gestão de pessoas"
+  ],
+  "tp": [
+   "ADM|Modelos de gestão de pessoas"
+  ]
+ },
+ {
+  "t": "Processos de gestão de pessoas",
+  "e": "Seis processos de Chiavenato",
+  "p": "Agregar, aplicar, recompensar, desenvolver, manter e monitorar pessoas.",
+  "c": "Agregar: recrutamento e seleção. Aplicar: desenho de cargos e avaliação. Recompensar: remuneração e benefícios. Desenvolver: T&D. Manter: higiene, segurança, qualidade de vida. Monitorar: bancos de dados e sistemas de informação.",
+  "g": [
+   "Chiavenato"
+  ],
+  "tp": [
+   "ADM|Processos de gestão"
+  ]
+ },
+ {
+  "t": "Recrutamento",
+  "e": "Atrair candidatos",
+  "p": "Divulgar a vaga e atrair pessoas qualificadas para o processo seletivo.",
+  "c": "Interno (pessoas da própria organização, mais barato e motivador) ou externo (traz novas ideias, mais caro e demorado). Misto combina os dois.",
+  "g": [
+   "agregar"
+  ],
+  "tp": [
+   "ADM|Processos de gestão"
+  ]
+ },
+ {
+  "t": "Seleção de pessoas",
+  "e": "Escolher entre os candidatos",
+  "p": "Comparar os candidatos com o perfil do cargo e escolher o mais adequado.",
+  "c": "Técnicas: entrevista, provas de conhecimento, testes psicológicos, técnicas de simulação. No setor público, a seleção é por concurso (CF, art. 37, II).",
+  "g": [
+   "agregar"
+  ],
+  "tp": [
+   "ADM|Processos de gestão"
+  ]
+ },
+ {
+  "t": "Endomarketing",
+  "e": "Marketing interno",
+  "p": "Ações de comunicação voltadas aos próprios servidores para engajá-los nos objetivos da organização.",
+  "c": "Ajuda a sustentar mudanças e a reforçar valores e missão.",
+  "g": [
+   "comunicação"
+  ],
+  "tp": [
+   "ADM|Estratégias",
+   "ADM|Gestão estratégica"
+  ]
+ },
+ {
+  "t": "Clima organizacional",
+  "e": "Percepção coletiva do ambiente de trabalho",
+  "p": "Como as pessoas sentem a organização: satisfação, relacionamento, motivação.",
+  "c": "Medido por pesquisa de clima. Cultura é mais profunda e duradoura (valores e crenças); clima é mais momentâneo.",
+  "g": [
+   "clima"
+  ],
+  "tp": [
+   "ADM|Indicadores",
+   "ADM|Motivação"
+  ]
+ },
+ {
+  "t": "Cultura organizacional",
+  "e": "Valores e crenças compartilhados",
+  "p": "Jeito de ser e de fazer da organização, aprendido e passado entre as pessoas.",
+  "c": "Níveis (Schein): artefatos visíveis, valores declarados e pressupostos básicos. É a principal fonte de resistência à mudança.",
+  "g": [
+   "cultura"
+  ],
+  "tp": [
+   "ADM|Gestão de processos de mudança",
+   "ADM|Mudança e inovação"
+  ]
+ },
+ {
+  "t": "Resistência à mudança",
+  "e": "Oposição às mudanças",
+  "p": "Reação de pessoas ou grupos que se opõem a mudanças por medo, hábito ou perda de poder.",
+  "c": "Superada com comunicação, participação, treinamento, negociação e apoio. Kotter: criar senso de urgência, formar coalizão, comunicar a visão, gerar vitórias de curto prazo e ancorar na cultura.",
+  "g": [
+   "mudança"
+  ],
+  "tp": [
+   "ADM|Gestão de processos de mudança",
+   "ADM|Estratégias"
+  ]
+ },
+ {
+  "t": "Modelo de Lewin",
+  "e": "Descongelamento, mudança e recongelamento",
+  "p": "Três etapas da mudança: desfazer os velhos hábitos, implantar o novo e consolidar o novo comportamento.",
+  "c": "Clássico em provas sobre gestão da mudança organizacional. A mudança só se sustenta se for recongelada.",
+  "g": [
+   "mudança"
+  ],
+  "tp": [
+   "ADM|Gestão de processos de mudança"
+  ]
+ },
+ {
+  "t": "Mudança incremental",
+  "e": "Mudança gradual",
+  "p": "Pequenos ajustes contínuos que melhoram o que já existe.",
+  "c": "Contrasta com a mudança radical (transformacional), que altera profundamente a estrutura ou a estratégia.",
+  "g": [
+   "mudança"
+  ],
+  "tp": [
+   "ADM|Gestão de processos de mudança",
+   "ADM|Mudança e inovação"
+  ]
+ },
+ {
+  "t": "Inovação",
+  "e": "Novidade que gera valor",
+  "p": "Implantação de algo novo ou melhorado (produto, serviço, processo) que traz resultado.",
+  "c": "Pode ser incremental ou radical. No setor público, aparece em serviços digitais, simplificação e laboratórios de inovação.",
+  "g": [
+   "inovação"
+  ],
+  "tp": [
+   "ADM|Mudança e inovação"
+  ]
+ },
+ {
+  "t": "Ambiente interno",
+  "e": "Fatores dentro da organização",
+  "p": "Pontos que a organização controla: pessoas, estrutura, processos, recursos.",
+  "c": "Na SWOT, gera forças e fraquezas. O ambiente externo gera oportunidades e ameaças.",
+  "g": [
+   "estratégia"
+  ],
+  "tp": [
+   "ADM|Análise dos ambientes"
+  ]
+ },
+ {
+  "t": "Análise PESTEL",
+  "e": "Análise do macroambiente",
+  "p": "Ferramenta que examina fatores Políticos, Econômicos, Sociais, Tecnológicos, Ecológicos e Legais.",
+  "c": "Útil para mapear oportunidades e ameaças externas antes do planejamento estratégico.",
+  "g": [
+   "estratégia"
+  ],
+  "tp": [
+   "ADM|Análise dos ambientes"
+  ]
+ },
+ {
+  "t": "Planejamento estratégico",
+  "e": "Definição de rumo de longo prazo",
+  "p": "Processo que define missão, visão, valores, objetivos e ações para a organização.",
+  "c": "Níveis: estratégico (longo prazo, toda a organização), tático (médio prazo, departamentos), operacional (curto prazo, tarefas).",
+  "g": [
+   "estratégia"
+  ],
+  "tp": [
+   "ADM|Missão",
+   "ADM|Gestão estratégica"
+  ]
+ },
+ {
+  "t": "Balanced Scorecard",
+  "e": "BSC",
+  "p": "Ferramenta que traduz a estratégia em indicadores de quatro perspectivas.",
+  "c": "Perspectivas: financeira, clientes, processos internos e aprendizado e crescimento. No setor público, a perspectiva da sociedade costuma ficar no topo. Usa mapa estratégico com relações de causa e efeito.",
+  "g": [
+   "indicadores"
+  ],
+  "tp": [
+   "ADM|Indicadores",
+   "ADM|Gestão estratégica"
+  ]
+ },
+ {
+  "t": "Indicador de desempenho",
+  "e": "Medida do resultado",
+  "p": "Número que mostra se uma meta está sendo cumprida: rotatividade, absenteísmo, horas de treinamento.",
+  "c": "Bons indicadores são específicos, mensuráveis, comparáveis e disponíveis a tempo. Meta é o valor a atingir; indicador é o que se mede.",
+  "g": [
+   "indicadores"
+  ],
+  "tp": [
+   "ADM|Indicadores"
+  ]
+ },
+ {
+  "t": "Rotatividade",
+  "e": "Turnover",
+  "p": "Taxa de entrada e saída de pessoas numa organização em determinado período.",
+  "c": "Alta rotatividade indica problemas de clima, remuneração ou seleção, e gera custos de reposição e treinamento.",
+  "g": [
+   "indicadores"
+  ],
+  "tp": [
+   "ADM|Indicadores"
+  ]
+ },
+ {
+  "t": "Absenteísmo",
+  "e": "Ausência ao trabalho",
+  "p": "Faltas e atrasos dos empregados, programados ou não.",
+  "c": "Indicador de gestão de pessoas ligado a saúde, motivação e clima organizacional.",
+  "g": [
+   "indicadores"
+  ],
+  "tp": [
+   "ADM|Indicadores"
+  ]
+ },
+ {
+  "t": "Levantamento de necessidades de treinamento",
+  "e": "LNT, diagnóstico de T&D",
+  "p": "Primeira etapa do treinamento: descobrir o que as pessoas precisam aprender.",
+  "c": "Ciclo de T&D: diagnóstico (LNT) → programação → execução → avaliação. Níveis de avaliação de Kirkpatrick: reação, aprendizagem, comportamento e resultados.",
+  "g": [
+   "T&D"
+  ],
+  "tp": [
+   "ADM|Treinamento"
+  ]
+ },
+ {
+  "t": "Educação corporativa",
+  "e": "Universidade corporativa",
+  "p": "Sistema de desenvolvimento contínuo alinhado à estratégia da organização.",
+  "c": "Vai além do treinamento pontual: forma competências para o longo prazo. No Judiciário, as escolas de servidores cumprem esse papel.",
+  "g": [
+   "T&D"
+  ],
+  "tp": [
+   "ADM|Treinamento"
+  ]
+ },
+ {
+  "t": "Efeito de leniência",
+  "e": "Erro de avaliação por complacência",
+  "p": "O avaliador dá notas altas a todos para evitar conflito.",
+  "c": "O efeito oposto é o rigor excessivo; a tendência central é dar notas médias a todos. São vieses da avaliação de desempenho, como o efeito halo.",
+  "g": [
+   "avaliação"
+  ],
+  "tp": [
+   "ADM|Avaliação"
+  ]
+ },
+ {
+  "t": "Escala gráfica",
+  "e": "Método de avaliação de desempenho",
+  "p": "Formulário com fatores (qualidade, pontualidade) e graus (ótimo a fraco) marcados pelo avaliador.",
+  "c": "Método mais usado por ser simples, mas sujeito a efeito halo e tendência central. Outros métodos: escolha forçada, incidentes críticos, pesquisa de campo, autoavaliação.",
+  "g": [
+   "avaliação"
+  ],
+  "tp": [
+   "ADM|Avaliação"
+  ]
+ },
+ {
+  "t": "Incidentes críticos",
+  "e": "Método de avaliação de desempenho",
+  "p": "O avaliador registra comportamentos extremos, muito positivos ou muito negativos.",
+  "c": "Foca exceções; não avalia o desempenho habitual.",
+  "g": [
+   "avaliação"
+  ],
+  "tp": [
+   "ADM|Avaliação"
+  ]
+ },
+ {
+  "t": "Enriquecimento de cargo",
+  "e": "Ampliar responsabilidade e desafio",
+  "p": "Aumentar a autonomia e as responsabilidades do cargo para torná-lo mais motivador.",
+  "c": "Vertical: tarefas mais complexas (mais motivador, segundo Herzberg). Horizontal: mais tarefas do mesmo nível (alargamento).",
+  "g": [
+   "cargos"
+  ],
+  "tp": [
+   "ADM|Modelagem",
+   "ADM|Motivação"
+  ]
+ },
+ {
+  "t": "Modelo clássico de desenho de cargos",
+  "e": "Desenho de cargos tayloriano",
+  "p": "Tarefas simples, repetitivas e padronizadas, com separação entre quem planeja e quem executa.",
+  "c": "Modelos: clássico (Taylor), humanístico (relações humanas) e contingencial (adapta o cargo à pessoa e à tarefa, mais motivador).",
+  "g": [
+   "cargos"
+  ],
+  "tp": [
+   "ADM|Modelagem"
+  ]
+ },
+ {
+  "t": "Teoria X e Y",
+  "e": "Teoria de McGregor",
+  "p": "Duas visões do trabalhador: X (preguiçoso, precisa de controle) e Y (gosta de trabalhar, busca responsabilidade).",
+  "c": "A teoria Y fundamenta estilos participativos de gestão. É teoria de motivação/liderança, não de processo.",
+  "g": [
+   "motivação"
+  ],
+  "tp": [
+   "ADM|Motivação"
+  ]
+ },
+ {
+  "t": "Teoria da expectativa",
+  "e": "Teoria de Vroom",
+  "p": "A motivação depende de quanto a pessoa espera que o esforço gere resultado e de quanto valoriza a recompensa.",
+  "c": "Fórmula: motivação = expectativa × instrumentalidade × valência. Teoria de processo, ao contrário de Maslow e Herzberg (conteúdo).",
+  "g": [
+   "motivação"
+  ],
+  "tp": [
+   "ADM|Motivação"
+  ]
+ },
+ {
+  "t": "Teoria da equidade",
+  "e": "Teoria de Adams",
+  "p": "As pessoas comparam o que dão e o que recebem com o de colegas; injustiça percebida desmotiva.",
+  "c": "Ao perceber iniquidade, a pessoa pode reduzir o esforço, pedir aumento ou mudar a comparação.",
+  "g": [
+   "motivação"
+  ],
+  "tp": [
+   "ADM|Motivação"
+  ]
+ },
+ {
+  "t": "Competência técnica",
+  "e": "Saber fazer",
+  "p": "Conhecimento e habilidade para executar as tarefas do cargo.",
+  "c": "Competências podem ser organizacionais (da instituição) ou individuais (técnicas e comportamentais). O mapeamento identifica o gap entre as necessárias e as existentes.",
+  "g": [
+   "competências"
+  ],
+  "tp": [
+   "ADM|Gestão por competências"
+  ]
+ },
+ {
+  "t": "Mapeamento de competências",
+  "e": "Diagnóstico de lacunas",
+  "p": "Identifica as competências necessárias para a estratégia e as compara com as que as pessoas já têm.",
+  "c": "A diferença é a lacuna (gap) de competências, que orienta treinamento, seleção e movimentação.",
+  "g": [
+   "competências"
+  ],
+  "tp": [
+   "ADM|Gestão por competências"
+  ]
+ },
+ {
+  "t": "Nova gestão pública",
+  "e": "New Public Management",
+  "p": "Movimento que trouxe ferramentas do setor privado para o Estado: foco em resultados, contratos de gestão, eficiência.",
+  "c": "No Brasil, ligado ao Plano Diretor da Reforma do Aparelho do Estado (1995) e à EC 19/1998, que incluiu a eficiência no art. 37.",
+  "g": [
+   "gestão pública"
+  ],
+  "tp": [
+   "ADM|Modelos de gestão pública"
+  ]
+ },
+ {
+  "t": "Governança pública",
+  "e": "Direção e controle do Estado",
+  "p": "Mecanismos de liderança, estratégia e controle para avaliar, direcionar e monitorar a gestão.",
+  "c": "Princípios: transparência, accountability, integridade, capacidade de resposta. Governança dirige; gestão executa.",
+  "g": [
+   "gestão pública"
+  ],
+  "tp": [
+   "ADM|Modelos de gestão pública",
+   "ADM|Eficácia"
+  ]
+ },
+ {
+  "t": "Accountability",
+  "e": "Responsabilização e prestação de contas",
+  "p": "Dever de o gestor prestar contas e responder pelos resultados.",
+  "c": "Vertical (sociedade sobre governo, eleições), horizontal (órgãos de controle entre si, como TCU) e social.",
+  "g": [
+   "gestão pública"
+  ],
+  "tp": [
+   "ADM|Eficácia",
+   "ET|Ética e democracia"
+  ]
+ },
+ {
+  "t": "Economicidade",
+  "e": "Melhor custo",
+  "p": "Obter o resultado com o menor custo possível, sem perder qualidade.",
+  "c": "Um dos critérios do controle externo (CF, art. 70), ao lado de legalidade e legitimidade.",
+  "g": [
+   "desempenho"
+  ],
+  "tp": [
+   "ADM|Eficácia",
+   "ADV|Controle pelos"
+  ],
+  "d": "CF, art. 70"
+ },
+ {
+  "t": "Princípio do equilíbrio",
+  "e": "Princípio orçamentário",
+  "p": "As despesas autorizadas não devem ultrapassar as receitas previstas.",
+  "c": "Reforçado pela LRF. A regra de ouro (CF, art. 167, III) proíbe operações de crédito acima das despesas de capital.",
+  "g": [
+   "orçamento"
+  ],
+  "tp": [
+   "ADM|Orçamento"
+  ]
+ },
+ {
+  "t": "Princípio da não vinculação",
+  "e": "Princípio da não afetação da receita",
+  "p": "É proibido vincular a receita de impostos a órgão, fundo ou despesa.",
+  "c": "Exceções na própria CF, art. 167, IV: repartição com estados e municípios, saúde, educação, administração tributária, garantias de operações de crédito.",
+  "g": [
+   "orçamento"
+  ],
+  "tp": [
+   "ADM|Orçamento"
+  ],
+  "d": "CF, art. 167, IV"
+ },
+ {
+  "t": "Princípio da publicidade orçamentária",
+  "e": "Divulgação do orçamento",
+  "p": "O orçamento e sua execução devem ser publicados e acessíveis.",
+  "c": "Inclui a transparência da LRF: relatórios de execução e de gestão fiscal.",
+  "g": [
+   "orçamento"
+  ],
+  "tp": [
+   "ADM|Orçamento"
+  ]
+ },
+ {
+  "t": "Ciclo orçamentário",
+  "e": "Etapas do orçamento",
+  "p": "Elaboração da proposta, discussão e aprovação no Legislativo, execução e controle/avaliação.",
+  "c": "Não confundir com o exercício financeiro (ano civil, 1º de janeiro a 31 de dezembro).",
+  "g": [
+   "orçamento"
+  ],
+  "tp": [
+   "ADM|Diretrizes"
+  ]
+ },
+ {
+  "t": "Exercício financeiro",
+  "e": "Período do orçamento",
+  "p": "Período de execução do orçamento, que no Brasil coincide com o ano civil.",
+  "c": "Lei 4.320/1964, art. 34. Pertencem ao exercício as receitas nele arrecadadas e as despesas nele empenhadas (regime misto).",
+  "g": [
+   "orçamento"
+  ],
+  "tp": [
+   "ADM|Diretrizes",
+   "ADM|Receita"
+  ],
+  "d": "Lei 4.320/1964, arts. 34 e 35"
+ },
+ {
+  "t": "Despesa corrente",
+  "e": "Despesa de manutenção",
+  "p": "Gastos para manter os serviços funcionando: pessoal, material de consumo, serviços de terceiros.",
+  "c": "Categoria econômica oposta à despesa de capital, que forma ou adquire bens (investimentos, inversões financeiras, amortização da dívida).",
+  "g": [
+   "despesa"
+  ],
+  "tp": [
+   "ADM|Receita"
+  ]
+ },
+ {
+  "t": "Despesa de capital",
+  "e": "Despesa que forma patrimônio",
+  "p": "Gastos com obras, equipamentos, compra de imóveis e amortização de dívidas.",
+  "c": "Grupos: investimentos, inversões financeiras e amortização da dívida.",
+  "g": [
+   "despesa"
+  ],
+  "tp": [
+   "ADM|Receita"
+  ]
+ },
+ {
+  "t": "Receita corrente",
+  "e": "Receita das atividades normais",
+  "p": "Receitas tributárias, de contribuições, patrimoniais, de serviços, transferências correntes.",
+  "c": "Receita de capital vem de operações de crédito, alienação de bens, amortização de empréstimos e transferências de capital.",
+  "g": [
+   "receita"
+  ],
+  "tp": [
+   "ADM|Receita"
+  ]
+ },
+ {
+  "t": "Lançamento",
+  "e": "Estágio da receita",
+  "p": "Ato que identifica o devedor e calcula o valor da receita.",
+  "c": "Estágios da receita: previsão, lançamento, arrecadação e recolhimento. Nem toda receita passa pelo lançamento.",
+  "g": [
+   "receita"
+  ],
+  "tp": [
+   "ADM|Receita"
+  ]
+ },
+ {
+  "t": "Despesas de exercícios anteriores",
+  "e": "DEA",
+  "p": "Despesas de anos passados pagas com o orçamento do ano atual, quando não foram empenhadas a tempo.",
+  "c": "Lei 4.320/1964, art. 37: despesas com saldo suficiente não processadas na época, restos a pagar com prescrição interrompida, compromissos reconhecidos após o encerramento do exercício.",
+  "g": [
+   "despesa"
+  ],
+  "tp": [
+   "ADM|Suprimento"
+  ],
+  "d": "Lei 4.320/1964, art. 37"
+ },
+ {
+  "t": "Restos a pagar processados",
+  "e": "Despesa liquidada e não paga",
+  "p": "Despesa empenhada e liquidada até 31 de dezembro, ainda não paga.",
+  "c": "Não processados: empenhados e ainda não liquidados. A distinção importa para o cancelamento e o controle fiscal.",
+  "g": [
+   "despesa"
+  ],
+  "tp": [
+   "ADM|Suprimento"
+  ]
+ },
+ {
+  "t": "Regime de adiantamento",
+  "e": "Suprimento de fundos",
+  "p": "Entrega de dinheiro a servidor para gastos que não podem seguir o processo normal de despesa.",
+  "c": "Sempre precedido de empenho. Não se concede a servidor responsável por dois suprimentos ou que esteja em alcance (sem prestar contas).",
+  "g": [
+   "despesa"
+  ],
+  "tp": [
+   "ADM|Suprimento"
+  ],
+  "d": "Lei 4.320/1964, arts. 68 e 69"
+ },
+ {
+  "t": "Etapa preparatória da licitação",
+  "e": "Fase interna",
+  "p": "Planejamento da contratação: estudo técnico preliminar, termo de referência, orçamento, análise de riscos.",
+  "c": "Lei 14.133/2021, art. 18. Fases: preparatória, divulgação do edital, propostas e lances, julgamento, habilitação, recursal e homologação.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADM|Noções de licitação",
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, art. 17"
+ },
+ {
+  "t": "Agente de contratação",
+  "e": "Condutor da licitação",
+  "p": "Servidor efetivo ou empregado público designado para conduzir a licitação.",
+  "c": "No pregão, é chamado de pregoeiro. Pode ser substituído por comissão de contratação de, no mínimo, três membros quando houver bens ou serviços especiais.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADM|Noções de licitação",
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, art. 8º"
+ },
+ {
+  "t": "Concorrência",
+  "e": "Modalidade de licitação",
+  "p": "Modalidade para bens e serviços especiais e obras e serviços comuns e especiais de engenharia.",
+  "c": "Lei 14.133/2021, art. 6º, XXXVIII. Critérios: menor preço, melhor técnica ou conteúdo artístico, técnica e preço, maior retorno econômico ou maior desconto.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADM|Noções de licitação",
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, art. 6º, XXXVIII"
+ },
+ {
+  "t": "Leilão",
+  "e": "Modalidade de licitação",
+  "p": "Modalidade para vender bens imóveis ou móveis inservíveis ou apreendidos, a quem der o maior lance.",
+  "c": "Pode ser conduzido por leiloeiro oficial ou servidor designado. Não tem habilitação prévia, em regra.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADM|Noções de licitação",
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, art. 6º, XL"
+ },
+ {
+  "t": "Concurso (licitação)",
+  "e": "Modalidade para trabalho técnico, científico ou artístico",
+  "p": "Escolhe trabalho intelectual mediante prêmio ou remuneração ao vencedor.",
+  "c": "Não confundir com concurso público para cargos. Critério: melhor técnica ou conteúdo artístico.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADM|Noções de licitação",
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, art. 6º, XXXIX"
+ },
+ {
+  "t": "Licitação deserta",
+  "e": "Nenhum interessado apareceu",
+  "p": "Licitação em que nenhum licitante se apresentou.",
+  "c": "Permite dispensa para nova contratação que mantenha todas as condições do edital, se a licitação foi feita há menos de 1 ano (Lei 14.133, art. 75, III). Fracassada: houve licitantes, mas todos foram inabilitados ou desclassificados.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADM|Noções de licitação",
+   "ADV|Licitações e contratos: Lei 14"
+  ]
+ }
+]

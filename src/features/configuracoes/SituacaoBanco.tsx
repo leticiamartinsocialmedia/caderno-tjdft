@@ -31,6 +31,11 @@ const ETAPAS = [
       return { error: r.error ?? (r.data?.length ? null : { message: "sem a prova" }) };
     },
   },
+  {
+    arquivo: "0008_revisao_edital_e_nomenclatura.sql",
+    oQue: "Edital revisado e mais termos na Nomenclatura",
+    marca: () => supabase().from("configuracoes").select("termos_2022_b").limit(1),
+  },
 ];
 
 async function verificar() {

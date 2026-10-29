@@ -349,8 +349,15 @@ as $$
 begin
   perform public.semear_edital();
   perform public.atualizar_edital_2022();
+  -- Etapas do 0008: rodar este arquivo de novo não as desliga.
+  if to_regprocedure('public.revisar_edital_2022()') is not null then
+    perform public.revisar_edital_2022();
+  end if;
   perform public.semear_termos();
   perform public.semear_termos_2022();
+  if to_regprocedure('public.semear_termos_2022b()') is not null then
+    perform public.semear_termos_2022b();
+  end if;
 end;
 $$;
 

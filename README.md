@@ -46,6 +46,7 @@ Código organizado por funcionalidade em `src/features/<seção>`. Componentes c
    5. `0005_simulados.sql`: simulados (banco de questões das provas anteriores, tentativas e respostas)
    6. `0006_simulado_tjdft_2022_fgv.sql`: prova de Técnico Judiciário – Área Administrativa do TJDFT 2022 (FGV), 60 questões e o tema da redação. Gerado por `node scripts/gerar-sql-simulados.mjs supabase/dados/simulado_tjdft_2022_fgv.json supabase/migrations/0006_simulado_tjdft_2022_fgv.sql`
    7. `0007_simulado_tjdft_2013_cebraspe.sql`: prova de Técnico Judiciário – Área Administrativa do TJDFT 2013 (Cebraspe, CESPE/UnB), 120 itens de certo ou errado, 3 textos com linhas numeradas e a discursiva. Gerado pelo mesmo script a partir de `supabase/dados/simulado_tjdft_2013_cebraspe.json`
+   8. `0008_revisao_edital_e_nomenclatura.sql`: revisão do edital (tópicos que faltavam em Gestão de Pessoas, Regimento Interno e Processo Civil; um tópico renomeado sem perder o que já estava ligado a ele) e a segunda leva da Nomenclatura (374 termos e 81 pares "Não confundir com"). Gerado junto com o 0003 por `node scripts/gerar-sql-edital.mjs`
 
    Cole o conteúdo inteiro, clique em **Run** e espere "Success". Rodar de novo não estraga nada.
 3. Copie a **Project URL** (Project Settings → Data API) e a **Publishable key** (Project Settings → API Keys).

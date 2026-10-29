@@ -1,0 +1,686 @@
+[
+ {
+  "t": "Câmara",
+  "e": "Órgão fracionário do Tribunal",
+  "p": "Grupo de desembargadores que julga certas matérias reunindo Turmas: no TJDFT há Câmaras Cíveis e a Câmara Criminal.",
+  "c": "As Câmaras julgam, por exemplo, ações rescisórias, conflitos de competência e incidentes entre Turmas da mesma especialidade. Confira a competência de cada uma no RITJDFT.",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "RI|Câmaras"
+  ]
+ },
+ {
+  "t": "Turma",
+  "e": "Órgão fracionário de julgamento",
+  "p": "Colegiado menor de desembargadores que julga a maior parte dos recursos (apelações, agravos).",
+  "c": "No TJDFT as Turmas são Cíveis ou Criminais. Turma Recursal é outra coisa: pertence aos Juizados Especiais e é composta de juízes de primeiro grau.",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "RI|Câmaras"
+  ]
+ },
+ {
+  "t": "Turma Recursal",
+  "e": "Órgão recursal dos Juizados Especiais",
+  "p": "Colegiado de juízes de primeiro grau que julga os recursos contra sentenças dos Juizados Especiais.",
+  "c": "Não integra o segundo grau do Tribunal. Recurso inominado (cível) e apelação (criminal, Lei 9.099) vão à Turma Recursal.",
+  "g": [
+   "juizados"
+  ],
+  "tp": [
+   "LOJ|Juizados",
+   "RI|Câmaras"
+  ]
+ },
+ {
+  "t": "Órgão fracionário",
+  "e": "Parte do Tribunal com competência própria",
+  "p": "Qualquer colegiado menor que o Pleno: Conselho Especial, Câmaras e Turmas.",
+  "c": "Pela cláusula de reserva de plenário (CF, art. 97), órgão fracionário não declara inconstitucionalidade de lei; envia ao Pleno ou ao órgão especial, salvo se já houver pronunciamento deles ou do STF.",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "RI|Câmaras",
+   "CON|Poder Judiciário: disp"
+  ],
+  "d": "CF, art. 97"
+ },
+ {
+  "t": "Reserva de plenário",
+  "e": "Cláusula do art. 97 da CF",
+  "p": "Só a maioria absoluta do Tribunal Pleno ou do órgão especial pode declarar uma lei inconstitucional.",
+  "c": "Súmula Vinculante 10: viola a cláusula a decisão de órgão fracionário que, sem declarar expressamente, afasta a aplicação da lei. No TJDFT o órgão especial é o Conselho Especial.",
+  "g": [
+   "constitucionalidade"
+  ],
+  "tp": [
+   "RI|Tribunal Pleno",
+   "CON|Poder Judiciário: disp"
+  ],
+  "d": "CF, art. 97; SV 10"
+ },
+ {
+  "t": "Órgão especial",
+  "e": "Órgão que exerce competências do Pleno",
+  "p": "Em tribunais com mais de 25 julgadores, pode ser criado um órgão com 11 a 25 membros para exercer atribuições do Pleno.",
+  "c": "Metade das vagas por antiguidade e metade por eleição do Pleno. No TJDFT, essa função cabe ao Conselho Especial.",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "RI|Tribunal Pleno",
+   "CON|Poder Judiciário: disp"
+  ],
+  "d": "CF, art. 93, XI"
+ },
+ {
+  "t": "Eleição dos dirigentes",
+  "e": "Escolha de Presidente, Vice-Presidentes e Corregedor",
+  "p": "Os cargos de direção do Tribunal são preenchidos por eleição entre os desembargadores mais antigos.",
+  "c": "Mandato de 2 anos, vedada a reeleição (LOMAN, art. 102). Quem exerceu cargo de direção por 4 anos ou o de Presidente fica inelegível até esgotar a lista de antiguidade.",
+  "g": [
+   "direção"
+  ],
+  "tp": [
+   "RI|Eleições"
+  ],
+  "d": "LOMAN (LC 35/1979), art. 102"
+ },
+ {
+  "t": "Posse",
+  "e": "Investidura no cargo",
+  "p": "Ato pelo qual o eleito ou nomeado assume formalmente o cargo, com compromisso.",
+  "c": "No Tribunal, a posse dos dirigentes ocorre em sessão solene do Pleno. Na Lei 8.112, posse é a assinatura do termo e ocorre em até 30 dias da nomeação.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "RI|Eleições",
+   "ADV|Lei 8.112"
+  ]
+ },
+ {
+  "t": "Substituição regimental",
+  "e": "Quem assume na ausência",
+  "p": "Regras que dizem quem substitui o Presidente, o relator ou o desembargador em férias ou afastado.",
+  "c": "Em geral, segue a ordem de antiguidade ou a designação prevista no RITJDFT. Pergunte-se sempre: substituição eventual (ausência curta) ou convocação de juiz (vaga ou afastamento longo)?",
+  "g": [
+   "substituição"
+  ],
+  "tp": [
+   "RI|Eleições"
+  ]
+ },
+ {
+  "t": "Antiguidade",
+  "e": "Critério de tempo na carreira",
+  "p": "Ordem dos magistrados pelo tempo de exercício; decide preferências, substituições e promoções.",
+  "c": "Promoção na magistratura alterna antiguidade e merecimento. Na antiguidade, o Tribunal só recusa o mais antigo por voto fundamentado de 2/3 dos membros.",
+  "g": [
+   "carreira"
+  ],
+  "tp": [
+   "RI|Eleições",
+   "CON|Poder Judiciário: disp"
+  ],
+  "d": "CF, art. 93, II, d"
+ },
+ {
+  "t": "Comissão permanente",
+  "e": "Comissão regimental fixa",
+  "p": "Grupo de desembargadores que cuida de um tema de forma contínua (ex.: regimento, jurisprudência, acervo).",
+  "c": "Diferente da comissão temporária, criada para um fim específico e extinta quando o cumpre.",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "RI|Comissões"
+  ]
+ },
+ {
+  "t": "Comissão temporária",
+  "e": "Comissão para tarefa específica",
+  "p": "Grupo criado para um trabalho determinado, que se encerra ao concluí-lo.",
+  "c": "Designada pelo Presidente ou pelo Pleno conforme o RITJDFT; não confundir com comissão permanente.",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "RI|Comissões"
+  ]
+ },
+ {
+  "t": "Distribuição",
+  "e": "Sorteio do processo a um relator",
+  "p": "Ato que define, por sorteio eletrônico e de forma alternada, qual relator ou órgão julgará o processo.",
+  "c": "Respeita a prevenção, a igualdade e a publicidade. Distribuição por dependência ocorre quando já há relator prevento.",
+  "g": [
+   "distribuição"
+  ],
+  "tp": [
+   "RI|Registro",
+   "PC|Distribuição"
+  ]
+ },
+ {
+  "t": "Distribuição por dependência",
+  "e": "Distribuição vinculada a processo anterior",
+  "p": "O processo vai direto ao juiz ou relator que já cuida de causa ligada a ele.",
+  "c": "CPC, art. 286: conexão ou continência; reiteração de pedido após extinção sem mérito; ações com risco de decisões conflitantes.",
+  "g": [
+   "distribuição"
+  ],
+  "tp": [
+   "PC|Distribuição",
+   "RI|Registro"
+  ],
+  "d": "CPC, art. 286"
+ },
+ {
+  "t": "Preparo",
+  "e": "Pagamento das custas do recurso",
+  "p": "Recolhimento das custas e do porte de remessa e retorno para o recurso ser processado.",
+  "c": "Comprovado no ato de interpor (CPC, art. 1.007). Insuficiente: intimação para completar em 5 dias. Não comprovado: pagamento em dobro. Isentos: MP, entes públicos, beneficiários da gratuidade.",
+  "g": [
+   "recursos"
+  ],
+  "tp": [
+   "RI|Preparo",
+   "PC|Recursos: disp"
+  ],
+  "d": "CPC, art. 1.007"
+ },
+ {
+  "t": "Deserção",
+  "e": "Recurso não conhecido por falta de preparo",
+  "p": "Se o recorrente não paga as custas do recurso, ele é considerado deserto e não é julgado.",
+  "c": "Antes de declarar a deserção, o relator deve intimar para recolher em dobro (ausência) ou completar (insuficiência). Justo impedimento afasta a pena.",
+  "g": [
+   "recursos"
+  ],
+  "tp": [
+   "RI|Preparo",
+   "PC|Recursos: disp"
+  ],
+  "d": "CPC, art. 1.007, §§ 2º a 6º"
+ },
+ {
+  "t": "Pauta de julgamento",
+  "e": "Lista de processos de uma sessão",
+  "p": "Relação publicada dos processos que serão julgados numa sessão.",
+  "c": "Entre a publicação da pauta e a sessão, prazo mínimo de 5 dias úteis (CPC, art. 935). Processo não julgado fica para a próxima sessão sem nova publicação.",
+  "g": [
+   "sessões"
+  ],
+  "tp": [
+   "RI|Sessões"
+  ],
+  "d": "CPC, art. 935"
+ },
+ {
+  "t": "Sustentação oral",
+  "e": "Fala do advogado na sessão",
+  "p": "Momento em que o advogado expõe oralmente suas razões antes do voto.",
+  "c": "15 minutos para cada parte, após o relatório (CPC, art. 937). Cabe em apelação, recurso ordinário, especial, extraordinário, embargos de divergência, rescisória, MS e agravo contra tutela provisória.",
+  "g": [
+   "sessões"
+  ],
+  "tp": [
+   "RI|Sessões",
+   "PC|Apelação"
+  ],
+  "d": "CPC, art. 937"
+ },
+ {
+  "t": "Pedido de vista",
+  "e": "Adiamento para examinar o processo",
+  "p": "Julgador que não se sente apto a votar pede o processo para examinar melhor.",
+  "c": "Prazo de 10 dias, prorrogável por mais 10; depois, o processo é reincluído em pauta automaticamente (CPC, art. 940).",
+  "g": [
+   "sessões"
+  ],
+  "tp": [
+   "RI|Sessões"
+  ],
+  "d": "CPC, art. 940"
+ },
+ {
+  "t": "Técnica de ampliação do colegiado",
+  "e": "Julgamento estendido",
+  "p": "Quando a apelação não é unânime, o julgamento continua com novos julgadores para permitir inversão do resultado.",
+  "c": "CPC, art. 942: substitui os antigos embargos infringentes. Aplica-se também à rescisória que rescinde a sentença e ao agravo que reforma decisão de mérito parcial.",
+  "g": [
+   "sessões"
+  ],
+  "tp": [
+   "RI|Sessões",
+   "PC|Apelação"
+  ],
+  "d": "CPC, art. 942"
+ },
+ {
+  "t": "Revisor",
+  "e": "Segundo julgador a examinar o processo",
+  "p": "Desembargador que revisa o processo depois do relator em certos feitos.",
+  "c": "O CPC/2015 extinguiu o revisor no processo civil. No processo penal, ainda existe em alguns recursos e ações penais originárias, conforme o regimento.",
+  "g": [
+   "julgamento"
+  ],
+  "tp": [
+   "RI|Sessões"
+  ]
+ },
+ {
+  "t": "Ação originária",
+  "e": "Processo que começa no Tribunal",
+  "p": "Causa que não passa pela primeira instância: já nasce no Tribunal por causa da matéria ou da autoridade.",
+  "c": "Ex.: MS contra ato de desembargador, ação rescisória, ação penal contra autoridades com foro no TJDFT. Diferente de recurso, que leva ao Tribunal causa já julgada pelo juiz.",
+  "g": [
+   "competência"
+  ],
+  "tp": [
+   "RI|Processos de competência"
+  ]
+ },
+ {
+  "t": "Ação rescisória",
+  "e": "Ação para desfazer decisão transitada em julgado",
+  "p": "Ação que pede a anulação de uma decisão de mérito já definitiva, por vícios graves listados na lei.",
+  "c": "Prazo de 2 anos do trânsito em julgado da última decisão (CPC, art. 975). Julgada pelo próprio Tribunal (competência originária).",
+  "g": [
+   "rescisória"
+  ],
+  "tp": [
+   "RI|Processos de competência",
+   "PC|Sentença"
+  ],
+  "d": "CPC, arts. 966 e 975"
+ },
+ {
+  "t": "Conflito de competência",
+  "e": "Disputa sobre quem deve julgar",
+  "p": "Dois ou mais juízes se dizem competentes (positivo) ou incompetentes (negativo) para a mesma causa.",
+  "c": "Também ocorre quando há controvérsia sobre reunião ou separação de processos (CPC, art. 66). Julgado pelo tribunal a que os juízes estão vinculados.",
+  "g": [
+   "competência"
+  ],
+  "tp": [
+   "RI|Processos de competência",
+   "PC|Competência"
+  ],
+  "d": "CPC, art. 66"
+ },
+ {
+  "t": "IRDR",
+  "e": "Incidente de resolução de demandas repetitivas",
+  "p": "Mecanismo que fixa uma tese única para muitos processos com a mesma questão de direito.",
+  "c": "Requisitos: repetição efetiva de processos e risco à isonomia e à segurança jurídica. Suspende os processos na área do tribunal; a tese vincula juízes e Juizados.",
+  "g": [
+   "precedentes"
+  ],
+  "tp": [
+   "RI|Uniformização",
+   "PC|Recursos: disp"
+  ],
+  "d": "CPC, arts. 976 a 987"
+ },
+ {
+  "t": "IAC",
+  "e": "Incidente de assunção de competência",
+  "p": "Leva o julgamento de recurso com questão relevante, sem repetição em massa, a um órgão colegiado maior.",
+  "c": "Diferente do IRDR, não exige multiplicidade de processos. O acórdão vincula juízes e órgãos fracionários.",
+  "g": [
+   "precedentes"
+  ],
+  "tp": [
+   "RI|Uniformização"
+  ],
+  "d": "CPC, art. 947"
+ },
+ {
+  "t": "Súmula",
+  "e": "Enunciado da jurisprudência dominante",
+  "p": "Frase curta que resume o entendimento consolidado de um tribunal.",
+  "c": "Tribunais devem uniformizar e manter a jurisprudência estável, íntegra e coerente (CPC, art. 926). Só a súmula vinculante do STF obriga toda a administração pública.",
+  "g": [
+   "precedentes"
+  ],
+  "tp": [
+   "RI|Uniformização"
+  ],
+  "d": "CPC, art. 926"
+ },
+ {
+  "t": "Emenda regimental",
+  "e": "Alteração do Regimento Interno",
+  "p": "Norma aprovada pelo Pleno que altera o texto do Regimento Interno.",
+  "c": "O edital cobra o RITJDFT com as emendas posteriores; questões costumam explorar competências alteradas.",
+  "g": [
+   "regimento"
+  ],
+  "tp": [
+   "RI|Emendas"
+  ]
+ },
+ {
+  "t": "Lei 11.697/2008",
+  "e": "Lei de Organização Judiciária do DF e dos Territórios",
+  "p": "Lei federal que organiza a Justiça do DF: composição do TJDFT, circunscrições, varas e competências.",
+  "c": "É lei federal porque a União organiza e mantém o Poder Judiciário do DF (CF, art. 21, XIII, e art. 22, XVII).",
+  "g": [
+   "organização judiciária"
+  ],
+  "tp": [
+   "LOJ|Lei 11.697"
+  ],
+  "d": "CF, art. 21, XIII"
+ },
+ {
+  "t": "Primeiro grau",
+  "e": "Primeira instância",
+  "p": "Onde o processo começa: juízes de direito nas varas e nos juizados.",
+  "c": "O segundo grau é o Tribunal (desembargadores), que julga recursos e ações originárias.",
+  "g": [
+   "organização judiciária"
+  ],
+  "tp": [
+   "LOJ|Lei 11.697",
+   "LOJ|Circunscrições"
+  ]
+ },
+ {
+  "t": "Vara de Fazenda Pública do DF",
+  "e": "Vara das causas do Distrito Federal",
+  "p": "Julga as causas em que o DF ou suas autarquias e fundações forem parte.",
+  "c": "Distinga das varas cíveis comuns e dos Juizados Especiais da Fazenda Pública (causas até 60 salários mínimos, Lei 12.153/2009).",
+  "g": [
+   "competência"
+  ],
+  "tp": [
+   "LOJ|Competência das Varas"
+  ]
+ },
+ {
+  "t": "Juizado Especial da Fazenda Pública",
+  "e": "Juizado para causas contra o Estado",
+  "p": "Julga causas cíveis de menor valor contra o DF, autarquias, fundações e empresas públicas distritais.",
+  "c": "Até 60 salários mínimos; competência absoluta onde instalado (Lei 12.153/2009). Não cabe para MS, desapropriação ou demandas coletivas.",
+  "g": [
+   "juizados"
+  ],
+  "tp": [
+   "LOJ|Juizados"
+  ],
+  "d": "Lei 12.153/2009"
+ },
+ {
+  "t": "Juizado Especial Cível",
+  "e": "Juizado das pequenas causas",
+  "p": "Julga causas cíveis simples, de até 40 salários mínimos, com rito rápido.",
+  "c": "Até 20 salários mínimos a parte pode atuar sem advogado (Lei 9.099/1995, art. 9º). Pessoa jurídica de direito público não pode ser parte.",
+  "g": [
+   "juizados"
+  ],
+  "tp": [
+   "LOJ|Juizados"
+  ],
+  "d": "Lei 9.099/1995"
+ },
+ {
+  "t": "Juizado Especial Criminal",
+  "e": "Juizado das infrações de menor potencial ofensivo",
+  "p": "Julga contravenções e crimes com pena máxima de até 2 anos.",
+  "c": "Admite transação penal e composição civil dos danos. Não se aplica à violência doméstica contra a mulher (Lei 11.340, art. 41).",
+  "g": [
+   "juizados"
+  ],
+  "tp": [
+   "LOJ|Juizados",
+   "PP|Processo comum"
+  ],
+  "d": "Lei 9.099/1995, art. 61"
+ },
+ {
+  "t": "Vara de Execuções Penais",
+  "e": "VEP",
+  "p": "Vara que acompanha o cumprimento das penas: progressão de regime, livramento condicional, remição.",
+  "c": "No DF, a competência e a organização vêm da LOJDFT. Não confundir com a vara criminal que proferiu a condenação.",
+  "g": [
+   "competência"
+  ],
+  "tp": [
+   "LOJ|Competência das Varas"
+  ]
+ },
+ {
+  "t": "Juiz de Direito",
+  "e": "Juiz titular de vara",
+  "p": "Magistrado de primeiro grau titular de uma vara.",
+  "c": "Entra na carreira como Juiz de Direito Substituto, por concurso de provas e títulos, e é promovido por antiguidade e merecimento.",
+  "g": [
+   "magistratura"
+  ],
+  "tp": [
+   "LOJ|Juízes"
+  ]
+ },
+ {
+  "t": "Vitaliciedade",
+  "e": "Garantia de permanência do juiz",
+  "p": "Após 2 anos de exercício no primeiro grau, o juiz só perde o cargo por sentença judicial transitada em julgado.",
+  "c": "Antes disso, a perda depende de deliberação do tribunal. Quem entra pelo quinto constitucional é vitalício desde a posse.",
+  "g": [
+   "garantias"
+  ],
+  "tp": [
+   "LOJ|Juízes",
+   "CON|Poder Judiciário: disp"
+  ],
+  "d": "CF, art. 95, I"
+ },
+ {
+  "t": "Serventia judicial",
+  "e": "Cartório do juízo",
+  "p": "Unidade administrativa que dá andamento aos processos de uma vara (o ofício judicial ou secretaria).",
+  "c": "Integra os serviços auxiliares da Justiça. O diretor de secretaria responde pela organização do cartório.",
+  "g": [
+   "serviços auxiliares"
+  ],
+  "tp": [
+   "LOJ|Serviços",
+   "PGC|Atribuições"
+  ]
+ },
+ {
+  "t": "Oficial de justiça",
+  "e": "Servidor que cumpre ordens do juiz fora do cartório",
+  "p": "Faz citações, intimações, penhoras e outras diligências determinadas pelo juiz.",
+  "c": "No CPC é auxiliar da Justiça (art. 154): certifica o que fez e pode certificar proposta de autocomposição.",
+  "g": [
+   "serviços auxiliares"
+  ],
+  "tp": [
+   "LOJ|Serviços",
+   "PC|Auxiliares"
+  ],
+  "d": "CPC, art. 154"
+ },
+ {
+  "t": "Distribuidor",
+  "e": "Serviço que reparte os processos",
+  "p": "Setor que registra e distribui os processos entre as varas competentes.",
+  "c": "Garante alternância e aleatoriedade. É um dos auxiliares da Justiça listados no CPC (art. 149).",
+  "g": [
+   "serviços auxiliares"
+  ],
+  "tp": [
+   "LOJ|Serviços",
+   "PC|Distribuição"
+  ]
+ },
+ {
+  "t": "Diretor de secretaria",
+  "e": "Chefe do cartório",
+  "p": "Servidor que dirige o ofício judicial: organiza o serviço, confere atos e assina expedientes.",
+  "c": "Responde pela guarda dos autos e pelo cumprimento das ordens judiciais; pode praticar atos ordinatórios.",
+  "g": [
+   "ofício judicial"
+  ],
+  "tp": [
+   "PGC|Atribuições",
+   "PGC|Provimento Geral"
+  ]
+ },
+ {
+  "t": "Termo de juntada",
+  "e": "Registro da inclusão de peça nos autos",
+  "p": "Certificação de que um documento foi anexado ao processo.",
+  "c": "No processo eletrônico a juntada é automática pelo sistema; no físico, é registrada por termo com data.",
+  "g": [
+   "ofício judicial"
+  ],
+  "tp": [
+   "PGC|Atribuições"
+  ]
+ },
+ {
+  "t": "Abertura de vista",
+  "e": "Envio dos autos à parte ou ao MP",
+  "p": "Ato que encaminha o processo para manifestação de alguém.",
+  "c": "Deve ser registrada nos autos com data. O prazo começa a correr na forma da intimação.",
+  "g": [
+   "ofício judicial"
+  ],
+  "tp": [
+   "PGC|Atribuições"
+  ]
+ },
+ {
+  "t": "Certidão de decurso de prazo",
+  "e": "Registro de que o prazo acabou",
+  "p": "Documento do cartório que atesta que o prazo terminou, com ou sem manifestação.",
+  "c": "Base para atos seguintes, como trânsito em julgado e revelia.",
+  "g": [
+   "certidões"
+  ],
+  "tp": [
+   "PGC|Atribuições"
+  ]
+ },
+ {
+  "t": "Mandado",
+  "e": "Ordem escrita do juiz",
+  "p": "Documento que leva a ordem judicial para ser cumprida pelo oficial de justiça.",
+  "c": "Mandado de citação, intimação, penhora, prisão. O oficial certifica o cumprimento no próprio mandado.",
+  "g": [
+   "comunicação"
+  ],
+  "tp": [
+   "PGC|Atribuições",
+   "PC|Comunicação"
+  ]
+ },
+ {
+  "t": "Correição",
+  "e": "Fiscalização dos serviços judiciais",
+  "p": "Inspeção feita pela Corregedoria nas unidades judiciais para verificar a regularidade dos serviços.",
+  "c": "Ordinária (periódica) ou extraordinária (por fato específico). O juiz faz correição permanente na própria unidade.",
+  "g": [
+   "corregedoria"
+  ],
+  "tp": [
+   "PGC|Provimento Geral",
+   "RI|Presidência"
+  ]
+ },
+ {
+  "t": "Arquivamento",
+  "e": "Guarda definitiva ou provisória do processo",
+  "p": "Encerramento do andamento do processo no cartório, com registro e baixa.",
+  "c": "Pode ser provisório (ex.: aguardando bens para penhora) ou definitivo. Desarquivar exige pedido e registro.",
+  "g": [
+   "ofício judicial"
+  ],
+  "tp": [
+   "PGC|Atribuições"
+  ]
+ },
+ {
+  "t": "Segredo de justiça",
+  "e": "Processo com acesso restrito",
+  "p": "Processo que só as partes e seus advogados podem consultar.",
+  "c": "CPC, art. 189: interesse público, família, dados protegidos pela intimidade e arbitragem com confidencialidade. No PJe, o sigilo é marcado no cadastro.",
+  "g": [
+   "sigilo"
+  ],
+  "tp": [
+   "PJE|Provimento",
+   "PC|Atos processuais"
+  ],
+  "d": "CPC, art. 189"
+ },
+ {
+  "t": "Credenciamento no PJe",
+  "e": "Cadastro para usar o sistema",
+  "p": "Advogados e partes precisam se cadastrar e usar certificado digital ou login para peticionar.",
+  "c": "Lei 11.419/2006, art. 2º: o envio de petições por meio eletrônico exige credenciamento prévio no Poder Judiciário.",
+  "g": [
+   "PJe"
+  ],
+  "tp": [
+   "PJE|Peticionamento",
+   "PC|Processo judicial"
+  ],
+  "d": "Lei 11.419/2006, art. 2º"
+ },
+ {
+  "t": "Indisponibilidade do sistema",
+  "e": "Falha do PJe",
+  "p": "Quando o sistema fica fora do ar, os prazos que venceriam naquele dia são prorrogados.",
+  "c": "Prorroga-se para o primeiro dia útil seguinte à resolução do problema (Lei 11.419, art. 10, § 2º).",
+  "g": [
+   "PJe",
+   "prazos"
+  ],
+  "tp": [
+   "PJE|Peticionamento",
+   "PC|Processo judicial"
+  ],
+  "d": "Lei 11.419/2006, art. 10, § 2º"
+ },
+ {
+  "t": "Petição tempestiva no PJe",
+  "e": "Prazo até 24 horas",
+  "p": "No processo eletrônico, a petição enviada até as 24 horas do último dia é tempestiva.",
+  "c": "Lei 11.419/2006, art. 3º, parágrafo único. Considera-se o horário de Brasília.",
+  "g": [
+   "PJe",
+   "prazos"
+  ],
+  "tp": [
+   "PJE|Peticionamento",
+   "PC|Processo judicial"
+  ],
+  "d": "Lei 11.419/2006, art. 3º"
+ },
+ {
+  "t": "Intimação tácita",
+  "e": "Intimação após 10 dias sem consulta",
+  "p": "No sistema eletrônico, se o intimado não abre a intimação em 10 dias corridos, considera-se intimado no fim desse prazo.",
+  "c": "Lei 11.419/2006, art. 5º, § 3º. Se consultar antes, a intimação ocorre no dia da consulta.",
+  "g": [
+   "PJe",
+   "intimações"
+  ],
+  "tp": [
+   "PJE|Peticionamento",
+   "PC|Comunicação"
+  ],
+  "d": "Lei 11.419/2006, art. 5º"
+ }
+]

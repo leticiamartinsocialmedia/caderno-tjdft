@@ -1,0 +1,897 @@
+[
+ {
+  "t": "Constituição promulgada",
+  "e": "Constituição democrática",
+  "p": "Feita por representantes eleitos pelo povo (Assembleia Constituinte).",
+  "c": "A CF/1988 é promulgada, escrita, dogmática, rígida, formal, analítica e eclética. A outorgada é imposta pelo governante (ex.: 1937).",
+  "g": [
+   "classificação"
+  ],
+  "tp": [
+   "CON|Constituição"
+  ]
+ },
+ {
+  "t": "Constituição analítica",
+  "e": "Constituição extensa",
+  "p": "Detalha muitos assuntos, inclusive temas que não são essencialmente constitucionais.",
+  "c": "Oposta à sintética (curta, só princípios, como a dos EUA). A CF/1988 é analítica.",
+  "g": [
+   "classificação"
+  ],
+  "tp": [
+   "CON|Constituição"
+  ]
+ },
+ {
+  "t": "Poder constituinte originário",
+  "e": "Poder que cria a Constituição",
+  "p": "Poder de fazer uma nova Constituição, inicial, ilimitado juridicamente e incondicionado.",
+  "c": "O derivado reformador (emendas) é limitado pelas cláusulas pétreas, pelo procedimento e pelas circunstâncias (não há emenda durante intervenção federal, estado de defesa ou de sítio).",
+  "g": [
+   "poder constituinte"
+  ],
+  "tp": [
+   "CON|Constituição"
+  ]
+ },
+ {
+  "t": "Eficácia limitada",
+  "e": "Norma que depende de lei",
+  "p": "Norma constitucional que só produz todos os efeitos depois que uma lei a regulamenta.",
+  "c": "Classificação de José Afonso da Silva: eficácia plena (aplicação imediata), contida (aplicação imediata, mas a lei pode restringir) e limitada (depende de lei).",
+  "g": [
+   "eficácia"
+  ],
+  "tp": [
+   "CON|Constituição"
+  ]
+ },
+ {
+  "t": "Separação dos Poderes",
+  "e": "Divisão das funções do Estado",
+  "p": "Legislativo, Executivo e Judiciário são independentes e harmônicos entre si.",
+  "c": "Princípio fundamental (CF, art. 2º) e cláusula pétrea. Há sistema de freios e contrapesos (veto, controle de constitucionalidade, CPI).",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "CON|Princípios"
+  ],
+  "d": "CF, art. 2º"
+ },
+ {
+  "t": "Dignidade da pessoa humana",
+  "e": "Fundamento da República",
+  "p": "Valor que coloca a pessoa como centro e fim do Estado.",
+  "c": "Fundamento (art. 1º, III), não objetivo. Fundamentos: soberania, cidadania, dignidade, valores sociais do trabalho e da livre iniciativa, pluralismo político (SOCIDIVAPLU).",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "CON|Princípios"
+  ],
+  "d": "CF, art. 1º, III"
+ },
+ {
+  "t": "Remédios constitucionais",
+  "e": "Ações de garantia",
+  "p": "Ações que protegem direitos fundamentais: habeas corpus, habeas data, mandado de segurança, mandado de injunção e ação popular.",
+  "c": "HC e HD são gratuitos; a ação popular é gratuita salvo comprovada má-fé do autor (CF, art. 5º, LXXIII e LXXVII).",
+  "g": [
+   "remédios"
+  ],
+  "tp": [
+   "CON|Direitos e deveres"
+  ],
+  "d": "CF, art. 5º"
+ },
+ {
+  "t": "Inviolabilidade de domicílio",
+  "e": "A casa é asilo inviolável",
+  "p": "Ninguém pode entrar na casa sem consentimento do morador.",
+  "c": "Exceções: flagrante delito, desastre ou socorro (a qualquer hora); ordem judicial (só durante o dia).",
+  "g": [
+   "direitos individuais"
+  ],
+  "tp": [
+   "CON|Direitos e deveres"
+  ],
+  "d": "CF, art. 5º, XI"
+ },
+ {
+  "t": "Direito de reunião",
+  "e": "Liberdade de reunião",
+  "p": "Todos podem se reunir pacificamente, sem armas, em locais abertos ao público.",
+  "c": "Não depende de autorização; exige apenas aviso prévio à autoridade e não frustrar outra reunião já convocada para o mesmo local.",
+  "g": [
+   "direitos individuais"
+  ],
+  "tp": [
+   "CON|Direitos e deveres"
+  ],
+  "d": "CF, art. 5º, XVI"
+ },
+ {
+  "t": "Direitos sociais",
+  "e": "Direitos de segunda dimensão",
+  "p": "Direitos que exigem prestações do Estado: educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência, proteção à maternidade e à infância, assistência aos desamparados.",
+  "c": "CF, art. 6º. Ligados à igualdade material. Aplicam-se a reserva do possível e a vedação ao retrocesso social.",
+  "g": [
+   "direitos sociais"
+  ],
+  "tp": [
+   "CON|Direitos sociais"
+  ],
+  "d": "CF, art. 6º"
+ },
+ {
+  "t": "Reserva do possível",
+  "e": "Limite orçamentário dos direitos",
+  "p": "Os direitos sociais se realizam dentro da disponibilidade de recursos do Estado.",
+  "c": "Não pode ser alegada para negar o mínimo existencial. Construção doutrinária e jurisprudencial, não está escrita na CF.",
+  "g": [
+   "direitos sociais"
+  ],
+  "tp": [
+   "CON|Direitos sociais"
+  ]
+ },
+ {
+  "t": "Direitos dos trabalhadores",
+  "e": "Rol do art. 7º da CF",
+  "p": "Garantias como salário mínimo, 13º, férias com 1/3, FGTS, licença-maternidade de 120 dias, jornada de 8h diárias e 44h semanais.",
+  "c": "O rol é exemplificativo (“além de outros que visem à melhoria de sua condição social”).",
+  "g": [
+   "direitos sociais"
+  ],
+  "tp": [
+   "CON|Direitos sociais"
+  ],
+  "d": "CF, art. 7º"
+ },
+ {
+  "t": "Direito de greve",
+  "e": "Greve dos trabalhadores",
+  "p": "Os trabalhadores decidem quando e por que fazer greve.",
+  "c": "Servidor público civil: direito exercido nos termos de lei específica; o STF aplica a lei de greve privada (Lei 7.783/1989) enquanto não vem a lei. Militares não podem fazer greve.",
+  "g": [
+   "greve"
+  ],
+  "tp": [
+   "CON|Direitos sociais",
+   "CON|Servidores"
+  ],
+  "d": "CF, arts. 9º e 37, VII"
+ },
+ {
+  "t": "Perda da nacionalidade",
+  "e": "Quando o brasileiro deixa de ser brasileiro",
+  "p": "Hoje o brasileiro só perde a nacionalidade em dois casos: naturalização cancelada por sentença (fraude no processo ou atentado contra a ordem constitucional) ou pedido expresso de perda.",
+  "c": "Redação da EC 131/2023: adquirir outra nacionalidade já não faz perder a brasileira; o pedido de perda não vale se gerar apatridia, e quem renunciou pode readquirir a nacionalidade.",
+  "g": [
+   "nacionalidade"
+  ],
+  "tp": [
+   "CON|Nacionalidade"
+  ],
+  "d": "CF, art. 12, § 4º"
+ },
+ {
+  "t": "Cargos privativos de brasileiro nato",
+  "e": "Cargos só para natos",
+  "p": "Presidente e Vice, Presidentes da Câmara e do Senado, Ministro do STF, carreira diplomática, oficial das Forças Armadas, Ministro de Estado da Defesa.",
+  "c": "CF, art. 12, § 3º. Fora desses casos, a lei não pode distinguir natos e naturalizados.",
+  "g": [
+   "nacionalidade"
+  ],
+  "tp": [
+   "CON|Nacionalidade"
+  ],
+  "d": "CF, art. 12, § 3º"
+ },
+ {
+  "t": "Sufrágio universal",
+  "e": "Direito de votar de todos",
+  "p": "Todos os cidadãos podem votar, sem exigência de renda ou instrução.",
+  "c": "Voto direto, secreto, com valor igual para todos. O voto direto, secreto, universal e periódico é cláusula pétrea; a obrigatoriedade não é.",
+  "g": [
+   "direitos políticos"
+  ],
+  "tp": [
+   "CON|Cidadania"
+  ],
+  "d": "CF, art. 14"
+ },
+ {
+  "t": "Idade mínima para eleição",
+  "e": "Condições de elegibilidade",
+  "p": "35 anos: Presidente, Vice e Senador; 30: Governador e Vice; 21: Deputado, Prefeito, Vice e juiz de paz; 18: Vereador.",
+  "c": "CF, art. 14, § 3º, VI. A idade é verificada na data da posse; para vereador, na data do registro (Lei 9.504, art. 11, § 2º).",
+  "g": [
+   "direitos políticos"
+  ],
+  "tp": [
+   "CON|Cidadania"
+  ],
+  "d": "CF, art. 14, § 3º"
+ },
+ {
+  "t": "Suspensão dos direitos políticos",
+  "e": "Privação temporária",
+  "p": "Os direitos políticos ficam suspensos enquanto durar a causa: condenação criminal transitada em julgado, improbidade, incapacidade civil absoluta, recusa a cumprir obrigação a todos imposta.",
+  "c": "A CF proíbe a cassação de direitos políticos; só admite perda e suspensão nos casos do art. 15.",
+  "g": [
+   "direitos políticos"
+  ],
+  "tp": [
+   "CON|Cidadania"
+  ],
+  "d": "CF, art. 15"
+ },
+ {
+  "t": "Distrito Federal",
+  "e": "Ente federativo com competências de estado e município",
+  "p": "O DF não se divide em municípios e acumula competências estaduais e municipais.",
+  "c": "Regido por lei orgânica. A União organiza e mantém o Judiciário, o MP, a Defensoria, a polícia civil, a penal, a militar e o corpo de bombeiros do DF.",
+  "g": [
+   "federação"
+  ],
+  "tp": [
+   "CON|Organização político"
+  ],
+  "d": "CF, art. 32"
+ },
+ {
+  "t": "Intervenção federal",
+  "e": "Afastamento temporário da autonomia",
+  "p": "A União intervém em estado ou no DF apenas nos casos taxativos da CF, como manter a integridade nacional ou garantir o cumprimento de ordem judicial.",
+  "c": "Decretada pelo Presidente; o Congresso aprecia o decreto em 24 horas, salvo quando dispensado. Durante a intervenção a CF não pode ser emendada.",
+  "g": [
+   "federação"
+  ],
+  "tp": [
+   "CON|Organização político"
+  ],
+  "d": "CF, arts. 34 a 36"
+ },
+ {
+  "t": "Cargo em comissão",
+  "e": "Cargo de livre nomeação e exoneração",
+  "p": "Cargo de confiança, preenchido por escolha da autoridade, para direção, chefia e assessoramento.",
+  "c": "Função de confiança é exclusiva de servidores efetivos; cargo em comissão tem percentual mínimo reservado a servidores de carreira.",
+  "g": [
+   "cargos"
+  ],
+  "tp": [
+   "CON|Administração pública",
+   "ADV|Agentes públicos"
+  ],
+  "d": "CF, art. 37, V"
+ },
+ {
+  "t": "Validade do concurso",
+  "e": "Prazo do concurso público",
+  "p": "O concurso vale por até 2 anos, prorrogável uma vez por igual período.",
+  "c": "Durante o prazo improrrogável, o aprovado tem prioridade sobre novos concursados. Aprovado dentro das vagas tem direito à nomeação (STF).",
+  "g": [
+   "concurso"
+  ],
+  "tp": [
+   "CON|Administração pública"
+  ],
+  "d": "CF, art. 37, III e IV"
+ },
+ {
+  "t": "Aposentadoria compulsória",
+  "e": "Aposentadoria por idade máxima",
+  "p": "O servidor é aposentado obrigatoriamente aos 75 anos, com proventos proporcionais ao tempo de contribuição.",
+  "c": "CF, art. 40, § 1º, II, e LC 152/2015. Vale também para magistrados.",
+  "g": [
+   "servidores"
+  ],
+  "tp": [
+   "CON|Servidores"
+  ],
+  "d": "CF, art. 40, § 1º, II"
+ },
+ {
+  "t": "Estabilidade do servidor",
+  "e": "Garantia de permanência",
+  "p": "Após 3 anos de efetivo exercício e avaliação especial de desempenho, o servidor efetivo fica estável.",
+  "c": "Só perde o cargo por sentença transitada em julgado, PAD com ampla defesa, avaliação periódica insuficiente (lei complementar) ou excesso de despesa com pessoal.",
+  "g": [
+   "servidores"
+  ],
+  "tp": [
+   "CON|Servidores"
+  ],
+  "d": "CF, art. 41"
+ },
+ {
+  "t": "Garantias do Judiciário",
+  "e": "Autonomia administrativa e financeira",
+  "p": "Os tribunais têm autogoverno: elegem dirigentes, fazem regimentos e propõem seus orçamentos.",
+  "c": "CF, arts. 96 e 99. Diferem das garantias dos magistrados (vitaliciedade, inamovibilidade e irredutibilidade de subsídio).",
+  "g": [
+   "Judiciário"
+  ],
+  "tp": [
+   "CON|Poder Judiciário: disp"
+  ],
+  "d": "CF, art. 99"
+ },
+ {
+  "t": "Inamovibilidade",
+  "e": "Garantia do juiz de não ser removido",
+  "p": "O juiz não pode ser removido contra a vontade, salvo por interesse público.",
+  "c": "Remoção compulsória exige voto da maioria absoluta do tribunal ou do CNJ, com ampla defesa.",
+  "g": [
+   "garantias"
+  ],
+  "tp": [
+   "CON|Poder Judiciário: disp",
+   "LOJ|Juízes"
+  ],
+  "d": "CF, art. 95, II, e 93, VIII"
+ },
+ {
+  "t": "Competência do STJ",
+  "e": "Uniformização da lei federal",
+  "p": "Julga o recurso especial e protege a interpretação da legislação federal infraconstitucional.",
+  "c": "Também julga homologação de sentença estrangeira e exequatur de cartas rogatórias (CF, art. 105, I, i). Governadores respondem por crime comum no STJ.",
+  "g": [
+   "competência"
+  ],
+  "tp": [
+   "CON|Órgãos do Poder"
+  ],
+  "d": "CF, art. 105"
+ },
+ {
+  "t": "Composição do CNJ",
+  "e": "Membros do Conselho Nacional de Justiça",
+  "p": "15 membros, com mandato de 2 anos, admitida uma recondução; presidido pelo Presidente do STF.",
+  "c": "O Corregedor Nacional é o Ministro do STJ. O CNJ controla a atuação administrativa e financeira do Judiciário e não tem função jurisdicional; não tem competência sobre o STF.",
+  "g": [
+   "CNJ"
+  ],
+  "tp": [
+   "CON|Conselho Nacional"
+  ],
+  "d": "CF, art. 103-B"
+ },
+ {
+  "t": "Princípios institucionais do MP",
+  "e": "Unidade, indivisibilidade e independência funcional",
+  "p": "O MP é uma só instituição, seus membros podem se substituir e cada um atua com independência.",
+  "c": "CF, art. 127, § 1º. Garantias dos membros: vitaliciedade, inamovibilidade e irredutibilidade de subsídio.",
+  "g": [
+   "MP"
+  ],
+  "tp": [
+   "CON|Funções essenciais à Justiça: Min"
+  ],
+  "d": "CF, art. 127"
+ },
+ {
+  "t": "Defensoria Pública",
+  "e": "Assistência jurídica aos necessitados",
+  "p": "Instituição que presta orientação jurídica e defesa gratuita a quem não pode pagar advogado.",
+  "c": "Tem autonomia funcional e administrativa. Princípios: unidade, indivisibilidade e independência funcional. Defensores não podem advogar fora das atribuições.",
+  "g": [
+   "Defensoria"
+  ],
+  "tp": [
+   "CON|Funções essenciais à Justiça: adv"
+  ],
+  "d": "CF, art. 134"
+ },
+ {
+  "t": "Advocacia",
+  "e": "Função essencial à Justiça",
+  "p": "O advogado é indispensável à administração da Justiça e inviolável por seus atos e manifestações no exercício da profissão, nos limites da lei.",
+  "c": "CF, art. 133. Há exceções à indispensabilidade, como habeas corpus e Juizados Especiais até 20 salários mínimos.",
+  "g": [
+   "advocacia"
+  ],
+  "tp": [
+   "CON|Funções essenciais à Justiça: adv"
+  ],
+  "d": "CF, art. 133"
+ },
+ {
+  "t": "Agência reguladora",
+  "e": "Autarquia em regime especial",
+  "p": "Autarquia que regula e fiscaliza setores (energia, telecomunicações, saúde), com maior autonomia.",
+  "c": "Dirigentes com mandato fixo, nomeados após aprovação do Senado. Lei 13.848/2019.",
+  "g": [
+   "administração indireta"
+  ],
+  "tp": [
+   "ADV|Organização administrativa"
+  ]
+ },
+ {
+  "t": "Consórcio público",
+  "e": "Associação entre entes federativos",
+  "p": "União de entes (municípios, estados) para gerir serviços em conjunto.",
+  "c": "Pode ser de direito público (associação pública, integra a administração indireta de todos) ou privado. Lei 11.107/2005.",
+  "g": [
+   "administração indireta"
+  ],
+  "tp": [
+   "ADV|Organização administrativa"
+  ]
+ },
+ {
+  "t": "Terceiro setor",
+  "e": "Entidades paraestatais",
+  "p": "Entidades privadas sem fins lucrativos que colaboram com o Estado: Sistema S, OS, OSCIP.",
+  "c": "Não integram a administração indireta. Recebem recursos públicos e se submetem ao controle do Tribunal de Contas.",
+  "g": [
+   "terceiro setor"
+  ],
+  "tp": [
+   "ADV|Organização administrativa"
+  ]
+ },
+ {
+  "t": "Supremacia do interesse público",
+  "e": "Princípio implícito",
+  "p": "O interesse da coletividade prevalece sobre o particular.",
+  "c": "Junto da indisponibilidade do interesse público forma o regime jurídico-administrativo. Fundamenta prerrogativas como as cláusulas exorbitantes.",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "ADV|Princípios"
+  ]
+ },
+ {
+  "t": "Indisponibilidade do interesse público",
+  "e": "Princípio implícito",
+  "p": "O administrador não é dono do interesse público e não pode dispor dele livremente.",
+  "c": "Limita as prerrogativas: exige licitação, concurso, motivação. Par da supremacia do interesse público.",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "ADV|Princípios"
+  ]
+ },
+ {
+  "t": "Razoabilidade e proporcionalidade",
+  "e": "Princípios implícitos",
+  "p": "O ato deve ser adequado, necessário e equilibrado em relação ao fim buscado.",
+  "c": "Lei 9.784, art. 2º, os prevê expressamente. Proíbem obrigações, restrições e sanções em medida superior à necessária.",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "ADV|Princípios",
+   "ADV|Processo administrativo: Lei 9"
+  ],
+  "d": "Lei 9.784/1999, art. 2º, VI"
+ },
+ {
+  "t": "Segurança jurídica",
+  "e": "Princípio da estabilidade",
+  "p": "Protege a confiança do cidadão e a estabilidade das relações.",
+  "c": "Lei 9.784, art. 2º, XIII: veda a aplicação retroativa de nova interpretação. Fundamenta o prazo decadencial de 5 anos para anular atos favoráveis.",
+  "g": [
+   "princípios"
+  ],
+  "tp": [
+   "ADV|Princípios",
+   "ADV|Processo administrativo: Lei 9"
+  ]
+ },
+ {
+  "t": "Órgão independente",
+  "e": "Classificação dos órgãos",
+  "p": "Órgão previsto na CF, no topo da hierarquia, sem subordinação: Presidência, Casas Legislativas, Tribunais, MP.",
+  "c": "Classificação de Hely Lopes Meirelles: independentes, autônomos (ministérios), superiores (secretarias, gabinetes) e subalternos (execução).",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "ADV|Órgãos"
+  ]
+ },
+ {
+  "t": "Capacidade processual do órgão",
+  "e": "Órgão em juízo",
+  "p": "Órgão não tem personalidade jurídica, mas alguns podem defender suas prerrogativas em juízo.",
+  "c": "Órgãos independentes e autônomos podem impetrar MS para proteger suas competências (ex.: Câmara Municipal).",
+  "g": [
+   "órgãos"
+  ],
+  "tp": [
+   "ADV|Órgãos"
+  ]
+ },
+ {
+  "t": "Agente político",
+  "e": "Agente com função de governo",
+  "p": "Ocupa cargos de cúpula previstos na CF: chefes do Executivo, parlamentares, ministros, secretários; para parte da doutrina, magistrados e membros do MP.",
+  "c": "Regime próprio, sem a Lei 8.112. Diferem dos servidores públicos em sentido estrito.",
+  "g": [
+   "agentes"
+  ],
+  "tp": [
+   "ADV|Agentes públicos"
+  ]
+ },
+ {
+  "t": "Particular em colaboração",
+  "e": "Agente honorífico ou delegado",
+  "p": "Pessoa que, sem ser servidor, exerce função pública: jurado, mesário, concessionário, tabelião.",
+  "c": "É agente público para fins de responsabilidade, inclusive penal (funcionário público por equiparação no que couber).",
+  "g": [
+   "agentes"
+  ],
+  "tp": [
+   "ADV|Agentes públicos"
+  ]
+ },
+ {
+  "t": "Nomeação",
+  "e": "Forma de provimento originário",
+  "p": "Ato que dá início à relação do servidor com o cargo.",
+  "c": "Lei 8.112, art. 8º: formas de provimento são nomeação, promoção, readaptação, reversão, aproveitamento, reintegração e recondução. Só a nomeação é originária.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 8º"
+ },
+ {
+  "t": "Reintegração",
+  "e": "Retorno do servidor demitido ilegalmente",
+  "p": "Volta do servidor estável ao cargo quando a demissão é anulada, com ressarcimento de todas as vantagens.",
+  "c": "Se o cargo foi extinto, fica em disponibilidade. O ocupante da vaga é reconduzido ao cargo de origem.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 28"
+ },
+ {
+  "t": "Recondução",
+  "e": "Retorno ao cargo anterior",
+  "p": "Volta do servidor estável ao cargo anterior por inabilitação no estágio de outro cargo ou por reintegração do anterior ocupante.",
+  "c": "Lei 8.112, art. 29. O STF admite a recondução por desistência do estágio probatório no novo cargo.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 29"
+ },
+ {
+  "t": "Reversão",
+  "e": "Retorno do aposentado",
+  "p": "Volta do aposentado à atividade: por invalidez, quando cessam os motivos, ou no interesse da administração, a pedido.",
+  "c": "Lei 8.112, art. 25. No interesse da administração exige pedido, aposentadoria voluntária, estabilidade anterior, aposentadoria há menos de 5 anos e cargo vago.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 25"
+ },
+ {
+  "t": "Aproveitamento",
+  "e": "Retorno do servidor em disponibilidade",
+  "p": "O servidor em disponibilidade volta à atividade em cargo de atribuições e vencimentos compatíveis com o anterior.",
+  "c": "Obrigatório. Se o servidor não entrar em exercício no prazo, o aproveitamento fica sem efeito e a disponibilidade é cassada, salvo doença comprovada.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, arts. 30 a 32"
+ },
+ {
+  "t": "Readaptação",
+  "e": "Provimento por limitação de saúde",
+  "p": "O servidor passa a ocupar cargo compatível com limitação física ou mental verificada em inspeção médica.",
+  "c": "Lei 8.112, art. 24. Se julgado incapaz para o serviço público, é aposentado.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 24"
+ },
+ {
+  "t": "Exercício",
+  "e": "Início do desempenho do cargo",
+  "p": "Efetivo desempenho das atribuições do cargo.",
+  "c": "Prazo de 15 dias contados da posse (Lei 8.112, art. 15). Se não entrar em exercício, o servidor é exonerado; se não tomar posse em 30 dias, a nomeação fica sem efeito.",
+  "g": [
+   "provimento"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 15"
+ },
+ {
+  "t": "Licença por motivo de doença em pessoa da família",
+  "e": "Licença da Lei 8.112",
+  "p": "Licença para acompanhar cônjuge, pais, filhos, padrasto ou madrasta, enteado ou dependente doente.",
+  "c": "Lei 8.112, art. 83: até 60 dias com remuneração e mais até 90 dias sem remuneração, a cada 12 meses.",
+  "g": [
+   "licenças"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 83"
+ },
+ {
+  "t": "Licença para capacitação",
+  "e": "Licença da Lei 8.112",
+  "p": "Após cada quinquênio de efetivo exercício, até 3 meses de licença remunerada para curso de capacitação.",
+  "c": "Lei 8.112, art. 87. Os períodos não são acumuláveis.",
+  "g": [
+   "licenças"
+  ],
+  "tp": [
+   "ADV|Lei 8.112"
+  ],
+  "d": "Lei 8.112/1990, art. 87"
+ },
+ {
+  "t": "Silêncio administrativo",
+  "e": "Omissão da administração",
+  "p": "Quando a administração não responde a um pedido no prazo.",
+  "c": "Lei 9.784, art. 49: concluída a instrução, a administração decide em até 30 dias, prorrogáveis por mais 30 motivadamente. O silêncio só produz efeito se a lei disser.",
+  "g": [
+   "processo administrativo"
+  ],
+  "tp": [
+   "ADV|Processo administrativo: Lei 9"
+  ],
+  "d": "Lei 9.784/1999, art. 49"
+ },
+ {
+  "t": "Prazo de recurso administrativo",
+  "e": "Recurso na Lei 9.784",
+  "p": "O interessado tem 10 dias para recorrer, contados da ciência ou da divulgação da decisão.",
+  "c": "Dirigido à autoridade que decidiu, que pode reconsiderar em 5 dias; tramita por no máximo 3 instâncias. Decisão do recurso em 30 dias.",
+  "g": [
+   "processo administrativo"
+  ],
+  "tp": [
+   "ADV|Processo administrativo: Lei 9"
+  ],
+  "d": "Lei 9.784/1999, arts. 56, 57 e 59"
+ },
+ {
+  "t": "Reformatio in pejus",
+  "e": "Agravamento da situação do recorrente",
+  "p": "Decisão do recurso que piora a situação de quem recorreu.",
+  "c": "Na Lei 9.784 (art. 64), o recurso pode agravar, desde que o recorrente seja avisado para se manifestar antes. Na revisão, não pode agravar a sanção (art. 65).",
+  "g": [
+   "processo administrativo"
+  ],
+  "tp": [
+   "ADV|Processo administrativo: Lei 9"
+  ],
+  "d": "Lei 9.784/1999, arts. 64 e 65"
+ },
+ {
+  "t": "Poder vinculado",
+  "e": "Atuação sem margem de escolha",
+  "p": "A lei define todos os elementos do ato; a administração só pode agir daquele jeito.",
+  "c": "Contrasta com o poder discricionário, em que há escolha por conveniência e oportunidade (mérito) dentro da lei.",
+  "g": [
+   "poderes"
+  ],
+  "tp": [
+   "ADV|Poderes"
+  ]
+ },
+ {
+  "t": "Poder discricionário",
+  "e": "Margem de escolha do administrador",
+  "p": "A lei deixa ao administrador escolher, dentro de limites, a melhor solução por conveniência e oportunidade.",
+  "c": "O mérito administrativo não é revisto pelo Judiciário, que controla apenas a legalidade, a razoabilidade e a proporcionalidade.",
+  "g": [
+   "poderes"
+  ],
+  "tp": [
+   "ADV|Poderes",
+   "ADV|Ato"
+  ]
+ },
+ {
+  "t": "Mérito administrativo",
+  "e": "Conveniência e oportunidade",
+  "p": "Juízo de escolha do administrador nos atos discricionários, situado no motivo e no objeto.",
+  "c": "O Judiciário não substitui esse juízo; a administração pode revogar o ato por mérito, com efeitos ex nunc.",
+  "g": [
+   "ato"
+  ],
+  "tp": [
+   "ADV|Ato",
+   "ADV|Controle administrativo"
+  ]
+ },
+ {
+  "t": "Cassação do ato",
+  "e": "Extinção por descumprimento",
+  "p": "Extinção do ato porque o beneficiário deixou de cumprir as condições exigidas.",
+  "c": "Ex.: licença cassada por descumprimento das regras. Diferente de anulação (ilegalidade) e revogação (mérito).",
+  "g": [
+   "ato"
+  ],
+  "tp": [
+   "ADV|Ato"
+  ]
+ },
+ {
+  "t": "Controle legislativo",
+  "e": "Controle exercido pelo Parlamento",
+  "p": "O Legislativo fiscaliza o Executivo: CPIs, sustação de atos normativos que exorbitem o poder regulamentar, julgamento das contas.",
+  "c": "Controle político e financeiro (este com auxílio do Tribunal de Contas). CF, art. 49, V e X.",
+  "g": [
+   "controle"
+  ],
+  "tp": [
+   "ADV|Controle administrativo"
+  ],
+  "d": "CF, art. 49"
+ },
+ {
+  "t": "Controle judicial",
+  "e": "Controle feito pelo Judiciário",
+  "p": "O Judiciário anula atos ilegais da administração, quando provocado.",
+  "c": "Controla a legalidade e a legitimidade, não o mérito. Instrumentos: MS, ação popular, ação civil pública, HD.",
+  "g": [
+   "controle"
+  ],
+  "tp": [
+   "ADV|Controle administrativo",
+   "PC|Controle judicial"
+  ]
+ },
+ {
+  "t": "Controle interno",
+  "e": "Controle dentro do próprio Poder",
+  "p": "Cada Poder mantém sistema que fiscaliza seus próprios atos.",
+  "c": "Quem toma conhecimento de irregularidade deve informar o Tribunal de Contas, sob pena de responsabilidade solidária (CF, art. 74, § 1º).",
+  "g": [
+   "controle"
+  ],
+  "tp": [
+   "ADV|Controle administrativo",
+   "ADV|Controle pelos"
+  ],
+  "d": "CF, art. 74"
+ },
+ {
+  "t": "Julgamento de contas",
+  "e": "Competência do Tribunal de Contas",
+  "p": "O Tribunal de Contas julga as contas de administradores e responsáveis por dinheiro público.",
+  "c": "Exceção: as contas do chefe do Executivo são apenas analisadas por parecer prévio; o julgamento é do Legislativo (CF, art. 71, I e II).",
+  "g": [
+   "controle"
+  ],
+  "tp": [
+   "ADV|Controle pelos"
+  ],
+  "d": "CF, art. 71"
+ },
+ {
+  "t": "Teoria do risco administrativo",
+  "e": "Base da responsabilidade objetiva",
+  "p": "O Estado responde pelo dano causado por seus agentes, independentemente de culpa, mas admite excludentes.",
+  "c": "Excludentes: culpa exclusiva da vítima, caso fortuito ou força maior, fato de terceiro. A teoria do risco integral não admite excludentes (dano nuclear, ambiental).",
+  "g": [
+   "responsabilidade"
+  ],
+  "tp": [
+   "ADV|Responsabilidade"
+  ],
+  "d": "CF, art. 37, § 6º"
+ },
+ {
+  "t": "Omissão do Estado",
+  "e": "Responsabilidade por não agir",
+  "p": "Quando o dano decorre de omissão genérica, a doutrina tradicional exige culpa do serviço (responsabilidade subjetiva).",
+  "c": "STF: se o Estado tinha dever específico de agir (ex.: preso sob custódia), a responsabilidade é objetiva.",
+  "g": [
+   "responsabilidade"
+  ],
+  "tp": [
+   "ADV|Responsabilidade"
+  ]
+ },
+ {
+  "t": "Dupla garantia",
+  "e": "Ação contra o Estado, não contra o agente",
+  "p": "A vítima deve processar o Estado; o agente só responde depois, em ação regressiva, se agiu com dolo ou culpa.",
+  "c": "Tese do STF (Tema 940): a ação deve ser ajuizada contra o Estado ou a pessoa jurídica de direito privado prestadora de serviço público.",
+  "g": [
+   "responsabilidade"
+  ],
+  "tp": [
+   "ADV|Responsabilidade"
+  ]
+ },
+ {
+  "t": "Contratação direta",
+  "e": "Contratação sem licitação",
+  "p": "Contratação feita por dispensa ou inexigibilidade, com processo próprio de justificativa.",
+  "c": "Lei 14.133, art. 72: exige documento de formalização da demanda, estimativa de despesa, parecer jurídico, comprovação de recursos, razão da escolha e justificativa do preço.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, art. 72"
+ },
+ {
+  "t": "Sistema de registro de preços",
+  "e": "SRP",
+  "p": "Registro formal de preços para contratações futuras, sem obrigação de comprar.",
+  "c": "Gera a ata de registro de preços, com vigência de 1 ano, prorrogável por igual período se o preço for vantajoso (Lei 14.133, art. 84).",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, arts. 82 a 86"
+ },
+ {
+  "t": "Pregão (Lei 10.520)",
+  "e": "Pregão na lei antiga",
+  "p": "Modalidade para bens e serviços comuns, com lances verbais e inversão de fases (julgamento antes da habilitação).",
+  "c": "Revogada pela Lei 14.133 (desde 30/12/2023), mas ainda cobrada para contratos firmados sob ela. Hoje, o pregão está na própria Lei 14.133.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADV|Licitações e contratos: Leis 8"
+  ]
+ },
+ {
+  "t": "Tomada de preços",
+  "e": "Modalidade da Lei 8.666",
+  "p": "Modalidade da lei antiga, entre interessados cadastrados ou que atendessem às condições até o 3º dia antes das propostas.",
+  "c": "Extinta pela Lei 14.133, assim como o convite. A nova lei mantém concorrência, concurso, leilão, pregão e cria o diálogo competitivo.",
+  "g": [
+   "licitação"
+  ],
+  "tp": [
+   "ADV|Licitações e contratos: Leis 8"
+  ]
+ },
+ {
+  "t": "Alteração unilateral do contrato",
+  "e": "Cláusula exorbitante",
+  "p": "A administração pode alterar o contrato sem concordância do contratado, dentro de limites.",
+  "c": "Lei 14.133, art. 125: acréscimos ou supressões de até 25% do valor (50% para reforma de edifício ou equipamento, só acréscimos). Mantém-se o equilíbrio econômico-financeiro.",
+  "g": [
+   "contratos"
+  ],
+  "tp": [
+   "ADV|Licitações e contratos: Lei 14"
+  ],
+  "d": "Lei 14.133/2021, arts. 104 e 125"
+ }
+]

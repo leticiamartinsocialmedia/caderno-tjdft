@@ -1,304 +1,317 @@
 {
-  "fonte": "Edital nº 01/2022 TJDFT (FGV), cargo Técnico Judiciário, Área Administrativa, sem especialidade",
-  "materias": [
-    {
-      "nome": "Língua Portuguesa",
-      "grupo": "Básicos · Língua Portuguesa (10 questões)",
-      "antigos": [],
-      "topicos": [
-        "Gênero do texto: literário e não literário, narrativo, descritivo e argumentativo",
-        "Interpretação e organização interna do texto",
-        "Semântica: sentido e emprego dos vocábulos e campos semânticos",
-        "Emprego de tempos e modos dos verbos",
-        "Classes gramaticais: reconhecimento, emprego e sentido",
-        "Processos de formação de palavras",
-        "Flexão dos nomes e dos verbos",
-        "Frase, oração e período",
-        "Termos da oração",
-        "Coordenação e subordinação",
-        "Concordância verbal e nominal",
-        "Transitividade e regência de nomes e verbos",
-        "Colocação pronominal",
-        "Mecanismos de coesão textual",
-        "Ortografia",
-        "Acentuação gráfica",
-        "Emprego do sinal indicativo de crase",
-        "Pontuação",
-        "Reescrita de frases: substituição, deslocamento e paralelismo",
-        "Variação linguística: norma culta"
-      ]
-    },
-    {
-      "nome": "Ética no Serviço Público",
-      "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
-      "antigos": [],
-      "topicos": [
-        "Ética e moral",
-        "Ética, princípios e valores",
-        "Ética e democracia: exercício da cidadania",
-        "Ética e função pública",
-        "Ética no setor público",
-        "Lei 8.112/1990: regime disciplinar",
-        "Lei 8.112/1990: deveres e proibições",
-        "Lei 8.112/1990: acumulação de cargos",
-        "Lei 8.112/1990: responsabilidades e penalidades",
-        "Lei 8.429/1992 (improbidade): disposições gerais",
-        "Lei 8.429/1992: atos de improbidade administrativa",
-        "Código de Ética dos Servidores do TJDFT (Resolução 9/2019 e Portaria Conjunta 76/2020)"
-      ]
-    },
-    {
-      "nome": "Regimento Interno do TJDFT",
-      "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
-      "antigos": [],
-      "topicos": [
-        "Disposições iniciais e composição do Tribunal",
-        "Tribunal Pleno, Conselho Especial e Conselho da Magistratura",
-        "Câmaras e Turmas",
-        "Presidência, Vice-Presidências e Corregedoria",
-        "Eleições, posse e substituições",
-        "Registro, distribuição e prevenção",
-        "Sessões, pauta e julgamento",
-        "Processos de competência originária, recursos e incidentes",
-        "Emendas Regimentais posteriores a 2016"
-      ]
-    },
-    {
-      "nome": "Lei de Organização Judiciária do DF e dos Territórios",
-      "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
-      "antigos": [],
-      "topicos": [
-        "Lei 11.697/2008: disposições gerais e composição da Justiça do DF",
-        "Tribunal de Justiça: composição e competência",
-        "Circunscrições judiciárias e Varas",
-        "Competência das Varas",
-        "Juizados Especiais",
-        "Juízes de Direito e Juízes de Direito Substitutos",
-        "Serviços auxiliares da Justiça"
-      ]
-    },
-    {
-      "nome": "Provimento Geral da Corregedoria",
-      "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
-      "antigos": [],
-      "topicos": [
-        "Provimento Geral da Corregedoria aplicado aos Juízes e Ofícios Judiciais (2014) e alterações",
-        "Atribuições dos ofícios judiciais: autuação, juntada, certidões e conclusão",
-        "Provimento nº 07/2010 (alterado pelos Provimentos nº 1/2012 e nº 4/2013)",
-        "Provimento nº 03/2011"
-      ]
-    },
-    {
-      "nome": "Provimento Judicial aplicado ao PJe",
-      "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
-      "antigos": [],
-      "topicos": [
-        "Provimento Judicial aplicado ao Processo Judicial Eletrônico (2017) e alterações",
-        "Peticionamento, intimações e prazos no PJe"
-      ]
-    },
-    {
-      "nome": "Noções de Administração de Recursos Humanos e Gestão Pública",
-      "grupo": "Específicos (40 questões no total)",
-      "antigos": [],
-      "topicos": [
-        "Modelos de gestão de pessoas e sua evolução",
-        "Gestão estratégica de pessoas",
-        "Processos de gestão de pessoas",
-        "Treinamento e desenvolvimento",
-        "Avaliação do desempenho humano",
-        "Modelagem do trabalho: descrição, análise e desenho de cargos",
-        "Motivação",
-        "Gestão por competências",
-        "Mudança e inovação organizacional",
-        "Análise dos ambientes interno e externo",
-        "Missão, visão de futuro e valores",
-        "Indicadores de desempenho de gestão de pessoas",
-        "Modelos de gestão pública: patrimonialista, burocrático e gerencial",
-        "Eficiência, eficácia e efetividade e avaliação do desempenho governamental",
-        "Orçamento público: princípios orçamentários",
-        "Diretrizes orçamentárias, processo orçamentário e emendas ao orçamento",
-        "Receita e despesa públicas: conceito, classificação e estágios",
-        "Suprimento de fundos, restos a pagar e despesas de exercícios anteriores",
-        "MCASP 9ª ed., Parte I: procedimentos contábeis orçamentários",
-        "Noções de licitação: fases, modalidades, dispensa e inexigibilidade"
-      ]
-    },
-    {
-      "nome": "Noções de Direito Constitucional",
-      "grupo": "Específicos (40 questões no total)",
-      "antigos": [
-        "Direito Constitucional"
-      ],
-      "topicos": [
-        "Constituição: conceito e classificações",
-        "Princípios fundamentais",
-        "Direitos e deveres individuais e coletivos",
-        "Direitos sociais",
-        "Nacionalidade",
-        "Cidadania, direitos políticos e partidos políticos",
-        "Organização político-administrativa: União, Estados, DF, Municípios e Territórios",
-        "Administração pública: disposições gerais",
-        "Servidores públicos",
-        "Poder Judiciário: disposições gerais",
-        "Órgãos do Poder Judiciário e competências",
-        "Conselho Nacional de Justiça: composição e competência",
-        "Funções essenciais à Justiça: Ministério Público",
-        "Funções essenciais à Justiça: advocacia e Defensoria Pública"
-      ]
-    },
-    {
-      "nome": "Noções de Direito Administrativo",
-      "grupo": "Específicos (40 questões no total)",
-      "antigos": [
-        "Direito Administrativo"
-      ],
-      "topicos": [
-        "Organização administrativa: administração direta e indireta",
-        "Centralização, descentralização e desconcentração",
-        "Princípios expressos e implícitos da administração pública",
-        "Órgãos públicos",
-        "Agentes públicos",
-        "Lei 8.112/1990: regime jurídico dos servidores",
-        "Processo administrativo: Lei 9.784/1999",
-        "Processo administrativo no DF: Lei distrital 2.834/2001",
-        "Poderes administrativos",
-        "Ato administrativo",
-        "Controle administrativo, judicial e legislativo",
-        "Controle pelos Tribunais de Contas",
-        "Improbidade administrativa",
-        "Responsabilidade civil do Estado",
-        "Licitações e contratos: Lei 14.133/2021",
-        "Licitações e contratos: Leis 8.666/1993 e 10.520/2002"
-      ]
-    },
-    {
-      "nome": "Noções de Direito Civil",
-      "grupo": "Específicos (40 questões no total)",
-      "antigos": [
-        "Direito Civil"
-      ],
-      "topicos": [
-        "LINDB: vigência, aplicação, interpretação e integração das leis",
-        "Conflito das leis no tempo e eficácia da lei no espaço",
-        "Pessoas naturais: personalidade e capacidade",
-        "Nome, estado e domicílio da pessoa natural",
-        "Direitos da personalidade",
-        "Pessoas jurídicas: disposições gerais e domicílio",
-        "Associações e fundações",
-        "Bens",
-        "Fatos jurídicos e negócio jurídico",
-        "Atos jurídicos lícitos e atos ilícitos",
-        "Prescrição e decadência"
-      ]
-    },
-    {
-      "nome": "Noções de Direito Processual Civil",
-      "grupo": "Específicos (40 questões no total)",
-      "antigos": [
-        "Direito Processual Civil"
-      ],
-      "topicos": [
-        "Princípios do processo: devido processo legal, contraditório, ampla defesa e juiz natural",
-        "Jurisdição e princípio da inércia",
-        "Ação: condições, elementos e classificação",
-        "Cooperação internacional: auxílio direto e carta rogatória",
-        "Competência: disposições gerais, modificação e incompetência",
-        "Pressupostos processuais e preclusão",
-        "Sujeitos do processo: capacidade processual e postulatória",
-        "Deveres das partes e procuradores; sucessão e substituição",
-        "Litisconsórcio",
-        "Intervenção de terceiros",
-        "Juiz: poderes, deveres, responsabilidade, impedimento e suspeição",
-        "Auxiliares da Justiça",
-        "Ministério Público, Advocacia Pública e Defensoria Pública no processo",
-        "Atos processuais: forma, tempo, lugar e prazos",
-        "Comunicação dos atos processuais",
-        "Nulidades",
-        "Distribuição, registro e valor da causa",
-        "Tutela provisória e tutela de urgência",
-        "Formação, suspensão e extinção do processo",
-        "Petição inicial, pedido, indeferimento e improcedência liminar",
-        "Audiência de conciliação ou de mediação",
-        "Contestação, reconvenção e revelia",
-        "Providências preliminares, saneamento e julgamento conforme o estado do processo",
-        "Audiência de instrução e julgamento e provas",
-        "Sentença e coisa julgada",
-        "Cumprimento de sentença e impugnação",
-        "Atos judiciais: despachos, decisões interlocutórias e sentenças",
-        "Recursos: disposições gerais",
-        "Apelação, agravo de instrumento e agravo interno",
-        "Embargos de declaração",
-        "Recursos para o STF e para o STJ",
-        "Controle judicial dos atos administrativos e mandado de segurança",
-        "Processo judicial eletrônico: Lei 11.419/2006"
-      ]
-    },
-    {
-      "nome": "Noções de Direito Penal",
-      "grupo": "Específicos (40 questões no total)",
-      "antigos": [
-        "Direito Penal"
-      ],
-      "topicos": [
-        "Princípios da legalidade e da anterioridade",
-        "Lei penal no tempo e no espaço; tempo e lugar do crime",
-        "Lei penal excepcional, especial e temporária",
-        "Territorialidade e extraterritorialidade",
-        "Pena cumprida no estrangeiro e eficácia da sentença estrangeira",
-        "Contagem de prazo e frações não computáveis da pena",
-        "Interpretação da lei penal, analogia e irretroatividade",
-        "Conflito aparente de normas penais",
-        "Teoria do crime: tipo penal objetivo e subjetivo",
-        "Ilicitude e causas excludentes",
-        "Culpabilidade e causas dirimentes",
-        "Crimes contra a pessoa",
-        "Crimes contra o patrimônio",
-        "Crimes contra a administração pública",
-        "Disposições constitucionais aplicáveis ao direito penal",
-        "Crimes hediondos (Lei 8.072/1990)",
-        "Abuso de autoridade (Lei 13.869/2019)",
-        "Estatuto da Criança e do Adolescente"
-      ]
-    },
-    {
-      "nome": "Noções de Direito Processual Penal",
-      "grupo": "Específicos (40 questões no total)",
-      "antigos": [
-        "Direito Processual Penal"
-      ],
-      "topicos": [
-        "Disposições preliminares do CPP",
-        "Inquérito policial",
-        "Ação penal",
-        "Juiz, Ministério Público, acusado e defensor",
-        "Assistentes, auxiliares da justiça, peritos e intérpretes",
-        "Citações e intimações",
-        "Sentença",
-        "Processo comum e instrução criminal",
-        "Júri: acusação, instrução preliminar, pronúncia, impronúncia e absolvição sumária",
-        "Júri: preparação do plenário, alistamento dos jurados, desaforamento e pauta",
-        "Júri: sorteio, convocação e função do jurado",
-        "Júri: composição, Conselho de Sentença, sessões e instrução em plenário",
-        "Júri: debates, quesitos e votação, sentença, ata e atribuições do presidente",
-        "Prisão e liberdade provisória",
-        "Crimes de responsabilidade dos funcionários públicos: processo e julgamento",
-        "Habeas corpus e seu processo",
-        "Disposições constitucionais aplicáveis ao processo penal"
-      ]
-    },
-    {
-      "nome": "Redação (prova discursiva)",
-      "grupo": "Prova discursiva · Redação (30 pontos)",
-      "antigos": [],
-      "topicos": [
-        "Gênero dissertativo-argumentativo (15 a 20 linhas)",
-        "Tema, tese e abordagem",
-        "Argumentação e repertório",
-        "Progressão textual: coesão e coerência entre parágrafos",
-        "Seleção vocabular e norma culta",
-        "Critérios de correção e penalidades do edital"
-      ]
-    }
-  ]
+ "fonte": "Edital nº 01/2022 TJDFT (FGV), cargo Técnico Judiciário, Área Administrativa, sem especialidade",
+ "materias": [
+  {
+   "nome": "Língua Portuguesa",
+   "grupo": "Básicos · Língua Portuguesa (10 questões)",
+   "antigos": [],
+   "topicos": [
+    "Gênero do texto: literário e não literário, narrativo, descritivo e argumentativo",
+    "Interpretação e organização interna do texto",
+    "Semântica: sentido e emprego dos vocábulos e campos semânticos",
+    "Emprego de tempos e modos dos verbos",
+    "Classes gramaticais: reconhecimento, emprego e sentido",
+    "Processos de formação de palavras",
+    "Flexão dos nomes e dos verbos",
+    "Frase, oração e período",
+    "Termos da oração",
+    "Coordenação e subordinação",
+    "Concordância verbal e nominal",
+    "Transitividade e regência de nomes e verbos",
+    "Colocação pronominal",
+    "Mecanismos de coesão textual",
+    "Ortografia",
+    "Acentuação gráfica",
+    "Emprego do sinal indicativo de crase",
+    "Pontuação",
+    "Reescrita de frases: substituição, deslocamento e paralelismo",
+    "Variação linguística: norma culta"
+   ]
+  },
+  {
+   "nome": "Ética no Serviço Público",
+   "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
+   "antigos": [],
+   "topicos": [
+    "Ética e moral",
+    "Ética, princípios e valores",
+    "Ética e democracia: exercício da cidadania",
+    "Ética e função pública",
+    "Ética no setor público",
+    "Lei 8.112/1990: regime disciplinar",
+    "Lei 8.112/1990: deveres e proibições",
+    "Lei 8.112/1990: acumulação de cargos",
+    "Lei 8.112/1990: responsabilidades e penalidades",
+    "Lei 8.429/1992 (improbidade): disposições gerais",
+    "Lei 8.429/1992: atos de improbidade administrativa",
+    "Código de Ética dos Servidores do TJDFT (Resolução 9/2019 e Portaria Conjunta 76/2020)"
+   ]
+  },
+  {
+   "nome": "Regimento Interno do TJDFT",
+   "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
+   "antigos": [],
+   "topicos": [
+    "Disposições iniciais e composição do Tribunal",
+    "Tribunal Pleno, Conselho Especial e Conselho da Magistratura",
+    "Câmaras e Turmas",
+    "Presidência, Vice-Presidências e Corregedoria",
+    "Comissões permanentes e temporárias",
+    "Eleições, posse e substituições",
+    "Registro, distribuição e prevenção",
+    "Preparo e deserção",
+    "Sessões, pauta e julgamento",
+    "Processos de competência originária, recursos e incidentes",
+    "Uniformização de jurisprudência, IRDR e súmulas",
+    "Emendas Regimentais posteriores a 2016"
+   ]
+  },
+  {
+   "nome": "Lei de Organização Judiciária do DF e dos Territórios",
+   "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
+   "antigos": [],
+   "topicos": [
+    "Lei 11.697/2008: disposições gerais e composição da Justiça do DF",
+    "Tribunal de Justiça: composição e competência",
+    "Circunscrições judiciárias e Varas",
+    "Competência das Varas",
+    "Juizados Especiais",
+    "Juízes de Direito e Juízes de Direito Substitutos",
+    "Serviços auxiliares da Justiça"
+   ]
+  },
+  {
+   "nome": "Provimento Geral da Corregedoria",
+   "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
+   "antigos": [],
+   "topicos": [
+    "Provimento Geral da Corregedoria aplicado aos Juízes e Ofícios Judiciais (2014) e alterações",
+    "Atribuições dos ofícios judiciais: autuação, juntada, certidões e conclusão",
+    "Provimento nº 07/2010 (alterado pelos Provimentos nº 1/2012 e nº 4/2013)",
+    "Provimento nº 03/2011"
+   ]
+  },
+  {
+   "nome": "Provimento Judicial aplicado ao PJe",
+   "grupo": "Básicos · Ética, Regimento, LOJ e Provimentos (10 questões no total)",
+   "antigos": [],
+   "topicos": [
+    "Provimento Judicial aplicado ao Processo Judicial Eletrônico (2017) e alterações",
+    "Peticionamento, intimações e prazos no PJe"
+   ]
+  },
+  {
+   "nome": "Noções de Administração de Recursos Humanos e Gestão Pública",
+   "grupo": "Específicos (40 questões no total)",
+   "antigos": [],
+   "topicos": [
+    "Modelos de gestão de pessoas e sua evolução",
+    "Gestão estratégica de pessoas",
+    "Processos de gestão de pessoas",
+    "Treinamento e desenvolvimento",
+    "Avaliação do desempenho humano",
+    "Modelagem do trabalho: descrição, análise e desenho de cargos",
+    "Motivação",
+    "Gestão por competências",
+    "Gestão de processos de mudança organizacional: conceito de mudança",
+    "Mudança e inovação organizacional",
+    "Análise dos ambientes interno e externo",
+    "Estratégias de gestão de pessoas para sustentar a mudança",
+    "Missão, visão de futuro e valores",
+    "Indicadores de desempenho de gestão de pessoas",
+    "Modelos de gestão pública: patrimonialista, burocrático e gerencial",
+    "Eficácia e efetividade: avaliação e mensuração do desempenho governamental",
+    "Orçamento público: princípios orçamentários",
+    "Diretrizes orçamentárias, processo orçamentário e emendas ao orçamento",
+    "Receita e despesa públicas: conceito, classificação e estágios",
+    "Suprimento de fundos, restos a pagar e despesas de exercícios anteriores",
+    "MCASP 9ª ed., Parte I: procedimentos contábeis orçamentários",
+    "Noções de licitação: fases, modalidades, dispensa e inexigibilidade"
+   ]
+  },
+  {
+   "nome": "Noções de Direito Constitucional",
+   "grupo": "Específicos (40 questões no total)",
+   "antigos": [
+    "Direito Constitucional"
+   ],
+   "topicos": [
+    "Constituição: conceito e classificações",
+    "Princípios fundamentais",
+    "Direitos e deveres individuais e coletivos",
+    "Direitos sociais",
+    "Nacionalidade",
+    "Cidadania, direitos políticos e partidos políticos",
+    "Organização político-administrativa: União, Estados, DF, Municípios e Territórios",
+    "Administração pública: disposições gerais",
+    "Servidores públicos",
+    "Poder Judiciário: disposições gerais",
+    "Órgãos do Poder Judiciário e competências",
+    "Conselho Nacional de Justiça: composição e competência",
+    "Funções essenciais à Justiça: Ministério Público",
+    "Funções essenciais à Justiça: advocacia e Defensoria Pública"
+   ]
+  },
+  {
+   "nome": "Noções de Direito Administrativo",
+   "grupo": "Específicos (40 questões no total)",
+   "antigos": [
+    "Direito Administrativo"
+   ],
+   "topicos": [
+    "Organização administrativa: administração direta e indireta",
+    "Centralização, descentralização e desconcentração",
+    "Princípios expressos e implícitos da administração pública",
+    "Órgãos públicos",
+    "Agentes públicos",
+    "Lei 8.112/1990: regime jurídico dos servidores",
+    "Processo administrativo: Lei 9.784/1999",
+    "Processo administrativo no DF: Lei distrital 2.834/2001",
+    "Poderes administrativos",
+    "Ato administrativo",
+    "Controle administrativo, judicial e legislativo",
+    "Controle pelos Tribunais de Contas",
+    "Improbidade administrativa",
+    "Responsabilidade civil do Estado",
+    "Licitações e contratos: Lei 14.133/2021",
+    "Licitações e contratos: Leis 8.666/1993 e 10.520/2002"
+   ]
+  },
+  {
+   "nome": "Noções de Direito Civil",
+   "grupo": "Específicos (40 questões no total)",
+   "antigos": [
+    "Direito Civil"
+   ],
+   "topicos": [
+    "LINDB: vigência, aplicação, interpretação e integração das leis",
+    "Conflito das leis no tempo e eficácia da lei no espaço",
+    "Pessoas naturais: personalidade e capacidade",
+    "Nome, estado e domicílio da pessoa natural",
+    "Direitos da personalidade",
+    "Pessoas jurídicas: disposições gerais e domicílio",
+    "Associações e fundações",
+    "Bens",
+    "Fatos jurídicos e negócio jurídico",
+    "Atos jurídicos lícitos e atos ilícitos",
+    "Prescrição e decadência"
+   ]
+  },
+  {
+   "nome": "Noções de Direito Processual Civil",
+   "grupo": "Específicos (40 questões no total)",
+   "antigos": [
+    "Direito Processual Civil"
+   ],
+   "topicos": [
+    "Princípios do processo: devido processo legal, contraditório, ampla defesa e juiz natural",
+    "Jurisdição e princípio da inércia",
+    "Ação: condições, elementos e classificação",
+    "Cooperação internacional: auxílio direto e carta rogatória",
+    "Competência: disposições gerais, modificação e incompetência",
+    "Pressupostos processuais e preclusão",
+    "Sujeitos do processo: capacidade processual e postulatória",
+    "Deveres das partes e procuradores; sucessão e substituição",
+    "Litisconsórcio",
+    "Intervenção de terceiros",
+    "Juiz: poderes, deveres, responsabilidade, impedimento e suspeição",
+    "Auxiliares da Justiça",
+    "Ministério Público, Advocacia Pública e Defensoria Pública no processo",
+    "Atos processuais: forma, tempo, lugar e prazos",
+    "Comunicação dos atos processuais",
+    "Nulidades",
+    "Distribuição, registro e valor da causa",
+    "Tutela provisória e tutela de urgência",
+    "Formação, suspensão e extinção do processo",
+    "Processo de conhecimento e procedimento comum: disposições gerais",
+    "Petição inicial, pedido, indeferimento e improcedência liminar",
+    "Audiência de conciliação ou de mediação",
+    "Contestação, reconvenção e revelia",
+    "Providências preliminares, saneamento e julgamento conforme o estado do processo",
+    "Audiência de instrução e julgamento e provas",
+    "Sentença e coisa julgada",
+    "Cumprimento de sentença e impugnação",
+    "Atos judiciais: despachos, decisões interlocutórias e sentenças",
+    "Recursos: disposições gerais",
+    "Apelação, agravo de instrumento e agravo interno",
+    "Embargos de declaração",
+    "Recursos para o STF e para o STJ",
+    "Controle judicial dos atos administrativos e mandado de segurança",
+    "Processo judicial eletrônico: Lei 11.419/2006"
+   ]
+  },
+  {
+   "nome": "Noções de Direito Penal",
+   "grupo": "Específicos (40 questões no total)",
+   "antigos": [
+    "Direito Penal"
+   ],
+   "topicos": [
+    "Princípios da legalidade e da anterioridade",
+    "Lei penal no tempo e no espaço; tempo e lugar do crime",
+    "Lei penal excepcional, especial e temporária",
+    "Territorialidade e extraterritorialidade",
+    "Pena cumprida no estrangeiro e eficácia da sentença estrangeira",
+    "Contagem de prazo e frações não computáveis da pena",
+    "Interpretação da lei penal, analogia e irretroatividade",
+    "Conflito aparente de normas penais",
+    "Teoria do crime: tipo penal objetivo e subjetivo",
+    "Ilicitude e causas excludentes",
+    "Culpabilidade e causas dirimentes",
+    "Crimes contra a pessoa",
+    "Crimes contra o patrimônio",
+    "Crimes contra a administração pública",
+    "Disposições constitucionais aplicáveis ao direito penal",
+    "Crimes hediondos (Lei 8.072/1990)",
+    "Abuso de autoridade (Lei 13.869/2019)",
+    "Estatuto da Criança e do Adolescente"
+   ]
+  },
+  {
+   "nome": "Noções de Direito Processual Penal",
+   "grupo": "Específicos (40 questões no total)",
+   "antigos": [
+    "Direito Processual Penal"
+   ],
+   "topicos": [
+    "Disposições preliminares do CPP",
+    "Inquérito policial",
+    "Ação penal",
+    "Juiz, Ministério Público, acusado e defensor",
+    "Assistentes, auxiliares da justiça, peritos e intérpretes",
+    "Citações e intimações",
+    "Sentença",
+    "Processo comum e instrução criminal",
+    "Júri: acusação, instrução preliminar, pronúncia, impronúncia e absolvição sumária",
+    "Júri: preparação do plenário, alistamento dos jurados, desaforamento e pauta",
+    "Júri: sorteio, convocação e função do jurado",
+    "Júri: composição, Conselho de Sentença, sessões e instrução em plenário",
+    "Júri: debates, quesitos e votação, sentença, ata e atribuições do presidente",
+    "Prisão e liberdade provisória",
+    "Crimes de responsabilidade dos funcionários públicos: processo e julgamento",
+    "Habeas corpus e seu processo",
+    "Disposições constitucionais aplicáveis ao processo penal"
+   ]
+  },
+  {
+   "nome": "Redação (prova discursiva)",
+   "grupo": "Prova discursiva · Redação (30 pontos)",
+   "antigos": [],
+   "topicos": [
+    "Gênero dissertativo-argumentativo (15 a 20 linhas)",
+    "Tema, tese e abordagem",
+    "Argumentação e repertório",
+    "Progressão textual: coesão e coerência entre parágrafos",
+    "Seleção vocabular e norma culta",
+    "Critérios de correção e penalidades do edital"
+   ]
+  }
+ ],
+ "renomeados": [
+  {
+   "materia": "Noções de Administração de Recursos Humanos e Gestão Pública",
+   "de": "Eficiência, eficácia e efetividade e avaliação do desempenho governamental",
+   "para": "Eficácia e efetividade: avaliação e mensuração do desempenho governamental"
+  }
+ ]
 }
